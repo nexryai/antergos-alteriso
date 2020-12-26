@@ -1,0 +1,13 @@
+post_install() {
+  chmod 4755 /opt/slimjet/slimjet-sandbox
+}
+
+post_upgrade() {
+  post_install
+}
+
+post_remove() {
+  post_install
+}
+
+# -*- mode: bash;-*-

@@ -1,0 +1,32 @@
+# Maintainer: Alexandre Filgueira <alexfilgueira@antergos.com
+
+pkgname=lembrame
+pkgver=0.1.1
+pkgrel=1
+pkgdesc="A tool to synchronize your Gnome Settings to be later used in an Antergos installation"
+url="https://www.antergos.com/"
+arch=(x86_64)
+license=(GPL)
+depends=(gjs gtk3 python python-libnacl pacman dconf gtk-update-icon-cache)
+makedepends=(gobject-introspection meson)
+source=("https://github.com/Antergos/lembrame/archive/v${pkgver}.tar.gz")
+sha256sums=('7c282671472930fb795cdc05146832cc29100487b4c7f7cbab14a9ac81fdd9a4')
+
+
+prepare() {
+  cd $pkgname-$pkgver
+}
+
+build() {
+  arch-meson $pkgname-$pkgver _build
+  ninja -C _build
+}
+
+check() {
+  cd _build
+  meson test
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C _build install
+}

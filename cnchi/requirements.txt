@@ -1,0 +1,8 @@
+pyalpm
+pygobject
+pydbus
+pycairo
+pyparted
+mako
+requests
+

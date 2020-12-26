@@ -1,0 +1,56 @@
+# Maintainer: Antergos devs <devs@antergos.com>
+
+pkgname=antergos-welcome
+_pkgname=welcome
+pkgver=0.3
+pkgrel=2
+pkgdesc='Welcome screen for Antergos Linux'
+arch=(any)
+license=(GPL)
+url="https://github.com/Antergos/welcome"
+depends=('python-gobject' 'python-pydbus' 'webkit2gtk' 'python-simplejson' 'notification-daemon')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/Antergos/${_pkgname}/archive/${pkgver}.tar.gz")
+md5sums=('1ac26c90274e9b9bcf2f0784eb11c615')
+
+## ANTBS METADATA
+#_is_monitored='True'
+#_monitored_service='github'
+#_monitored_type='releases'
+#_monitored_project='antergos'
+#_monitored_repo='welcome'
+## END ANTBS METADATA
+
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+
+    # Install antergos-welcomed (dbus service)
+    install -d "${pkgdir}/usr/share/antergos/welcomed"
+    cp -R src/welcomed/. "${pkgdir}/usr/share/antergos/welcomed"
+    install -Dm755 bin/antergos-welcomed "${pkgdir}/usr/bin/antergos-welcomed"
+
+    # Install antergos-welcomed service file
+    install -d "${pkgdir}/usr/lib/systemd/system"
+    install -m644 dbus/welcomed.service \
+        "${pkgdir}/usr/lib/systemd/system/welcomed.service"
+
+    # Install d-bus setup files
+    install -d "${pkgdir}/usr/share/dbus-1/system-services"
+    install -m644 dbus/com.antergos.welcome.service \
+        "${pkgdir}/usr/share/dbus-1/system-services/com.antergos.welcome.service"
+    install -d "${pkgdir}/etc/dbus-1/system.d"
+    install -m644 dbus/com.antergos.welcome.conf \
+        "${pkgdir}/etc/dbus-1/system.d/com.antergos.welcome.conf"
+    install -d "${pkgdir}/usr/share/polkit-1/actions"
+    install -m644 dbus/com.antergos.welcome.policy \
+        "${pkgdir}/usr/share/polkit-1/actions/com.antergos.welcome.policy"
+
+    # Install antergos-welcome (client app)
+    install -d "${pkgdir}/usr/share/antergos/welcome"
+    cp src/*.py "${pkgdir}/usr/share/antergos/welcome"
+    install -Dm755 bin/antergos-welcome \
+        "${pkgdir}/usr/bin/antergos-welcome"
+    install -Dm644 antergos-welcome.desktop \
+        "${pkgdir}/usr/share/applications/antergos-welcome.desktop"
+    install -d "${pkgdir}/usr/share/antergos/welcome/data"
+    cp -R data/. "${pkgdir}/usr/share/antergos/welcome/data"
+}

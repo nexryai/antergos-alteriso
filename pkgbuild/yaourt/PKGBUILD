@@ -1,0 +1,37 @@
+# Author: Julien MISCHKOWITZ <wain@archlinux.fr>
+# Author: tuxce <tuxce.net@gmail.com>
+
+pkgname=yaourt
+pkgver=1.9
+pkgrel=1
+pkgdesc="A pacman wrapper with extended features and AUR support"
+arch=('any')
+url="https://github.com/archlinuxfr/yaourt"
+license=(GPL)
+depends=('diffutils' 'pacman>=4.2' 'package-query>=1.6' 'gettext')
+optdepends=('aurvote: vote for favorite packages from AUR'
+			'customizepkg: automatically modify PKGBUILD during install/upgrade'
+			'rsync: retrieve PKGBUILD from official repositories')
+backup=('etc/yaourtrc')
+source=("https://github.com/archlinuxfr/yaourt/archive/${pkgver}.zip")
+md5sums=('d1eab5ecc6c009df90727cc7711424ef')
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='archlinuxfr'
+_monitored_repo='yaourt'
+# END ANTBS METADATA
+
+build() { 
+	cd "$srcdir/$pkgname-$pkgver/src"
+	make PREFIX=/usr sysconfdir=/etc localstatedir=/var 
+}
+
+package() {
+	cd "$srcdir/$pkgname-$pkgver/src"
+	make PREFIX=/usr sysconfdir=/etc localstatedir=/var DESTDIR="$pkgdir" install
+}
+
+

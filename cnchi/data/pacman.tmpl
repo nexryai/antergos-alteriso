@@ -1,0 +1,27 @@
+[options]
+Architecture = auto
+CheckSpace
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+
+RootDir = ${destDir}
+DBPath = ${destDir}/var/lib/pacman/
+CacheDir = ${destDir}/var/cache/pacman/pkg
+LogFile = /var/log/cnchi/pacman.log
+
+# Repositories
+[antergos]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/antergos-mirrorlist
+
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+[community]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist

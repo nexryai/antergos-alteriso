@@ -1,0 +1,45 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Evgeniy Alekseev <arcanis at archlinux dot org>
+# Contributor: Andrea Scarpino <andrea at archlinux dot org>
+# Contributor: XazZ <xazz.xazz at googlemail dot com>
+
+pkgname=liblastfm-qt5
+_pkgname=liblastfm
+pkgver=1.1.0.r637
+pkgrel=4
+pkgdesc="A Qt5 C++ library for the Last.fm webservices"
+arch=('x86_64')
+url='https://github.com/lastfm/liblastfm/'
+license=('GPL3')
+depends=('qt5-base' 'fftw' 'libsamplerate')
+makedepends=('cmake')
+provides=('liblastfm')
+conflicts=('liblastfm')
+source=(${_pkgname}::"git+https://github.com/lastfm/${_pkgname}.git")
+md5sums=('SKIP')
+
+#pkgver() {
+#	cd "${_pkgname}"
+#	printf "%s.r%s" "${pkgver}" "$(git rev-list --count HEAD)"
+#}
+
+prepare() {
+  rm -rf _build
+  mkdir _build
+}
+
+build() {
+  cd _build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DBUILD_WITH_QT4=OFF \
+    -DBUILD_TESTS=OFF
+  make -j4
+}
+
+package(){
+  cd _build
+  make DESTDIR="${pkgdir}" install
+}

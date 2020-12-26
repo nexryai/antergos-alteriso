@@ -1,0 +1,27 @@
+pkgbase = zfs
+	pkgdesc = Kernel modules for the Zettabyte File System.
+	pkgver = 0.8.0rc5
+	pkgrel = 1
+	url = http://zfsonlinux.org/
+	install = zfs.install
+	arch = x86_64
+	groups = system
+	groups = zfs
+	license = CDDL
+	makedepends = git
+	depends = zfs-utils>=0.8.0rc5
+	depends = dkms
+	depends = linux-headers
+	depends = linux<5.2
+	provides = zfs-dkms
+	conflicts = zfs-git
+	conflicts = zfs-dkms
+	conflicts = spl-git
+	conflicts = spl-dkms
+	replaces = spl
+	replaces = spl-dkms
+	source = https://github.com/zfsonlinux/zfs/archive/zfs-0.8.0-rc5.zip
+	md5sums = 8341bf06845e0a71b2555affc125b756
+
+pkgname = zfs
+

@@ -1,0 +1,50 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=mate-screensaver
+pkgver=1.20.3
+pkgrel=1
+pkgdesc='Screensaver for MATE'
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('dbus-glib' 'libmatekbd' 'libnotify' 'libxss' 'mate-desktop'
+		 'mate-menus' 'mate-session-manager')
+makedepends=('wget' 'mate-common' 'xmlto')
+optdepends=('mate-power-manager: Add power management support.'
+			'mate-screensaver-hacks: Additional screensavers.'
+			'rss-glx: Really slick screensavers.')
+groups=('mate-extra')
+source=("https://pub.mate-desktop.org/releases/${pkgver::(-2)}/${pkgname}-${pkgver}.tar.xz")
+_sha1sums_url="https://pub.mate-desktop.org/releases/${pkgver::(-2)}/SHA1SUMS"
+sha1sums=($(wget -q "${_sha1sums_url}" && grep "${pkgname}-${pkgver}.tar.xz" SHA1SUMS | cut -f1))
+
+# BEGIN ANTBS METADATA
+_autosums='True'
+_is_monitored='True'
+_monitored_service='mate-desktop'
+_monitored_match_pattern='/^\d\.\d[02468]\.\d+$/'
+# END ANTBS METADATA
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/${pkgname} \
+		--sysconfdir=/etc \
+		--with-xscreensaverdir=/usr/share/xscreensaver/config \
+		--with-xscreensaverhackdir=/usr/lib/xscreensaver \
+		--with-mit-ext \
+		--with-libnotify \
+		--enable-locking \
+		--without-console-kit \
+		--disable-static
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}
+
+# -*- mode: bash;-*-

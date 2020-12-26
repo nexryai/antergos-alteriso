@@ -1,0 +1,61 @@
+# $Id: PKGBUILD 126461 2015-01-23 20:22:27Z faidoc $
+# Maintainer: Alexandre Filgueira <alexfilgueira@cinnarch.com>
+# Contributor: Ner0
+
+pkgname=nemo
+pkgver=3.6.5
+pkgrel=1
+pkgdesc="File manager for GTK-based desktops."
+arch=('x86_64')
+url="https://github.com/linuxmint/nemo"
+license=('GPL')
+groups=('cinnamon')
+depends=('libexif' 'gvfs' 'dconf' 'desktop-file-utils' 'exempi' 'python2'
+		'cinnamon-desktop' 'libnotify' 'libxml2' 'cinnamon-translations' 'xapps')
+makedepends=('gtk-doc' 'gobject-introspection' 'intltool' 'gnome-common'
+			'python-gobject' 'python-polib' 'python2-gobject' 'python2-polib')
+options=('!emptydirs')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/nemo/tarball/${pkgver}")
+md5sums=('5d609858f3d32d6bb700dfec972804ac')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='linuxmint'
+_monitored_repo='nemo'
+# END ANTBS METADATA
+
+
+prepare() {
+	cd linuxmint-nemo-*
+
+	# Python2 fix
+	find -type f | xargs sed -i 's@^#!.*python$@#!/usr/bin/python2@'
+
+	# Rename 'Files' app name to avoid having the same as nautilus
+	sed -i 's/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in.in
+}
+
+
+build() {
+	cd linuxmint-nemo-*
+
+	./autogen.sh --prefix=/usr --sysconfdir=/etc \
+		--localstatedir=/var --disable-static \
+		--libexecdir=/usr/lib/nemo \
+		--disable-update-mimedb \
+		--disable-tracker \
+		--disable-gtk-doc-html \
+		--disable-schemas-compile \
+		--enable-selinux=no # :face_with_rolling_eyes:
+	make
+}
+
+package() {
+	cd linuxmint-nemo-*
+
+	make DESTDIR="${pkgdir}" install
+}
+

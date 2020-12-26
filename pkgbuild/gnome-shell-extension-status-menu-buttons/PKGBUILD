@@ -1,0 +1,31 @@
+# Maintainer: Dustin Falgout <dustin@antergos.info>
+
+pkgname=gnome-shell-extension-status-menu-buttons
+pkgver=0.3
+pkgrel=2
+pkgdesc="Adds a hibernate, suspend, & lock button to the status menu."
+arch=('any')
+url="http://www.antergos.com"
+license=('GPLv2')
+groups=('gnome-shell-extensions')
+depends=('gnome-shell-extensions' 'lightdm' 'xscreensaver' 'light-locker')
+replaces=('gnome-shell-extension-lockscreen-lightdm')
+conflicts=('gnome-shell-extension-lockscreen-lightdm')
+install=buttons.install
+source=("https://github.com/lots0logs/${pkgname}/archive/master.zip")
+sha256sums=('854a3c611fb4a36d75a65c82da58e7e7fa320e87c37ae95336a2d6bd5c72183e')
+
+build() {
+	cd ${srcdir}
+}
+
+package() {
+	cd ${pkgdir}
+	mkdir -p usr/share/gnome-shell/extensions/status-menu-buttons@dev.antergos.com
+	cd usr/share/gnome-shell/extensions/status-menu-buttons@dev.antergos.com
+	cp ${srcdir}/${pkgname}-master/extension.js .
+	cp ${srcdir}/${pkgname}-master/metadata.json .
+	cp ${srcdir}/${pkgname}-master/confirmDialog.js .
+}
+
+

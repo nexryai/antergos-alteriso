@@ -1,0 +1,28 @@
+# Maintainer: Antergos devs <devs@antergos.com>
+# AUR Maintainer: Jonni Westphalen <jonny.westphalen@googlemail.com>
+
+pkgname=aurman
+pkgver=2.18
+pkgrel=1
+pkgdesc="aurman AUR helper with almost pacman syntax"
+arch=('any')
+url="https://github.com/polygamma/aurman"
+license=('MIT')
+depends=('python' 'expac' 'python-requests' 'git' 'python-regex' 'python-dateutil' 'pyalpm' 'python-feedparser')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/polygamma/${pkgname}/archive/${pkgver}.tar.gz")
+md5sums=('SKIP')
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='polygamma'
+_monitored_repo='aurman'
+# END ANTBS METADATA
+
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    /usr/bin/python3 setup.py install --root="$pkgdir/" --optimize=1
+    install -Dm644 ./bash.completion "$pkgdir/usr/share/bash-completion/completions/aurman"
+    install -Dm644 ./aurman.fish "$pkgdir/usr/share/fish/vendor_completions.d/aurman.fish"
+}

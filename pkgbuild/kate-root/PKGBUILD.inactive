@@ -1,0 +1,54 @@
+# Maintainer: Antergos Devs <devs@antergos.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=('kate-root')
+_pkgname=kate
+pkgver=18.08.0
+pkgrel=1
+arch=('x86_64')
+license=('GPL' 'LGPL' 'FDL')
+makedepends=(
+    'extra-cmake-modules' 'kdoctools' 'plasma-framework' 'knewstuff'
+    'ktexteditor' 'threadweaver' 'kitemmodels' 'kactivities')
+source=("https://download.kde.org/stable/applications/${pkgver}/src/${_pkgname}-${pkgver}.tar.xz"
+	kate-root.patch)
+sha256sums=(
+    'c7fc7ebab1c9ce8933bcf6bf6fc265e20b3a858a21d379ae7259b34f5dbe2cd2'
+    'dedb32281d4cc271c982147e2ce9da3a3e75373838712fc65209b8fcdd720033')
+options=(!emptydirs)
+
+pkgdesc="Advanced Text Editor"
+groups=('kde-applications' 'kdebase')
+url="https://www.kde.org/applications/utilities/kate/"
+depends=('knewstuff' 'ktexteditor' 'threadweaver' 'kitemmodels' 'kactivities' 'hicolor-icon-theme')
+conflicts=('kdesdk-kate' 'kate')
+provides=('kdesdk-kate' 'kate')
+optdepends=('konsole: open a terminal in Kate')
+
+prepare() {
+    mkdir -p build
+
+    cd ${_pkgname}-${pkgver}/kate
+    patch -Np1 -i "${srcdir}/kate-root.patch"
+}
+
+build() {
+    cd build
+    cmake ../${_pkgname}-${pkgver} \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DKDE_INSTALL_LIBDIR=lib \
+        -DSYSCONF_INSTALL_DIR=/etc \
+        -DBUILD_TESTING=OFF
+    make
+}
+
+package() {
+    cd build
+    make DESTDIR="${pkgdir}" install
+
+    find "$pkgdir" -type f -name '*kwrite*' -exec rm {} \;
+    rm -r "$pkgdir"/usr/share/doc/HTML/*/kwrite
+}

@@ -1,0 +1,55 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: isiachi <isiachi@rhyeworld.it>
+
+pkgname=zfs
+_pkgver=0.8.0rc5
+pkgver=0.8.0rc5
+pkgrel=1
+pkgdesc="Kernel modules for the Zettabyte File System."
+license=('CDDL')
+groups=("system" "zfs")
+makedepends=("git")
+depends=("zfs-utils>=${pkgver%+*}" "dkms" "linux-headers" "linux<5.2")
+provides=("zfs-dkms")
+replaces=("spl" "spl-dkms")
+conflicts=("zfs-git" "zfs-dkms" "spl-git" "spl-dkms")
+install=zfs.install
+arch=("x86_64")
+url="http://zfsonlinux.org/"
+_commit=''
+_tag="zfs-${_pkgver/rc5/-rc5}"
+source=(
+	"https://github.com/zfsonlinux/${pkgname}/archive/${_tag}.zip"
+)
+md5sums=('8341bf06845e0a71b2555affc125b756')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='zfsonlinux'
+_monitored_repo='zfs'
+_monitored_match_pattern='/(?<=zfs-|spl-)\S+/'
+# END ANTBS METADATA
+
+
+prepare() {
+	cd "${srcdir}/${pkgname}-${_tag}"
+}
+
+build() {
+    cd "${srcdir}/${pkgname}-${_tag}"
+    ./autogen.sh
+}
+
+package() {
+    dkmsdir="${pkgdir}/usr/src/zfs-${_pkgver}"
+    install -d "${dkmsdir}"
+
+    cp -a "${srcdir}/${pkgname}-${_tag}"/. ${dkmsdir}
+
+    cd "${dkmsdir}"
+    scripts/dkms.mkconf -v ${_pkgver} -f dkms.conf -n ${pkgname}
+    chmod g-w,o-w -R .
+}

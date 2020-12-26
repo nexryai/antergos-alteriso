@@ -1,0 +1,37 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Andrew Querol <andrew@querol.me>
+# Contributor: Rafael Fontenelle <rafaelff@gnome.org>
+
+pkgname=chrome-gnome-shell
+pkgver=10.1
+pkgrel=1
+pkgdesc="Native integration of extensions.gnome.org with GNOME Shell for Chromium-based browsers."
+arch=('any')
+url='https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome'
+license=('GPL')
+depends=('gnome-shell' 'python-requests' 'python-gobject')
+makedepends=('cmake' 'jq')
+replaces=('gs-chrome-connector')
+conflicts=('gs-chrome-connector' "${pkgname}-git")
+source=("https://git.gnome.org/browse/chrome-gnome-shell/snapshot/chrome-gnome-shell-v${pkgver}.tar.xz")
+md5sums=('cbc7ae29bee7d52460880d12cf4b6632')
+
+
+prepare() {
+	cd "${srcdir}/${pkgname}-v${pkgver}"
+	mkdir -p 'build'
+}
+
+build() {
+	cd "${srcdir}/${pkgname}-v${pkgver}/build"
+	cmake \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib  \
+		-DBUILD_EXTENSION=OFF \
+		../
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-v${pkgver}/build"
+	make DESTDIR="${pkgdir}" install
+}

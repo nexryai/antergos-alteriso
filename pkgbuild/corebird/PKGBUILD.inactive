@@ -1,0 +1,41 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Carlos Silva <r3pek@r3pek.org>
+
+pkgname=corebird
+pkgver=1.7.4
+pkgrel=2
+pkgdesc='Native Gtk+ Twitter Client'
+arch=('x86_64')
+license=('GPL')
+url='https://github.com/baedert/corebird'
+depends=('gtk3' 'rest' 'gstreamer' 'gstreamer' 'gst-plugins-base' 'gst-plugins-good'
+		'gst-plugins-bad' 'gst-libav' 'gspell')
+makedepends=('vala' 'gnome-common')
+source=("https://github.com/baedert/corebird/archive/${pkgver}.tar.gz")
+md5sums=('ec7e8a97b27ffa407e525aa0ebc05967')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='baedert'
+_monitored_repo='corebird'
+# END ANTBS METADATA
+
+
+build() {
+	cd "${pkgname}-${pkgver}"
+
+	./autogen.sh --prefix=/usr
+
+	make
+}
+
+package() {
+	cd "${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}
+
+
+

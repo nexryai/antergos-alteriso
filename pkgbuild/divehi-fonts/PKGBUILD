@@ -1,0 +1,24 @@
+# Dhivehi-fonts
+
+# Maintainer: Ali Aafee
+pkgname=divehi-fonts
+pkgver=0.1
+pkgrel=3
+pkgdesc="Divehi(thaana) fonts for archlinux"
+arch=('any')
+url="https://launchpad.net/~mvishah/+archive/ttf-dhivehi-fonts"
+license=('GPL3')
+depends=('xorg-fonts-encodings' 'xorg-font-utils' 'fontconfig')
+install=divehi-fonts.install
+source=("https://launchpad.net/~mvishah/+archive/ttf-dhivehi-fonts/+files/ttf-thaana-fonts_1.0-1_i386.deb")
+sha256sums=('4185f7ef5e1384374b6c349f6076e21a0ac131426df703afbf1ffc9205756f15')
+
+build() {
+  cd "$srcdir"
+  tar -xvzf data.tar.gz
+  mkdir -p ${pkgdir}/usr/share/fonts/divehi-fonts
+  cp ${srcdir}/usr/share/fonts/truetype/ttf-thaana-fonts/* ${pkgdir}/usr/share/fonts/divehi-fonts/
+  
+}
+
+

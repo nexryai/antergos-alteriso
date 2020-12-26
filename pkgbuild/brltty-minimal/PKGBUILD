@@ -1,0 +1,67 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Kelly Prescott <kprescott@coolip.net>
+# Contributor: Chris Brannon <chris@the-brannons.com>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+
+pkgname=brltty-minimal
+pkgver=6.0
+pkgrel=1
+pkgdesc='Braille display driver for Linux/Unix'
+arch=('x86_64')
+url='http://brltty.com'
+license=('GPL' 'LGPL')
+depends=('bash' 'icu' 'tcl')
+conflicts=('brltty')
+provides=('brltty')
+backup=('etc/brltty.conf')
+options=('!emptydirs')
+install=brltty.install
+source=("https://github.com/brltty/brltty/archive/BRLTTY-${pkgver}.tar.gz"
+		'brltty.service')
+md5sums=('36ff2aa924f03a238b11b02d06122581'
+         '0cad54bb5470122535f5e3a11d5ca123')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='brltty'
+_monitored_repo='brltty'
+_monitored_match_pattern='/(?<=BRLTTY-)[\d.]+/'
+# END ANTBS METADATA
+
+
+build() {
+	cd "${srcdir}/brltty-BRLTTY-${pkgver}"
+	
+	./autogen
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--with-tables-directory=/usr/share/brltty \
+		--with-screen-driver=lx \
+		--disable-speech-support \
+		--disable-gpm \
+		--disable-java-bindings \
+		--disable-python-bindings \
+		--disable-tcl-bindings \
+		--disable-ocaml-bindings \
+		--disable-x \
+		--disable-lisp-bindings \
+		--disable-standalone-programs
+
+	make
+}
+
+package() {
+	cd "${srcdir}/brltty-BRLTTY-${pkgver}"
+
+	make INSTALL_ROOT="$pkgdir" install
+	install -Dm644 Documents/brltty.conf "$pkgdir/etc/brltty.conf"
+	install -Dm644 ../brltty.service "$pkgdir/usr/lib/systemd/system/brltty.service"
+}
+
+# -*- mode: bash;-*

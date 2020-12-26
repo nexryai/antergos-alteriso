@@ -1,0 +1,38 @@
+# Maintainer: Antergos Developers
+# Contributor: tuxce <tuxce.net@gmail.com>
+
+pkgname=package-query
+pkgver=1.9.r380
+_pkgver=1.9
+_commit='dc45413df71a8e5364e52f845417a56aa6706c57'
+pkgrel=3
+pkgdesc="Query ALPM and AUR"
+arch=('x86_64')
+url="https://github.com/archlinuxfr/package-query/"
+license=('GPL')
+depends=('pacman' 'curl' 'yajl>=2.0')
+source=("${pkgname}-${_pkgver}::https://github.com/archlinuxfr/${pkgname}/archive/${_commit}.zip")
+md5sums=('0c4466a26766fa673ec28293d2482865')
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='archlinuxfr'
+_monitored_repo='package-query'
+# END ANTBS METADATA
+
+
+build() {
+	cd "$srcdir/$pkgname-${_commit}"
+	./autogen.sh
+	./configure --localstatedir=/var --prefix=/usr --sysconfdir=/etc
+	make
+}
+
+package () {
+	cd "$srcdir/$pkgname-${_commit}"
+	make DESTDIR="$pkgdir" install
+}
+
+# -*- mode: bash; tab-width: 4; indent-tabs-mode: t -*-

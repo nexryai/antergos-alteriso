@@ -1,0 +1,43 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
+
+pkgname=copyq
+_realname=CopyQ
+pkgver=3.7.3-beta-osx-fix-open-in-fullscreen
+pkgrel=1
+pkgdesc='Clipboard manager with searchable and editable history.'
+url='https://github.com/hluk/CopyQ'
+groups=('tools')
+depends=('qt5-base' 'libxtst' 'qt5-webkit' 'qt5-svg' 'qt5-tools' 'qt5-script' 'libxfixes' 'qt5-x11extras')
+makedepends=('cmake')
+license=('GPL3')
+arch=('x86_64')
+source=("https://github.com/hluk/${_realname}/archive/v${pkgver}.tar.gz")
+md5sums=('afb6ad7982b928fdf4213ca4ac54c738')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='hluk'
+_monitored_repo='copyq'
+# END ANTBS METADATA
+
+
+build() {
+	mkdir "${srcdir}/build"
+	cd "${srcdir}/build"
+	cmake -DWITH_WEBKIT=1 \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DQT_QMAKE_EXECUTABLE=qmake-qt5 \
+		-DWITH_QT5=TRUE \
+		"${srcdir}/${_realname}-${pkgver}"
+	make
+}
+
+package() {
+	cd "${srcdir}/build"
+	make DESTDIR="${pkgdir}" install
+}
+

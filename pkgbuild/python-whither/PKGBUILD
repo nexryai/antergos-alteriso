@@ -1,0 +1,36 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+
+pkgname=python-whither
+_module="${pkgname#*-}"
+pkgver=0.3.2
+pkgrel=2
+pkgdesc='Desktop application SDK for creating Universal Linux Applications.'
+url="https://github.com/antergos/whither"
+depends=('python-pyqt5' 'qt5-webengine' 'python-ruamel-yaml')
+makedepends=('python-setuptools')
+license=('GPL')
+arch=('any')
+source=("https://files.pythonhosted.org/packages/source/w/${_module}/${_module}-${pkgver}.tar.gz")
+md5sums=('58b426230330fd6ef9bf0e7c509360c2')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='antergos'
+_monitored_repo='whither'
+# END ANTBS METADATA
+
+
+build() {
+	cd "${srcdir}/${_module}-${pkgver}"
+	python setup.py build
+}
+
+package() {
+	cd "${srcdir}/${_module}-${pkgver}"
+	python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
+
+

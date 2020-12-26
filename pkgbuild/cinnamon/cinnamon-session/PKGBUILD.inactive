@@ -1,0 +1,53 @@
+# $Id$
+# Maintainer: Alexandre Filgueira <alexfilgueira@antergos.com>
+# Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=cinnamon-session
+pkgver=3.6.1
+pkgrel=1
+pkgdesc="The Cinnamon Session Handler"
+arch=('x86_64')
+license=('GPL' 'LGPL')
+groups=('cinnamon')
+depends=('dbus-glib' 'cinnamon-desktop' 'libsm' 'libcanberra' 'libsystemd')
+optdepends=('qt5-styleplugins: Gtk theme/styles for QT apps')
+makedepends=('intltool' 'mesa' 'json-glib' 'xtrans' 'gnome-common')
+options=('!emptydirs')
+url="https://github.com/linuxmint/cinnamon-session"
+source=("${pkgname}-${pkgver}.zip::https://github.com/linuxmint/cinnamon-session/archive/${pkgver}.zip")
+md5sums=('fe61e337b3f392ad6fa6c27ee2806b47')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='linuxmint'
+_monitored_repo='cinnamon-session'
+# END ANTBS METADATA
+
+
+prepare() {
+	cd $pkgname-$pkgver
+}
+
+build() {
+	cd $pkgname-$pkgver
+	
+	CFLAGS="${CFLAGS} -Wno-error=format-nonliteral" ./autogen.sh \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--libexecdir=/usr/lib/cinnamon-session \
+		--disable-schemas-compile \
+		--disable-gconf \
+		--enable-qt57-theme-support
+	make
+}
+
+package() {
+	cd $pkgname-$pkgver
+	make DESTDIR="$pkgdir" install
+}
+
+# -*- mode: bash;-*-

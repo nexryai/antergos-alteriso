@@ -1,0 +1,52 @@
+# $Id$
+# Maintainer: Alexandre Filgueira <alexfilgueira@antergos.com>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=cjs
+pkgver=3.6.1
+pkgrel=1
+pkgdesc="Javascript Bindings for Cinnamon"
+arch=('x86_64')
+url="https://github.com/linuxmint/cjs"
+license=(GPL)
+groups=('cinnamon')
+depends=('cairo' 'gobject-introspection-runtime' 'js38' 'dbus-glib')
+makedepends=('gnome-common' 'python2' 'gobject-introspection')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/cjs/archive/${pkgver}.tar.gz")
+md5sums=('f44a290adafb84b18c73a1a501058fcb')
+
+
+# BEGIN ANTBS METADATA
+
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='linuxmint'
+_monitored_repo='cjs'
+
+# END ANTBS METADATA
+
+
+build() {
+  cd $pkgname-$pkgver
+
+  # Python2 fix
+  sed -i 's|#! /usr/bin/env python|#! /usr/bin/env python2|' verbump.py
+
+  ./autogen.sh --prefix=/usr --disable-static --libexecdir=/usr/lib
+  make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  # Needs a display
+  make -k check || :
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
+ 
+
+ 

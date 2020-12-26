@@ -1,0 +1,43 @@
+# Maintainer: Alexandre Filgueira <faidoc@gmail.com>
+
+pkgname=antergos-wallpapers
+_pkgname=wallpapers
+pkgver=0.7
+pkgrel=3
+pkgdesc='Default wallpapers for Antergos Linux'
+arch=('any')
+url='http://www.antergos.com'
+license=('CCPL:by-nc-sa')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/Antergos/${_pkgname}/archive/${pkgver}.tar.gz")
+md5sums=('bd5a39459981bfe7f56d70a539d93e55')
+
+# ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='antergos'
+_monitored_repo='wallpapers'
+# END ANTBS METADATA
+
+package() {
+	cd "${srcdir}/${_pkgname}-${pkgver}"
+
+	install -d "${pkgdir}/usr/share/antergos/wallpapers"
+	install -m644 *.jpg "${pkgdir}/usr/share/antergos/wallpapers/"
+	install -m644 *.png "${pkgdir}/usr/share/antergos/wallpapers/"
+
+	install -d "${pkgdir}/usr/share/gnome-background-properties"
+	install -m644 antergos-backgrounds-4-3.xml "${pkgdir}/usr/share/gnome-background-properties/"
+
+	# Cinnamon
+	_bg_path="${pkgdir}/usr/share/cinnamon-background-properties/antergos.xml"
+
+	install -d "${pkgdir}/usr/share/cinnamon-background-properties"
+	cp --no-preserve=ownership antergos-backgrounds-4-3.xml "${_bg_path}"
+	sed -i 's|gnome-wp-list|cinnamon-wp-list|g' "${_bg_path}"
+
+	mkdir -p "${pkgdir}/usr/share/backgrounds"
+	ln -sr "${pkgdir}/usr/share/antergos/wallpapers" "${pkgdir}/usr/share/backgrounds/antergos"
+}
+
+

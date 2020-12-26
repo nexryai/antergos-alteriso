@@ -1,0 +1,274 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
+# Contributor: TZ86
+# Contributor: killajoe
+
+_archgit_url='https://git.archlinux.org/svntogit/packages.git/plain/trunk'
+
+_from_arch_pkg() {
+	echo "${1}::${_archgit_url}/${1}?h=packages/chromium"
+}
+
+pkgname=vivaldi
+pkgver=2.3.1440.60
+# https://update.vivaldi.com/update/1.0/relnotes/2.3.1440.60.html
+_chromium=72.0.3626.121 # https://omahaproxy.appspot.com
+pkgrel=1
+pkgdesc='An advanced browser made with the power user in mind.'
+groups=('browser')
+url="https://vivaldi.com"
+options=('!strip' '!zipman')
+license=('custom' 'LGPL2.1')
+arch=('x86_64')
+depends=('gtk3' 'nss' 'libxtst' 'gconf' 'libxss' 'freetype2' 'ttf-font' 'nspr'
+		'desktop-file-utils' 'shared-mime-info' 'alsa-lib' 'hicolor-icon-theme')
+makedepends=(
+	'w3m' 'libexif' 'libpulse' 'libxss' 'ninja' 'pciutils' 'python2' 'xdg-utils' 'nodejs'
+	'opus' 'gperf' 'yasm' 'mesa' 'harfbuzz-icu' 'libwebp' 'libxslt' 'libxml2' 're2' 'minizip'
+	'snappy' 'clang' 'lld'
+)
+provides=('vivaldi-ffmpeg-codecs' 'vivaldi-widevine')
+conflicts=('vivaldi-ffmpeg-codecs' 'vivaldi-widevine')
+replaces=('vivaldi-ffmpeg-codecs' 'vivaldi-widevine')
+noextract=('chrome.rpm')
+
+source=(
+	"https://downloads.vivaldi.com/stable/vivaldi-stable-${pkgver}-1.x86_64.rpm"
+	"https://commondatastorage.googleapis.com/chromium-browser-official/chromium-$_chromium.tar.xz"
+	"chrome.rpm::https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+	'chrome-eula_text.html::https://www.google.com/intl/en/chrome/browser/privacy/eula_text.html'
+        chromium-drirc-disable-10bpc-color-configs.conf
+	"$(_from_arch_pkg chromium-enable-mojo-video-decoders-by-default.patch)"
+	"$(_from_arch_pkg chromium-vaapi-fix-the-VA_CHECK_VERSION.patch)"
+	"$(_from_arch_pkg chromium-vaapi-relax-the-version-check-for-VA-API.patch)"
+	"$(_from_arch_pkg chromium-vaapi.patch)"
+	"$(_from_arch_pkg chromium-webrtc-missing-header.patch)"
+	"$(_from_arch_pkg chromium-widevine.patch)"
+	"$(_from_arch_pkg chromium-system-icu.patch)"
+	"$(_from_arch_pkg chromium-skia-harmony.patch)"
+)
+md5sums=('62303233492f2c0ad80bc7cbbcc7a048'
+         'c9b2cd5509e257501d21ed4b5db4b4c2'
+         'c31d5811a8569ad8126ee7911b3b33a1'
+         '10fefbd0dd4ebc948b864b533c621fc1'
+         'bac4af3ab52348e4e3eff5ab00ec9228'
+         'c5577a46032a9dc60e491cd1f6782508'
+         '150096ab5c39177e47b6395909f7c433'
+         '71a580a9eb60bbf4d67038d022770d99'
+         'f6fa80f245a136ad6a578af0a87c886d'
+         '0f4f67f5d4b36eb804b2c76e220a93c8'
+         'c12ebe37255561ec13a55a911d586380'
+         '8ed00802bb023e9be48dfb625285b0ef'
+         '1260cfc8dbb887edd44997a7f9d5224b')
+
+
+
+
+# Possible replacements are listed in build/linux/unbundle/replace_gn_files.py
+# Keys are the names in the above script; values are the dependencies in Arch
+declare -gA _system_libs=(
+  #[ffmpeg]=ffmpeg
+  [flac]=flac
+  [fontconfig]=fontconfig
+  [freetype]=freetype2
+  [harfbuzz-ng]=harfbuzz
+  [icu]=icu
+  [libdrm]=
+  [libjpeg]=libjpeg
+  #[libpng]=libpng            # https://crbug.com/752403#c10
+  #[libvpx]=libvpx            # needs unreleased libvpx
+  [libwebp]=libwebp
+  [libxml]=libxml2
+  [libxslt]=libxslt
+  [opus]=opus
+  [re2]=re2
+  [snappy]=snappy
+  [yasm]=
+  [zlib]=minizip
+)
+_unwanted_bundled_libs=(
+  ${!_system_libs[@]}
+  ${_system_libs[libjpeg]+libjpeg_turbo}
+)
+depends+=(${_system_libs[@]})
+
+prepare() {
+	cd "$srcdir/chromium-$_chromium"
+
+  # Allow building against system libraries in official builds
+  sed -i 's/OFFICIAL_BUILD/GOOGLE_CHROME_BUILD/' \
+    tools/generate_shim_headers/generate_shim_headers.py
+
+  # https://crbug.com/893950
+  sed -i -e 's/\<xmlMalloc\>/malloc/' -e 's/\<xmlFree\>/free/' \
+    third_party/blink/renderer/core/xml/*.cc \
+    third_party/blink/renderer/core/xml/parser/xml_document_parser.cc \
+    third_party/libxml/chromium/libxml_utils.cc
+
+
+  # Enable VAAPI on Linux
+  patch -Np1 -i ../chromium-vaapi.patch
+  patch -Np1 -i ../chromium-vaapi-relax-the-version-check-for-VA-API.patch
+  patch -Np1 -i ../chromium-enable-mojo-video-decoders-by-default.patch
+  patch -Np1 -i ../chromium-vaapi-fix-the-VA_CHECK_VERSION.patch
+
+  # Load Widevine CDM if available
+  patch -Np1 -i ../chromium-widevine.patch
+
+  # https://crbug.com/skia/6663#c10
+  patch -Np0 -i ../chromium-skia-harmony.patch
+
+  # https://webrtc.googlesource.com/src.git/+/3e70781361ed
+  patch -Np0 -i ../chromium-webrtc-missing-header.patch
+
+  # https://bugs.gentoo.org/661880#c21
+  patch -Np1 -i ../chromium-system-icu.patch
+
+	# Remove compiler flags not supported by our system clang
+	sed -i \
+		-e '/"-Wno-enum-compare-switch"/d' \
+		-e '/"-Wno-null-pointer-arithmetic"/d' \
+		-e '/"-Wno-tautological-unsigned-zero-compare"/d' \
+		-e '/"-Wno-tautological-constant-compare"/d' build/config/compiler/BUILD.gn
+
+	# chromium 46 gives an error about a missing file
+	# workaround create empty
+	touch chrome/test/data/webui/i18n_process_css_test.html
+
+	# Use Python 2
+	find . -name '*.py' -exec sed -i -r 's|/usr/bin/python$|&2|g' {} +
+
+	# There are still a lot of relative calls which need a workaround
+	[[ -d "$srcdir/python2-path" ]] && rm -rf "$srcdir/python2-path"
+	mkdir "$srcdir/python2-path"
+	ln -s /usr/bin/python2 "$srcdir/python2-path/python"
+
+	mkdir -p third_party/node/linux/node-linux-x64/bin
+	ln -s /usr/bin/node third_party/node/linux/node-linux-x64/bin/
+
+  # Remove bundled libraries for which we will use the system copies; this
+  # *should* do what the remove_bundled_libraries.py script does, with the
+  # added benefit of not having to list all the remaining libraries
+  local _lib
+  for _lib in ${_unwanted_bundled_libs[@]}; do
+    find "third_party/$_lib" -type f \
+      \! -path "*third_party/$_lib/chromium/*" \
+      \! -path "*third_party/$_lib/google/*" \
+      \! -path '*third_party/yasm/run_yasm.py' \
+      \! -regex '.*\.\(gn\|gni\|isolate\|py\)' \
+      -delete
+  done
+
+  python2 build/linux/unbundle/replace_gn_files.py \
+    --system-libraries "${!_system_libs[@]}"
+
+}
+
+build() {
+	cd "$srcdir/chromium-$_chromium"
+
+	export PATH="$srcdir/python2-path:$PATH"
+	export HOME="$srcdir"
+	export TMPDIR="$srcdir/temp"
+	mkdir -p "$TMPDIR"
+
+	export CC=clang
+	export CXX=clang++
+	export AR=ar
+	export NM=nm
+
+	local args=(
+		'clang_use_chrome_plugins=false'
+		'fieldtrial_testing_like_official_build=true'
+		'remove_webcore_debug_symbols=true'
+		'ffmpeg_branding="Chrome"'
+		'proprietary_codecs=true'
+		'enable_hevc_demuxing=true'
+		'link_pulseaudio=true'
+		'use_gconf=false'
+		'use_gio=false'
+		'use_gnome_keyring=false'
+		'use_kerberos=false'
+		'use_cups=false'
+		'use_sysroot=false'
+		'use_gold=false'
+		'linux_use_bundled_binutils=false'
+		'use_gtk3=true'
+		'use_custom_libcxx=false'
+		'fatal_linker_warnings=false'
+		'treat_warnings_as_errors=false'
+		'is_clang=true'
+		'custom_toolchain="//build/toolchain/linux/unbundle:default"'
+		'host_toolchain="//build/toolchain/linux/unbundle:default"'
+		'is_component_build=true'
+		'is_debug=false'
+		'symbol_level=0'
+		'enable_nacl=false'
+		'enable_swiftshader=false'
+		'enable_nacl=false'
+		'enable_widevine=true'
+		'use_system_freetype=true'
+		'use_system_harfbuzz=true'
+	)
+
+	python2 tools/gn/bootstrap/bootstrap.py --gn-gen-args "${args[*]}"
+	out/Release/gn gen out/Release --args="${args[*]}" --script-executable=/usr/bin/python2
+
+	ninja -C out/Release -v media/ffmpeg
+}
+
+
+package() {
+	cp -a {opt,usr} "${pkgdir}"
+
+	# File conflicts with exo package
+	rm "${pkgdir}/usr/share/xfce4/helpers/vivaldi.desktop"
+
+	# suid sanbox
+	chmod 4755 "${pkgdir}/opt/vivaldi/vivaldi-sandbox"
+
+	# make /usr/bin/vivaldi available if its not there
+	if [[ ! -e "$pkgdir/usr/bin/vivaldi-stable" ]]; then
+		install -dm 755 "$pkgdir/usr/bin"
+		ln -sf /opt/vivaldi/vivaldi "$pkgdir/usr/bin/vivaldi-stable"
+	fi
+
+	# install icons
+	for res in 16 22 24 32 48 64 128 256; do
+		install -Dm644 "${pkgdir}/opt/vivaldi/product_logo_${res}.png" \
+		"${pkgdir}/usr/share/icons/hicolor/${res}x${res}/apps/vivaldi.png"
+	done
+
+	# license
+	install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+	strings "$pkgdir/opt/vivaldi/locales/en-US.pak" \
+		| tr '\n' ' ' \
+		| sed -rne 's/.*(<html lang.*>.*html>).*/\1/p' \
+		| w3m -I 'utf-8' -T 'text/html' \
+		> "$pkgdir/usr/share/licenses/$pkgname/eula.txt"
+
+	# disable-10bpc-color-configs
+	install -Dm644 ../chromium-drirc-disable-10bpc-color-configs.conf \
+	"$pkgdir/usr/share/drirc.d/10-$pkgname.conf"
+
+	# Install ffmpeg codec
+	(cd "$srcdir/chromium-$_chromium" \
+		&& install -Dm644 out/Release/libffmpeg.so "$pkgdir/opt/vivaldi/libffmpeg.so")
+
+	# Extract and install widevine codec
+	mkdir "${srcdir}/chrome" && cd "${srcdir}/chrome"
+	bsdtar -xf ../chrome.rpm opt/google/chrome/libwidevinecdm.so
+
+	# Copy to Vivaldi directory for now. We might add a symlink when package is installed (using alpm hook).
+	unlink "${pkgdir}/opt/vivaldi/libwidevinecdm.so" || true
+	cp opt/google/chrome/libwidevinecdm.so "${pkgdir}/opt/vivaldi"
+	
+	# Chrome license
+	cp "${srcdir}/chrome-eula_text.html" "${pkgdir}/usr/share/licenses/${pkgname}"
+
+	# ALPM Hooks
+	mkdir -p "${pkgdir}/usr/share/libalpm"/{hooks,scripts}
+	(cd "${srcdir}" \
+		&& cp ../*.hook "${pkgdir}/usr/share/libalpm/hooks" \
+		&& install -Dm755 ../vivaldi-widevine-helper "${pkgdir}/usr/share/libalpm/scripts/vivaldi-widevine-helper")
+}

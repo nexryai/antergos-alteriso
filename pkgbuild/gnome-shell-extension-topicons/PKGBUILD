@@ -1,0 +1,33 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+
+pkgname=gnome-shell-extension-topicons
+pkgver=21
+pkgrel=1
+epoch=1
+pkgdesc="Shows legacy tray icons on the top panel."
+arch=('any')
+url="https://github.com/phocean/TopIcons-plus"
+license=('GPL')
+makedepends=('gnome-common')
+groups=('gnome-shell-extensions')
+source=("${pkgname}-${pkgver}.zip::${url}/archive/v${pkgver}.zip")
+md5sums=('23065fe05e234b821ec6741b40ba8711')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='phocean'
+_monitored_repo='TopIcons-plus'
+_monitored_match_pattern='/v\d+/'
+# END ANTBS METADATA
+
+
+package() {
+	cd "${srcdir}/TopIcons-plus-${pkgver}"
+
+	make INSTALL_PATH="${pkgdir}/usr/share/gnome-shell/extensions" install
+}
+
+

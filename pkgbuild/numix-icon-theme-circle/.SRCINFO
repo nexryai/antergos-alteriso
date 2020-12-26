@@ -1,0 +1,21 @@
+pkgbase = numix-icon-theme-circle
+	pkgdesc = Circle icon theme from the Numix project
+	pkgver = 19.02.07
+	pkgrel = 1
+	epoch = 1
+	url = http://numixproject.org/
+	arch = any
+	license = GPL3
+	makedepends = git
+	depends = numix-icon-theme
+	provides = numix-circle-icon-theme
+	provides = numix-circle-light-icon-theme
+	provides = numix-icon-theme-circle
+	conflicts = numix-circle-icon-theme
+	conflicts = numix-circle-light-icon-theme
+	conflicts = numix-circle-icon-theme-git
+	source = numix-icon-theme-circle-19.02.07.tar.gz::https://github.com/numixproject/numix-icon-theme-circle/archive/19.02.07.tar.gz
+	sha256sums = 64ea91d809ea7918dc180e8f4eeeda96099ba1e7c15d46aa2b565b1f85a91ca3
+
+pkgname = numix-icon-theme-circle
+

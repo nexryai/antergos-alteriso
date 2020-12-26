@@ -1,0 +1,51 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Based on gnome-screensaver package:
+# Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Jan de Groot <jgc@archlinux.org>
+
+pkgname=cinnamon-screensaver
+pkgver=3.6.1
+pkgrel=2
+pkgdesc="Screensaver designed to integrate well with the Cinnamon desktop."
+arch=('x86_64')
+license=('GPL')
+groups=('cinnamon')
+url='https://github.com/linuxmint/cinnamon-screensaver'
+backup=('etc/pam.d/cinnamon-screensaver')
+depends=('cinnamon-desktop' 'cinnamon-translations' 'dbus-glib' 'libgnomekbd' 'webkit2gtk'
+		'python-setproctitle' 'python-cairo' 'python-gobject' 'gnome-keyring'
+		'accountsservice' 'python-xlib' 'xapps' 'python-xapp')
+optdepends=('xscreensaver')
+makedepends=('intltool' 'gnome-common')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/${pkgname}/archive/$pkgver.tar.gz")
+md5sums=('7f2f6a44a3bd976e6201038dc9441ce1')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='linuxmint'
+_monitored_repo='cinnamon-screensaver'
+# END ANTBS METADATA
+
+
+build() {
+	cd "${pkgname}-${pkgver}"
+
+	./autogen.sh \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--libexecdir=/usr/lib/cinnamon-screensaver \
+		--localstatedir=/var \
+		--with-mit-ext \
+		--with-systemd
+	make
+}
+
+package() {
+	cd "${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}
+
+# -*- mode: bash;-*-

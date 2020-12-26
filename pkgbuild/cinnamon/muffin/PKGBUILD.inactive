@@ -1,0 +1,69 @@
+# $Id: PKGBUILD 133853 2015-05-20 01:13:54Z faidoc $
+# Maintainer: Alexandre Filgueira <alexfilgueira@antergos.com>
+# Contributor: Adam Hani Schakaki <adam@schakaki.net>
+# Contributor: Ner0
+
+pkgname=muffin
+pkgver=3.6.0
+pkgrel=1
+pkgdesc="Cinnamon window manager based on Mutter"
+arch=('x86_64')
+url="https://github.com/linuxmint/muffin"
+license=('GPL')
+groups=('cinnamon')
+depends=('clutter' 'gobject-introspection-runtime' 'cinnamon-desktop' 'libcanberra' 'libsm'
+         'startup-notification' 'zenity' 'dconf')
+makedepends=('intltool' 'gnome-doc-utils' 'gnome-common' 'gobject-introspection' 'gtk-doc' 'python2') 
+options=('!emptydirs')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxmint/muffin/archive/$pkgver.tar.gz")
+md5sums=('8ddd32ad130b10b1c01d644e06f191ab')
+_allowed_in=('staging')
+
+
+# BEGIN ANTBS METADATA
+
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='linuxmint'
+_monitored_repo='muffin'
+
+# END ANTBS METADATA
+
+
+prepare() {
+	cd ${pkgname}-${pkgver}
+
+}
+
+
+build() {
+	cd ${pkgname}-${pkgver}
+
+
+	PYTHON=python2 ./autogen.sh \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--libexecdir=/usr/lib/muffin \
+		--localstatedir=/var \
+		--disable-static \
+		--disable-schemas-compile \
+		--enable-compile-warnings=minimum \
+		--disable-gtk-doc
+
+	make
+}
+
+package() {
+	cd ${pkgname}-${pkgver}
+	make DESTDIR="$pkgdir/" install
+
+	# Remove unused stuff
+	#make -C src DESTDIR="$pkgdir" uninstall-binPROGRAMS uninstall-desktopfilesDATA
+	#make -C src/tools DESTDIR="$pkgdir" uninstall
+	#make -C src/compositor/plugins DESTDIR="$pkgdir" uninstall
+	#make -C doc/man DESTDIR="$pkgdir" uninstall
+}
+
+
+ 

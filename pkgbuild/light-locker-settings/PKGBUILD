@@ -1,0 +1,36 @@
+# Maintainer: Antergos Developers <dev AT antergos com>
+# Contributor: Rob McCathie <korrode AT gmail>
+
+pkgname=light-locker-settings
+pkgver=1.5.3
+pkgrel=1
+pkgdesc="Just a simple settings dialog for light-locker"
+arch=('any')
+url="https://github.com/lots0logs/${pkgname}"
+license=('GPL3')
+depends=('light-locker' 'python-gobject' 'python-psutil')
+makedepends=('intltool')
+source=("https://github.com/antergos/light-locker-settings/archive/${pkgver}.tar.gz")
+md5sums=('9532dc32f3a1edbefe9f93e75dd73c16')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='antergos'
+_monitored_repo='light-locker-settings'
+# END ANTBS METADATA
+
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure --prefix=/usr
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}
+

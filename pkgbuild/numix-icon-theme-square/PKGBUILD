@@ -1,0 +1,38 @@
+# Maintainer: Antergos Devs <devs@antergos.com>
+
+pkgname=numix-icon-theme-square
+pkgver=19.02.07 
+pkgrel=1
+epoch=2
+pkgdesc="Square icon expansion theme from the Numix project"
+arch=('any')
+url='http://numixproject.org/'
+license=('GPL3')
+depends=('numix-icon-theme')
+replaces=('numix-icon-theme-square-kde')
+conflicts=('numix-icon-theme-square-git')
+source=("https://github.com/numixproject/${pkgname}/archive/${pkgver}.tar.gz")
+sha256sums=('6c06bec3f941d75be4123944b059dd84c8df2e17cbbc7f6bbae931685dd2a828')
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='numixproject'
+_monitored_repo='numix-icon-theme-square'
+# END ANTBS METADATA
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	sed -i 's|Inherits=Numix|Inherits=Numix,Adwaita,gnome,hicolor|g;
+			s|Name=Numix Square|Name=Numix-Square|g' Numix-Square/index.theme
+
+	sed -i 's|Inherits=Numix-Light|Inherits=Numix-Light,Numix,Adwaita,gnome,hicolor|g;
+			s|Name=Numix Square Light|Name=Numix-Square-Light|g' Numix-Square-Light/index.theme
+
+	install -dm 755 "${pkgdir}/usr/share/icons"
+	cp -r Numix-Square{,-Light} "${pkgdir}/usr/share/icons"
+}
+
+

@@ -1,0 +1,106 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Damian01w <damian01w@gmail.com>
+# Contributor: Padfoot <padfoot@exemail.com.au>
+
+pkgbase=plymouth
+pkgname=('plymouth' 'plymouth-theme-antergos')
+pkgver=0.9.2.r2031
+pkgrel=1
+pkgdesc='A graphical boot splash screen with kernel mode-setting support'
+url='http://www.freedesktop.org/wiki/Software/Plymouth'
+arch=('x86_64')
+license=('GPL')
+depends=('libdrm' 'pango' 'systemd' 'gtk3' 'cairo' 'libpng' 'ttf-dejavu'
+		'plymouth-theme-antergos')
+makedepends=('docbook-xsl' 'linux-headers')
+options=('!libtool' '!emptydirs')
+conflicts=('plymouth-git')
+backup=('etc/plymouth/plymouthd.conf')
+source=("git+https://anongit.freedesktop.org/git/plymouth#commit=18dd7558"
+		'https://github.com/antergos/plymouth-theme-antergos/archive/1.0.tar.gz'
+		'plymouth.encrypt_hook'
+		'plymouth.encrypt_install'
+		'plymouth.initcpio_hook'
+		'plymouth.initcpio_install'
+		'plymouth-quit.service.in.patch'
+		'plymouth-set-default-theme.in.patch'
+		'plymouth-update-initrd.patch'
+		'display-manager.conf')
+
+md5sums=('SKIP'
+         'a2f2c3fff630636872424f409ab3bc3b'
+         'fbdd5d04e3089a214b9056357434df86'
+         '65eb269910f1b81e3f0970af456394ca'
+         '32f04fdbd1eb94ade30d1e63fdcdd9b5'
+         '40c6899440c1bf55ed99eaaffee79501'
+         '165a39dbedcc6e123c8ca05d5b4b2e25'
+         'f79edbbb30c71b0dbcd102c7dd31660b'
+         '0357775c16b5f90f1af485e6a4c80a9e'
+         '150b4946afce1250ae3a9628445a57f3')
+
+
+prepare() {
+	cd "${srcdir}/${pkgname}"
+	patch -p1 -i $srcdir/plymouth-set-default-theme.in.patch
+	patch -p1 -i $srcdir/plymouth-update-initrd.patch
+	patch -p1 -i $srcdir/plymouth-quit.service.in.patch
+}
+
+
+build() {
+	cd "${srcdir}/${pkgname}"
+
+	LDFLAGS="$LDFLAGS -ludev" ./autogen.sh \
+		--prefix=/usr \
+		--exec-prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--libdir=/usr/lib \
+		--libexecdir=/usr/lib \
+		--sbindir=/usr/bin \
+		--disable-gdm-transition \
+		--enable-systemd-integration \
+		--enable-drm \
+		--enable-tracing \
+		--enable-pango \
+		--enable-gtk=yes \
+		--with-release-file=/etc/os-release \
+		--with-logo=/usr/share/antergos/antergos-logo.png \
+		--with-background-color=0x000000 \
+		--with-background-start-color-stop=0x000000 \
+		--with-background-end-color-stop=0x4D4D4D \
+		--without-rhgb-compat-link \
+		--without-system-root-install \
+		--disable-libkms
+
+	make
+}
+
+package_plymouth() {
+	cd "${srcdir}/plymouth"
+
+	make DESTDIR="${pkgdir}" install
+
+	cd "${srcdir}"
+	install -Dm644 "plymouth.encrypt_hook"     "${pkgdir}/usr/lib/initcpio/hooks/plymouth-encrypt"
+	install -Dm644 "plymouth.encrypt_install"  "${pkgdir}/usr/lib/initcpio/install/plymouth-encrypt"
+	install -Dm644 "plymouth.initcpio_hook"    "${pkgdir}/usr/lib/initcpio/hooks/plymouth"
+	install -Dm644 "plymouth.initcpio_install" "${pkgdir}/usr/lib/initcpio/install/plymouth"
+
+	mkdir -p "${pkgdir}/etc/systemd/system/display-manager.service.d"
+	cp 'display-manager.conf' "${pkgdir}/etc/systemd/system/display-manager.service.d"
+
+	cp "${pkgdir}/usr/share/plymouth/plymouthd.defaults" "${pkgdir}/etc/plymouth/plymouthd.conf"
+}
+
+package_plymouth-theme-antergos() {
+	pkgver=1.0
+	pkgdesc='Default plymouth theme for Antergos'
+	arch=('any')
+	depends=()
+
+	cd "${srcdir}/plymouth-theme-antergos-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}
+
+

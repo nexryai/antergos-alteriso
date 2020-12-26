@@ -1,0 +1,23 @@
+# Maintainer: Alexandre Filgueira <info@antergos.com>
+# Contributor: Daniel Apolinario <dapolinario@gmail.com>
+# Contributor: Roman Timushev <romikt@gmail.com>
+
+pkgname=antergos-gnome-defaults-list
+pkgver=1.1
+pkgrel=3
+pkgdesc="default file associations for GNOME environment"
+arch=('any')
+url="http://www.antergos.com"
+license=('GPL3')
+conflicts=('gnome-defaults-list')
+source=(mimeapps.list)
+backup=('etc/gnome/mimeapps.list')
+sha256sums=('ce243c025ebdb7aef19006a42b2ccbbce1aa77bdc706a5947477907298e12fbd')
+
+package() {
+  install -d "${pkgdir}/etc/gnome"
+  install -d "${pkgdir}/usr/share/applications"
+  cp ${srcdir}/mimeapps.list ${pkgdir}/etc/gnome/mimeapps.list
+  ln -s "/etc/gnome/mimeapps.list" "${pkgdir}/usr/share/applications/"
+}
+

@@ -1,0 +1,39 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Xavion <Xavion (dot) 0 (at) Gmail (dot) com>
+
+pkgname=kdesudo
+pkgver=3.4.2.4
+pkgrel=3
+pkgdesc="A sudo frontend for KDE"
+arch=("x86_64")
+url="https://launchpad.net/kdesudo"
+license=("GPL")
+depends=("kdebase-runtime" "sudo" "kdelibs4support" "karchive")
+makedepends=("cmake" "automoc4" "kde-dev-scripts")
+options=(!emptydirs)
+source=('kdesudo.tar.gz')
+md5sums=('db152fc5c1ea8b31fd5c2aeedcc860ab')
+
+
+build() {
+	cd "${pkgname}"
+	mkdir build && cd build
+
+	# Config
+	sed -i "s|ADD_SUBDIRECTORY(en)|#ADD_SUBDIRECTORY(en)|g" ../doc/CMakeLists.txt
+
+	cmake .. \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DLIB_INSTALL_DIR=lib \
+		-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+		-DBUILD_TESTING=OFF
+	make
+}
+
+package() {
+	cd "${pkgname}"
+	make -C build DESTDIR="${pkgdir}" install
+}
+
+

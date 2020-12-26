@@ -1,0 +1,63 @@
+# Maintainer: Antergos Devs <devs@antergos.com>
+
+pkgname=pacaur
+pkgver=4.7.90
+pkgrel=2
+pkgdesc='An AUR helper that minimizes user interaction'
+arch=('any')
+url='https://github.com/rmarquis/pacaur'
+license=('ISC')
+depends=('cower' 'expac' 'sudo' 'git')
+makedepends=('perl')
+backup=('etc/xdg/pacaur/config')
+source=("https://github.com/rmarquis/$pkgname/archive/$pkgver.tar.gz")
+md5sums=('6f725f0f17cae3aaa08b654746c627d4')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='rmarquis'
+_monitored_repo='pacaur'
+# END ANTBS METADATA
+
+
+build() {
+	cd "$pkgname-$pkgver"
+	pod2man \
+		--utf8 \
+		--section=8 \
+		--center='Pacaur Manual' \
+		--name='PACAUR' \
+		--release="$pkgname $pkgver" ./README.pod > ./pacaur.8
+}
+
+
+package() {
+	cd "$pkgname-$pkgver"
+
+	mkdir -p $pkgdir/etc/xdg/pacaur
+	install -D -m644 ./config $pkgdir/etc/xdg/pacaur/config
+
+	mkdir -p $pkgdir/usr/{bin,share}
+	mkdir -p $pkgdir/usr/share/{bash-completion/completions,zsh/site-functions,man/man8,licenses/pacaur}
+
+	install -D -m755 ./$pkgname $pkgdir/usr/bin/$pkgname
+
+	install -D -m644 ./bash.completion $pkgdir/usr/share/bash-completion/completions/$pkgname
+	install -D -m644 ./zsh.completion $pkgdir/usr/share/zsh/site-functions/_pacaur
+
+	install -D -m644 ./pacaur.8 $pkgdir/usr/share/man/man8/pacaur.8
+	install -D -m644 ./LICENSE $pkgdir/usr/share/licenses/pacaur/LICENSE
+
+	for pofile in ./po/*.po
+	do
+		pofile="${pofile#*/}"
+		lang="${pofile%.po}"
+		mkdir -p $pkgdir/usr/share/locale/${lang##*/}/LC_MESSAGES
+		msgfmt "${pofile}" -o $pkgdir/usr/share/locale/${lang##*/}/LC_MESSAGES/pacaur.mo
+	done
+}
+
+# -*- mode: bash;-*

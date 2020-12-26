@@ -1,0 +1,15 @@
+post_install() {
+	case $DESKTOP_SESSION in
+		kde*|*plasma*|lxqt*) 
+			sed -i 's|Adwaita|Breeze|g' /usr/share/icons/Numix-Light/index.theme
+			sed -i 's|gnome|Breeze|g' /usr/share/icons/Numix/index.theme
+		  ;;
+	esac
+}
+
+post_upgrade() {
+	post_install
+}
+
+
+# -*- mode:bash; -*-

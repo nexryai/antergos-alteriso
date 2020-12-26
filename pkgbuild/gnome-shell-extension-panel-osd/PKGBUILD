@@ -1,0 +1,42 @@
+# Maintainer: Antergos Devs <devs@antergos.com>
+
+pkgname=gnome-shell-extension-panel-osd
+pkgver=1.0
+_pkgver=1.0
+pkgrel=1
+pkgdesc="A gnome-shell extension to place shell notifications under the panel instead of above the message-tray."
+arch=('any')
+url="https://github.com/jenslody/gnome-shell-extension-panel-osd"
+license=('GPL')
+depends=('gnome-shell' 'gnome-tweak-tool')
+makedepends=('gnome-common' 'intltool' 'pkg-config')
+groups=('gnome-shell-extensions')
+provides=('gnome-shell-extension-panel-osd')
+source=("${pkgname}-${_pkgver}::git+https://github.com/jenslody/gnome-shell-extension-panel-osd.git#commit=e052ded4e900a6dec9f26e568bb65c1b1fa393ac")
+#source=("https://github.com/jenslody/${pkgname}/archive/v1.0.zip")
+install=${pkgname}.install
+md5sums=('SKIP')
+
+
+_archivename="v${pkgver}"
+
+pkgver() {
+	cd "${srcdir}/${pkgname}-${_pkgver}"
+	printf "%s.r%s" "${_pkgver}" "$(git rev-list --count HEAD)"
+
+}
+
+build() {
+	#cd "$srcdir/$_archivename"
+	cd "${srcdir}/${pkgname}-${_pkgver}"
+	./autogen.sh --prefix=/usr 
+	make
+}
+
+package() {
+	#cd "$srcdir/$_archivename"
+	cd "${srcdir}/${pkgname}-${_pkgver}"
+	mkdir -p "${pkgdir}/usr/share/gnome-shell/extensions" "${pkgdir}/usr/share/glib-2.0/schemas/"
+	make DESTDIR=${pkgdir} install
+}
+

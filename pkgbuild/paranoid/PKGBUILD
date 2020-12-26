@@ -1,0 +1,40 @@
+# Maintainer: Alexandre Filgueira <alexfilgueira@antergos.com>
+
+pkgname=paranoid
+_gitname=paranoid
+pkgver=1.1.1
+pkgrel=2
+pkgdesc="GTK+3 configuration tool for compton."
+arch=(any)
+url="https://github.com/semplice/paranoid"
+license=('GPL3')
+depends=('python2' 'gtk3>=3.18' 'compton' 'python2-gobject')
+makedepends=('git')
+source=("git://github.com/semplice/paranoid.git"
+	"fix-glade-location.patch"
+	"paranoid.desktop")
+sha256sums=('SKIP'
+            'e3a99709fae9befd5e708624e50520df14dd70ec927c4f311141bcd7fa402b11'
+            '4d86d9dad9146ea1ded99d8f1e39f6ecb10808f06a89271a2fe0e67696fe56d8')
+
+build() {
+  cd "$srcdir/$_gitname"
+
+  # python2 fix
+  find -type f | xargs sed -i 's@^#!.*python$@#!/usr/bin/python2@'
+
+  # Fix glade location
+  patch -Np1 -i ../fix-glade-location.patch
+
+  python2 setup.py build
+}
+
+package() {
+  cd "$srcdir/$_gitname"
+
+  python2 ./setup.py install --prefix=/usr --root=${pkgdir}
+  
+  install -d ${pkgdir}/usr/share/applications
+  install -m644 "$srcdir/${pkgname}.desktop" "$pkgdir/usr/share/applications"
+}
+

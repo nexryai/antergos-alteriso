@@ -1,0 +1,40 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Gerald Nunn <gerald dot b dot nunn at gmail dot com>
+
+pkgname=tilix
+pkgver=1.8.1
+pkgrel=2
+pkgdesc="A tiling terminal emulator based on GTK+ 3"
+arch=('x86_64')
+url="http://github.com/gnunn1/terminix"
+license=('MPL')
+depends=('gtk3' 'gsettings-desktop-schemas' 'vte3' 'liblphobos')
+optdepends=(
+	'python2-nautilus: for "Open Tilix Here" support in nautilus'
+	'nemo-python: for "Open Tilix Here" support in nemo'
+)
+replaces=('terminix')
+conflicts=('terminix')
+source=(
+	"https://github.com/gnunn1/terminix/releases/download/${pkgver}/${pkgname}.zip"
+	'com.gexperts.Tilix.gschema.override'
+)
+md5sums=('1a7943de5ba739f6b7db61e50a5b6e49'
+         '6bdbf9269e37d0b771f6a6530f568b59')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='gnunn1'
+_monitored_repo='tilix'
+# END ANTBS METADATA
+
+
+package() {
+	cp -R "${srcdir}/usr" "${pkgdir}"
+	cp "${startdir}/com.gexperts.Tilix.gschema.override" "${pkgdir}/usr/share/glib-2.0/schemas"
+}
+
+

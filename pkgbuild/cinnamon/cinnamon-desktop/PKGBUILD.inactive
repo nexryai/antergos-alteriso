@@ -1,0 +1,57 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Alexandre Filgueira <alexfilgueira@antergos.com>
+# Contributor:  Jan de Groot <jan@archlinux.org>
+
+pkgname=cinnamon-desktop
+pkgver=3.6.2
+pkgrel=1
+pkgdesc="Library with common API for various Cinnamon modules"
+url="https://github.com/linuxmint/cinnamon-desktop"
+arch=(i686 x86_64)
+license=(GPL LGPL)
+groups=('cinnamon')
+depends=('gtk3' 'libxkbfile' 'python2' 'glib2' 'libgsystem' 'libpulse'
+		'gobject-introspection' 'python2-gobject' 'accountsservice')
+makedepends=('intltool' 'gnome-common')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/${pkgname}/archive/${pkgver}.tar.gz"
+		'config.patch')
+md5sums=('a12c4a8cf30f4cde2a3d946c08cd8a16'
+         'bd5b5f24e04e6cd8cfa701bf67fc36f5')
+
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='tags'
+_monitored_project='linuxmint'
+_monitored_repo='cinnamon-desktop'
+# END ANTBS METADATA
+
+
+prepare() {
+	cd "${pkgname}-${pkgver}"
+
+	# Arch uses systemd
+	patch -Np1 -i ../config.patch
+}
+
+build() {
+	cd "${pkgname}-${pkgver}"
+
+	./autogen.sh \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--libexecdir=/usr/lib/"${pkgname}" \
+		--disable-static
+
+	make
+}
+
+package() {
+	cd "${pkgname}-${pkgver}"
+
+	make DESTDIR="${pkgdir}" install
+}
+ 
+# -*- mode: bash;-*-

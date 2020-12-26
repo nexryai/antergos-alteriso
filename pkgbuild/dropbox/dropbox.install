@@ -1,0 +1,51 @@
+_notify_on_install() {
+
+	echo "You must run dropbox manually once in order to complete the setup wizard."
+}
+
+_post_install_upgrade() {
+
+	ln -sf /opt/dropbox/dropbox /usr/bin/dropbox
+	ln -sf /opt/dropbox/dropboxd /usr/bin/dropboxd
+
+	for _home_dir in /home/*
+	do
+		if [[ -d "${_home_dir}/.dropbox-dist" ]]; then
+			rm -R "${_home_dir}/.dropbox-dist"
+		fi
+		
+		install -dm0 "${_home_dir}/.dropbox-dist"
+		
+		if ! [[ -e "${_home_dir}/.config/autostart/dropbox.desktop" ]] && [[ -d "${_home_dir}/.config/autostart" ]]; then
+			cp --no-preserve=ownership /usr/share/applications/dropbox.desktop "${_home_dir}/.config/autostart/"
+		fi
+
+		chattr +i "${_home_dir}/.config/autostart/dropbox.desktop"
+
+	done
+}
+
+post_install() {
+
+	_post_install_upgrade
+	_notify_on_install
+}
+
+post_upgrade() {
+
+	_post_install_upgrade
+}
+
+post_remove() {
+
+	unlink -f /usr/bin/dropbox
+	unlink -f /usr/bin/dropboxd
+
+	for _home_dir in /home/*
+	do
+		rm -rf "${_home_dir}/.config/autostart/.dropbox-dist"
+		chattr -i "${_home_dir}/.config/autostart/dropbox.desktop"
+		rm -rf "${_home_dir}/.config/autostart/.config/dropbox.desktop" > /dev/null
+	done
+}
+# -*- mode: bash;-*-

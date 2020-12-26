@@ -1,0 +1,16 @@
+pkgbase = numix-icon-theme-square
+	pkgdesc = Square icon expansion theme from the Numix project
+	pkgver = 19.02.07
+	pkgrel = 1
+	epoch = 2
+	url = http://numixproject.org/
+	arch = any
+	license = GPL3
+	depends = numix-icon-theme
+	conflicts = numix-icon-theme-square-git
+	replaces = numix-icon-theme-square-kde
+	source = https://github.com/numixproject/numix-icon-theme-square/archive/19.02.07.tar.gz
+	sha256sums = 6c06bec3f941d75be4123944b059dd84c8df2e17cbbc7f6bbae931685dd2a828
+
+pkgname = numix-icon-theme-square
+

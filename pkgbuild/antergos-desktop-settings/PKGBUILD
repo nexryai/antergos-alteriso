@@ -1,0 +1,46 @@
+# Maintainer: Antergos Devs <devs@antergos.com>
+
+pkgname=antergos-desktop-settings
+pkgver=1.14
+pkgrel=2
+pkgdesc="Setup configuration for Antergos Desktops"
+url="http://github.com/Antergos/antergos-desktop-settings"
+arch=('any')
+license=('GPL2')
+depends=('gsettings-desktop-schemas' 'dconf')
+source=("https://github.com/Antergos/${pkgname}/archive/${pkgver}.tar.gz")
+sha256sums=('ade89488b709586db36a661c535598adf83e956dd543a58312e65b4c136187fa')
+install=${pkgname}.install
+
+# ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='antergos'
+_monitored_repo='antergos-desktop-settings'
+# END ANTBS METADATA
+
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+
+    # Install schemas
+    for file in $(find schemas/. -type f); do
+        install -Dm644 ${file#./} "${pkgdir}/usr/share/glib-2.0/schemas/${file#schemas/./}"
+    done
+    
+    # Install skel
+    for file in $(find skel/. -type f); do
+        install -Dm644 ${file#./} "${pkgdir}/etc/skel/${file#skel/./}"
+    done
+
+    # Cinnamon needs .themes dir
+    install -d "${pkgdir}/etc/skel/.themes"
+
+    # Openbox (these two need 755)
+    install -Dm755 "skel/.config/openbox/pipemenus/obpipemenu-places" \
+        ${pkgdir}/etc/skel/.config/openbox/pipemenus/obpipemenu-places
+
+    install -Dm755 "skel/.config/openbox/pipemenus/obrecent.sh" \
+        ${pkgdir}/etc/skel/.config/openbox/pipemenus/obrecent.sh
+
+}

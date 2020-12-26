@@ -1,0 +1,60 @@
+# Maintainer: Dustin Falgout <dustin@falgout.us>
+# Contributor: Gifts <gifts.antichat@gmail.com>
+# Contributor: Andrey Vlasovskikh <andrey.vlasovskikh@gmail.com>
+
+pkgname=pycharm-pro-eap
+_buildver=163.6512.5
+_pkgver=2016.3.0
+_eap="True"
+pkgver="${_pkgver}.${_buildver}"
+epoch=1
+pkgrel=1
+pkgdesc="Powerful Python and Django IDE, Early Access Program (EAP) build. Professional edition."
+arch=('any')
+options=('!strip')
+url="http://www.jetbrains.com/pycharm/"
+license=("custom")
+makedepends=('wget')
+provides=('pycharm-eap' 'pycharm-professional')
+groups=("development" "IDE" "editor" "jetbrains")
+
+if [[ "True" = "${_eap}" ]]; then
+	_srcfile="pycharm-professional-${_buildver}.tar.gz"
+	source=("http://download.jetbrains.com/python/${_srcfile}"
+			"${pkgname}.desktop")
+	sha256sums=($(wget -q "${source}.sha256" && cat "${_srcfile}.sha256" | cut -f1 -d" ")
+				"a1dfd0da292c46fe17382522ae448a7987e2221bd1d19323a3d2cdb3b2bed3c8")
+else
+	_srcfile="pycharm-professional-${_pkgver}.tar.gz"
+	source=("http://download.jetbrains.com/python/${_srcfile}"
+			"${pkgname}.desktop")
+	sha256sums=($(wget -q "${source}.sha256" && cat "${_srcfile}.sha256" | cut -f1 -d" ")
+				"a1dfd0da292c46fe17382522ae448a7987e2221bd1d19323a3d2cdb3b2bed3c8")
+fi
+
+package() {
+	cd "${srcdir}"
+	install -dm 755 \
+		"${pkgdir}/opt/${pkgname}" \
+		"${pkgdir}/usr/bin/" \
+		"${pkgdir}/usr/share/licenses/${pkgname}/" \
+		"${pkgdir}/usr/share/applications/"
+
+	if [[ "True" = "${_eap}" ]]; then
+		cp -R --no-preserve=ownership "${srcdir}/pycharm-${_buildver}/"* "${pkgdir}/opt/${pkgname}"
+	else
+		cp -R --no-preserve=ownership "${srcdir}/pycharm-${_pkgver}/"* "${pkgdir}/opt/${pkgname}"
+	fi
+	
+	if [[ "i686" = "${CARCH}" ]]; then
+		rm -f "${pkgdir}/opt/${pkgname}/bin/libyjpagent-linux64.so"
+		rm -f "${pkgdir}/opt/${pkgname}/bin/fsnotifier64"
+	fi
+
+	sed -i "s/Version=/Version=${pkgver}/g" "${pkgname}.desktop"
+	install -m644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/"
+	
+	ln -s "/opt/${pkgname}/bin/pycharm.sh" "${pkgdir}/usr/bin/pycharm-eap"
+}
+
+# -*- mode: bash;-*-

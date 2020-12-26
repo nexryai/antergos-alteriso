@@ -1,0 +1,3518 @@
+# Cnchi
+# Copyright (C) 2013-2015 Antergos
+#
+# Translators:
+# Martin Kříž <slovanworks.czech@gmail.com>, 2015
+# Miroslav Janota <craftys@seznam.cz>, 2015
+# Radek <radek@fastlinux.eu>, 2014
+# Tomáš Pospíšil <topos@post.cz>, 2015
+# Japhy <zeman.filip@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Antergos\n"
+"POT-Creation-Date: 2018-07-29 11:22+0200\n"
+"PO-Revision-Date: 2015-08-10 15:35+0000\n"
+"Last-Translator: Martin Kříž <slovanworks.czech@gmail.com>\n"
+"Language-Team: Czech (http://www.transifex.com/faidoc/antergos/language/"
+"cs/)\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: cnchi/src/bootinfo.py:81 cnchi/src/bootinfo.py:95 cnchi/src/bootinfo.py:179
+#: cnchi/src/bootinfo.py:184 cnchi/src/bootinfo.py:193
+#: cnchi/src/bootinfo.py:210 cnchi/src/bootinfo.py:243
+#: cnchi/src/bootinfo.py:268 cnchi/src/bootinfo.py:271
+#: cnchi/src/bootinfo.py:274 cnchi/src/bootinfo.py:297
+msgid "unknown"
+msgstr "neznámý"
+
+#: cnchi/src/cnchi.py:101
+msgid ""
+"This installer must be run with administrative privileges, and cannot "
+"continue without them."
+msgstr ""
+"Tento instalátor musí být spuštěn s oprávněními správce a bez nich nemůže "
+"pokračovat."
+
+#: cnchi/src/cnchi.py:108
+#, python-format
+msgid ""
+"You cannot run two instances of this installer.\n"
+"\n"
+"If you are sure that the installer is not already running\n"
+"you can run this installer using the --force option\n"
+"or you can manually delete the offending file.\n"
+"\n"
+"Offending file: '{0}'"
+msgstr ""
+"Nelze spustit dvě instance tohoto instalačního programu.\n"
+"\n"
+"Pokud jste si jisti, že instalační program neběží můžete spustit tento "
+"instalační program pomocí – vybrat možnost, nebo si můžete ručně odstranit "
+"problematický soubor.\n"
+"\n"
+"Chybný soubor: {0}."
+
+#: cnchi/src/cnchi.py:189
+#, fuzzy, python-format
+msgid "Cnchi (Antergos Installer) version {0}"
+msgstr "Verze Cnchi instalátoru %s"
+
+#: cnchi/src/cnchi.py:377
+#, python-format
+msgid "Cnchi v{0} - Antergos Installer"
+msgstr "Cnchi v {0} - Instalační služby Antergos"
+
+#: cnchi/src/cnchi.py:381
+msgid "Set accessibility feature on by default"
+msgstr ""
+
+#: cnchi/src/cnchi.py:384
+msgid "Use pre-downloaded xz packages when possible"
+msgstr "Použít předem stažený xz balíčky, když je to možné"
+
+#: cnchi/src/cnchi.py:387
+msgid "Sets Cnchi log level to 'debug'"
+msgstr "Nastaví úroveň protokolování Cnchi na \"debug\""
+
+#: cnchi/src/cnchi.py:390
+msgid "Sets the Desktop Environment that will be installed"
+msgstr "Nastaví Desktop Environment, který bude nainstalován"
+
+#: cnchi/src/cnchi.py:393
+#, fuzzy
+msgid "Runs cnchi even when another instance is running"
+msgstr "Provozuje cnchi, i v případě, že zjistí, že je spuštěna jiná instance"
+
+#: cnchi/src/cnchi.py:396
+msgid "Disables first screen's 'try it' option"
+msgstr "Zakáže možnost \"vyzkoušet\" první obrazovku"
+
+#: cnchi/src/cnchi.py:399
+msgid "Makes checks optional in check screen"
+msgstr "Kontroluje volitelné v kontrolní obrazovce"
+
+#: cnchi/src/cnchi.py:402
+#, fuzzy
+msgid "Install packages referenced by a local xml file"
+msgstr "Nainstalujte balíčky odkazuje místního xml místo výchozích"
+
+#: cnchi/src/cnchi.py:405
+msgid "Show logging messages to stdout"
+msgstr "Zobrazit zprávy protokolování na stdout"
+
+#: cnchi/src/cnchi.py:408
+msgid "Show Cnchi version and quit"
+msgstr ""
+
+#: cnchi/src/cnchi.py:411
+#, fuzzy
+msgid "Show options in development (use at your own risk!)"
+msgstr "Zobrazit možnosti rozvoje (pro vývojáře, nepoužívejte tento!)"
+
+#: cnchi/src/cnchi.py:466
+msgid "Cnchi files not found. Please, install Cnchi using pacman"
+msgstr "Cnchi soubory nebyl nalezen. Prosím nainstalujte Cnchi pomocí pacman"
+
+#: cnchi/src/desktop_info.py:116
+msgid ""
+"This option will install Antergos as command-line only system, without any "
+"type of graphical interface. After the installation you can customize "
+"Antergos by installing packages with the command-line package manager."
+msgstr ""
+"Tato možnost nainstaluje Antergos bez jakéhokoli typu grafického rozhraní, "
+"pouze s podporou příkazového řádku.  Po dokončení instalace lze přizpůsobit "
+"Antergos instalací balíků z příkazového řádku."
+
+#: cnchi/src/desktop_info.py:121
+msgid ""
+"Cinnamon is a Linux desktop which provides advanced, innovative features and "
+"a traditional desktop user experience. Cinnamon aims to make users feel at "
+"home by providing them with an easy-to-use and comfortable desktop "
+"experience."
+msgstr ""
+
+#: cnchi/src/desktop_info.py:126
+msgid ""
+"Deepin desktop is a lightweight, elegant desktop environment. It was "
+"originally created for Linux Deepin distribution. Now, DDE will support most "
+"Linux operating systems such as Arch Linux, Ubuntu, Fedora, openSUSE etc."
+msgstr ""
+
+#: cnchi/src/desktop_info.py:131
+#, fuzzy
+msgid ""
+"GNOME 3 is an easy and elegant way to use your computer. It features the "
+"Activities Overview which is an easy way to access all your basic tasks."
+msgstr ""
+"Gnome 3 je jednoduchý a elegantní způsob, jak používat váš počítač. Je "
+"vybaveno přehledem aktivit, které usnadní přístup ke všem základním úkolům. "
+"GNOME 3 je výchozí desktop distribuce Antergos."
+
+#: cnchi/src/desktop_info.py:135
+msgid ""
+"If you are looking for a familiar working environment, KDE's Plasma Desktop "
+"offers all the tools required for a modern desktop computing experience so "
+"you can be productive right from the start."
+msgstr ""
+"Pokud hledáte známé pracovní prostředí, KDE Plasma Desktop nabízí všechny "
+"nástroje potřebné pro moderní ovládání počítače, takže můžete být "
+"produktivní od samého počátku."
+
+#: cnchi/src/desktop_info.py:139
+msgid ""
+"MATE is an intuitive, attractive, and lightweight desktop environment which "
+"provides a more traditional desktop experience. Accelerated compositing is "
+"supported, but not required to run MATE making it suitable for lower-end "
+"hardware."
+msgstr ""
+
+#: cnchi/src/desktop_info.py:144
+msgid ""
+"Not actually a desktop environment, Openbox is a highly configurable window "
+"manager. It is known for its minimalistic appearance and its flexibility. It "
+"is the most lightweight graphical option offered by antergos. Please Note: "
+"Openbox is not recommended for users who are new to Linux."
+msgstr ""
+
+#: cnchi/src/desktop_info.py:150
+#, fuzzy
+msgid ""
+"Xfce is a lightweight desktop environment. It aims to be fast and low on "
+"system resources, while remaining visually appealing and user friendly. It "
+"suitable for use on older computers and those with lower-end hardware "
+"specifications. "
+msgstr ""
+"XFCE je odlehčené desktopové prostředí. Cílí na rychlost a býti nenáročné na "
+"systémové požadavky, ačkoli zůstává vizuálně přitažlivé a uživatelsky "
+"přívětivé. Je skvělou volbou pro použití na starších počítačích nebo ty s "
+"nízkou hardwarovou specifikací."
+
+#: cnchi/src/desktop_info.py:155
+msgid ""
+"Budgie is the flagship desktop of Solus and is a Solus project. It focuses "
+"on simplicity and elegance. Written from scratch with integration in mind, "
+"the Budgie desktop tightly integrates with the GNOME stack, but offers an "
+"alternative desktop experience."
+msgstr ""
+
+#: cnchi/src/desktop_info.py:160
+msgid ""
+"Enlightenment is not just a window manager for Linux/X11 and others, but "
+"also a whole suite of libraries to help you create beautiful user interfaces "
+"with much less work"
+msgstr ""
+"Enlightenment není jen správce oken pro Linux/X11 a další, ale také celá "
+"sada knihoven, které vám pomohou vytvořit krásné uživatelské rozhraní s "
+"vynaložením méně práce"
+
+#: cnchi/src/desktop_info.py:164
+msgid ""
+"i3 is a tiling window manager, completely written from scratch. The target "
+"platforms are GNU/Linux and BSD operating systems, its code is Free and Open "
+"Source Software (FOSS) under the BSD license. i3 is primarily targeted at "
+"advanced users and developers."
+msgstr ""
+
+#: cnchi/src/desktop_info.py:169
+msgid ""
+"LXQt is the next-generation of LXDE, the Lightweight Desktop Environment. It "
+"is lightweight, modular, blazing-fast, and user-friendly."
+msgstr ""
+
+#: cnchi/src/features_info.py:68
+#, fuzzy
+msgid "Adds accessibility packages"
+msgstr "Přidávání balíků souborového systému"
+
+#: cnchi/src/features_info.py:69
+msgid "Arch User Repository (AUR) Support"
+msgstr "Uživatele Repository (AUR) podpora klenby"
+
+#: cnchi/src/features_info.py:70
+msgid "Bluetooth Support"
+msgstr "Podpora Bluetooth"
+
+#: cnchi/src/features_info.py:71
+msgid "Printing Support"
+msgstr "Podpora tisku"
+
+#: cnchi/src/features_info.py:72
+#, fuzzy
+msgid "Chromium Web Browser"
+msgstr "Firefox webový prohlížeč"
+
+#: cnchi/src/features_info.py:73
+msgid "Advanced power management"
+msgstr ""
+
+#: cnchi/src/features_info.py:74
+msgid "Firefox Web Browser"
+msgstr "Firefox webový prohlížeč"
+
+#: cnchi/src/features_info.py:75
+#, fuzzy
+msgid "Vivaldi Web Browser"
+msgstr "Firefox webový prohlížeč"
+
+#: cnchi/src/features_info.py:76
+msgid "Uncomplicated Firewall"
+msgstr "Jednoduchý firewall"
+
+#: cnchi/src/features_info.py:77
+msgid "Flash plugins"
+msgstr ""
+
+#: cnchi/src/features_info.py:78
+msgid "Steam + PlayonLinux"
+msgstr ""
+
+#: cnchi/src/features_info.py:79
+msgid "Graphic drivers (Proprietary)"
+msgstr "Grafické ovladače (nesvobodné)"
+
+#: cnchi/src/features_info.py:80
+msgid "Apache (or Nginx) + Mariadb + PHP"
+msgstr "Apache (nebo Nginx) + PHP + Mariadb"
+
+#: cnchi/src/features_info.py:81
+msgid "Kernel (LTS version)"
+msgstr "Jádro (LTS verze)"
+
+#: cnchi/src/features_info.py:82
+msgid "LibreOffice"
+msgstr "LibreOffice"
+
+#: cnchi/src/features_info.py:83
+msgid "SSH Service"
+msgstr ""
+
+#: cnchi/src/features_info.py:84
+msgid "Visual Effects"
+msgstr "Vizuální efekty"
+
+#: cnchi/src/features_info.py:88 cnchi/src/features_info.py:108
+msgid "Useful packages for individuals who are blind or visually impaired."
+msgstr ""
+
+#: cnchi/src/features_info.py:89
+msgid "The AUR is a community-driven repository for Arch users."
+msgstr "AUR je repositář pro uživatele Arch linuxu spravovaný komunitou."
+
+#: cnchi/src/features_info.py:90
+msgid "Enables your system to make wireless connections via Bluetooth."
+msgstr "Umožní systému zajistit bezdrátové spojení pomocí bluetooth."
+
+#: cnchi/src/features_info.py:91
+#, fuzzy
+msgid "Open-source web browser from Google."
+msgstr "Populární open-source grafický webový prohlížeč od Mozilly"
+
+#: cnchi/src/features_info.py:92
+msgid "Brings you the benefits of advanced power management for Linux."
+msgstr ""
+
+#: cnchi/src/features_info.py:93
+#, fuzzy
+msgid "A popular open-source graphical web browser from Mozilla."
+msgstr "Populární open-source grafický webový prohlížeč od Mozilly"
+
+#: cnchi/src/features_info.py:94
+msgid "Vivaldi is a free, fast web browser designed for power-users."
+msgstr ""
+
+#: cnchi/src/features_info.py:95
+msgid "Freeware software normally used for multimedia."
+msgstr ""
+
+#: cnchi/src/features_info.py:96
+#, fuzzy
+msgid "Installs AMD or Nvidia proprietary graphic driver."
+msgstr "Nainstaluje AMD nebo Nvidia nesvobodný grafický ovladač"
+
+#: cnchi/src/features_info.py:97
+msgid "Installs Steam and Playonlinux for gaming enthusiasts."
+msgstr ""
+
+#: cnchi/src/features_info.py:98
+#, fuzzy
+msgid "Apache (or Nginx) + Mariadb + PHP installation and setup."
+msgstr "Apache (nebo Nginx) + Mariadb + PHP instalace a nastavení"
+
+#: cnchi/src/features_info.py:99
+msgid "Installation of printer drivers and management tools."
+msgstr "Instalace ovladačů tiskáren a nástrojů pro správu."
+
+#: cnchi/src/features_info.py:100
+msgid "Open source office suite. Supports editing MS Office files."
+msgstr ""
+"Kancelářská sada s otevřeným kódem. Podporuje úpravu souborů MS Office. "
+
+#: cnchi/src/features_info.py:101
+msgid "Enable transparency, shadows, and other desktop effects."
+msgstr "Povolit průhlednost, stíny, a ostatní destkopové efekty."
+
+#: cnchi/src/features_info.py:102
+msgid "Control the incoming and outgoing network traffic."
+msgstr "Ovládání příchozího a odchozího síťového provozu."
+
+#: cnchi/src/features_info.py:103
+msgid "Enables Secure SHell service."
+msgstr ""
+
+#: cnchi/src/features_info.py:104
+msgid "Long term support (LTS) Linux kernel and modules."
+msgstr "Dlouhodobá podpora (LTS), Linux jádro a moduly."
+
+#: cnchi/src/features_info.py:109
+msgid ""
+"Use yaourt to install AUR packages.\n"
+"The AUR was created to organize and share new packages\n"
+"from the community and to help expedite popular packages'\n"
+"inclusion into the [community] repository."
+msgstr ""
+"K instalaci balíčků AUR používejte yaourt.\n"
+"AUR vznikla, organizovat a sdílet nové balíčky ze Společenství a pomoci "
+"urychlit populární balíčky začlenění do úložiště [Společenství]."
+
+#: cnchi/src/features_info.py:113
+#, fuzzy
+msgid ""
+"Bluetooth is a standard for the short-range wireless\n"
+"interconnection of cellular phones, computers, and\n"
+"other electronic devices. In Linux, the canonical\n"
+"implementation of the Bluetooth protocol stack is BlueZ."
+msgstr ""
+"Bluetooth je standardem pro krátkého dosahu bezdrátové propojení mobilních "
+"telefonů, počítačů a jiných elektronických zařízení. V Linuxu kanonické "
+"implementace zásobníku protokolu Bluetooth je BlueZ"
+
+#: cnchi/src/features_info.py:117
+#, fuzzy
+msgid ""
+"CUPS is the standards-based, open source printing\n"
+"system developed by Apple Inc. for OS® X and other\n"
+"UNIX®-like operating systems."
+msgstr ""
+"CUPS je založené na standardech, open source tiskový systém vyvinutý "
+"společností Apple Computer pro OS\\302\\256 X a jiných UNIX\\302\\256-like "
+"operační systémy."
+
+#: cnchi/src/features_info.py:120
+msgid ""
+"Chromium is an open-source browser project that aims to build a\n"
+"safer, faster, and more stable way for all users to experience the web.\n"
+"(this is the default)"
+msgstr ""
+
+#: cnchi/src/features_info.py:123
+msgid ""
+"Linux thermal daemon (thermald) monitors and controls temperature\n"
+"in laptops, tablet PC with the latest Intel sandy bridge. Once the\n"
+"system temperature reaches a certain threshold, the Linux daemon\n"
+"activates various cooling methods to try to cool the system"
+msgstr ""
+
+#: cnchi/src/features_info.py:127
+#, fuzzy
+msgid ""
+"Mozilla Firefox (known simply as Firefox) is a free and\n"
+"open-source web browser developed for Windows, OS X, and Linux,\n"
+"with a mobile version for Android, by the Mozilla Foundation and\n"
+"its subsidiary, the Mozilla Corporation. Firefox uses the Gecko\n"
+"layout engine to render web pages, which implements current and\n"
+"anticipated web standards.  Enable this option to install Firefox\n"
+"instead of Chromium"
+msgstr ""
+"Mozilla Firefox (známý jako Firefox) je zdarma a open-source webový "
+"prohlížeč vyvinutý pro Windows, OS X a Linux, s mobilní verzí pro Android, "
+"Mozilla Foundation a její dceřiná společnost Mozilla Corporation. Firefox "
+"používá Gecko formát motor k vykreslení webové stránky, která implementuje "
+"současných a očekávaných webových standardů."
+
+#: cnchi/src/features_info.py:134
+msgid ""
+"Vivaldi is a freeware, cross-platform web browser developed by\n"
+"Vivaldi Technologies. It was officially launched on April 12, 2016.\n"
+"The browser is aimed at staunch technologists, heavy Internet users,\n"
+"and previous Opera web browser users disgruntled by Opera's transition\n"
+"from the Presto layout engine to the Blink layout engine, which\n"
+"removed many popular features."
+msgstr ""
+
+#: cnchi/src/features_info.py:140
+msgid ""
+"Ufw stands for Uncomplicated Firewall, and is a program for\n"
+"managing a netfilter firewall. It provides a command line\n"
+"interface and aims to be uncomplicated and easy to use."
+msgstr ""
+"Ufw je zkratka pro Uncomplicated Firewall, což je program pro\n"
+"správu firewallu. Poskytuje rozhraní pro příkazový řádek\n"
+"a jeho cílem je být jednoduchý na použití."
+
+#: cnchi/src/features_info.py:143
+msgid ""
+"Adobe Flash Player is freeware software for using content created\n"
+"on the Adobe Flash platform, including viewing multimedia, executing\n"
+"rich internet applications and streaming video and audio."
+msgstr ""
+
+#: cnchi/src/features_info.py:146
+msgid ""
+"Steam is one of the most popular gaming clients that supports\n"
+"linux in technology and gaming, while PlayOnLinux\n"
+"is a very easy manager to setting up games to play\n"
+"through wine, instead of doing it manually."
+msgstr ""
+
+#: cnchi/src/features_info.py:150
+msgid ""
+"Installs AMD or Nvidia proprietary graphics driver instead\n"
+"of the open-source variant. Do NOT install this if you have a\n"
+"Nvidia Optimus laptop"
+msgstr ""
+
+#: cnchi/src/features_info.py:153
+#, fuzzy
+msgid ""
+"This option installs a web server (you can choose\n"
+"Apache or Nginx) plus a database server (Mariadb)\n"
+"and PHP."
+msgstr ""
+"Tato možnost nainstaluje webový server (můžete zvolit \n"
+"Apache nebo Nginx) a navíc databázový server (Mariadb) \n"
+"a PHP"
+
+#: cnchi/src/features_info.py:156
+#, fuzzy
+msgid ""
+"The linux-lts package is an alternative Arch kernel package.\n"
+"This particular kernel version enjoys long-term support from upstream,\n"
+"including security fixes and some feature backports. Additionally, this\n"
+"package includes ext4 support. For Antergos users seeking a long-term\n"
+"support kernel, or who want a fallback kernel in case the latest kernel\n"
+"version causes problems, this option is the answer."
+msgstr ""
+"Linux-lts balíček je alternativa k Arch kernel balíčku\n"
+"založené na Linux jádru 3.14 a je k dispozici v core repozitáři.\n"
+"Tato verze jádra má dlouhodobou podporu na rozdíl od běžných, ale novějších "
+"verzí\n"
+"včetně bezpečnostních záplat a některých zpětně portovaných funkcí.  Navíc "
+"tento\n"
+"balíček obsahuje i dlouhodobou podporu oprav pro ext4.\n"
+"Pro uživatele Antergos, kteří hledají jádro s dlouhodobou podporou\n"
+"nebo pro ty kteří chtějí nouzové jádro pro případ, že by nejnovější verze "
+"jádra\n"
+"působila problémy.\n"
+"V závislosti na velikosti boot oddílu můžete nainstalovat více jader "
+"současně."
+
+#: cnchi/src/features_info.py:162
+msgid ""
+"LibreOffice is the free power-packed Open Source\n"
+"personal productivity suite for Windows, Macintosh\n"
+"and Linux, that gives you six feature-rich applications\n"
+"for all your document production and data processing\n"
+"needs: Writer, Calc, Impress, Draw, Math and Base."
+msgstr ""
+"LibreOffice je volné energie sbalil Open Source osobní produktivity balík "
+"pro Windows, Macintosh a Linux, který vám dává šest funkcí aplikace potřebám "
+"všech svých dokumentů produkce a zpracování dat: spisovatel, Calc, Impress, "
+"kreslení, matematiky a základnu."
+
+#: cnchi/src/features_info.py:167
+msgid ""
+"Secure Shell (SSH) is a network protocol that allows data to be\n"
+"exchanged over a secure channel between two computers.\n"
+"SSH is typically used to log into a remote machine and execute commands.\n"
+msgstr ""
+
+#: cnchi/src/features_info.py:170
+msgid ""
+"Compton is a lightweight, standalone composite manager,\n"
+"suitable for use with window managers that do not natively\n"
+"provide compositing functionality. Compton itself is a fork\n"
+"of xcompmgr-dana, which in turn is a fork of xcompmgr.\n"
+"See the compton github page for further information."
+msgstr ""
+"Compton je lehký, samostatný kompozitní manažer, vhodný pro použití s "
+"manažery, které neobsahují skládání funkcí. Compton, samotný je fork "
+"xcompmgr-dana, což je vidlice xcompmgr.\n"
+"Najdete na stránce compton github pro další informace."
+
+#: cnchi/src/main_window.py:206
+#, fuzzy
+msgid "Next"
+msgstr "Další krok"
+
+#: cnchi/src/main_window.py:207
+msgid "Back"
+msgstr ""
+
+#: cnchi/src/main_window.py:265
+msgid "Antergos Installer"
+msgstr "Antergos Instalátor"
+
+#: cnchi/src/main_window.py:438
+msgid "Do you really want to quit the installer?"
+msgstr "Opravdu chcete instalační program ukončit?"
+
+#: cnchi/src/proxy.py:114
+#, fuzzy
+msgid "Cnchi - Internet Connection Proxy Setup"
+msgstr "Cnchi internetová verze: %s"
+
+#: cnchi/src/proxy.py:117
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: cnchi/src/proxy.py:119
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: cnchi/src/proxy.py:121
+msgid "FTP proxy server:"
+msgstr ""
+
+#: cnchi/src/proxy.py:123
+msgid "SOCKS host server:"
+msgstr ""
+
+#: cnchi/src/proxy.py:125
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: cnchi/src/proxy.py:133
+msgid "Port:"
+msgstr ""
+
+#: cnchi/src/rank_mirrors.py:272
+msgid "Server"
+msgstr ""
+
+#: cnchi/src/rank_mirrors.py:272
+msgid "Rate"
+msgstr ""
+
+#: cnchi/src/rank_mirrors.py:272
+msgid "Time"
+msgstr ""
+
+#: cnchi/src/show_message.py:73
+msgid "Antergos Installer - Error"
+msgstr "Instalace Antergos - Chyba"
+
+#: cnchi/src/show_message.py:91
+msgid "Antergos Installer - Warning"
+msgstr "Instalace distribuce Antergos - Varování"
+
+#: cnchi/src/show_message.py:109
+msgid "Antergos Installer - Information"
+msgstr "Instalace distribuce Antergos - Informace"
+
+#: cnchi/src/show_message.py:127
+msgid "Antergos Installer - Confirmation"
+msgstr "Instalátor Antergos - Potvrzení"
+
+#: cnchi/src/download/download.py:100
+#, fuzzy
+msgid "Can't create download package list."
+msgstr "Nelze vytvořit stahování souboru: %s"
+
+#: cnchi/src/download/download.py:113
+#, fuzzy
+msgid "Can't download needed packages. Cnchi can't continue."
+msgstr "Nelze nainstalovat potřebné balíčky. Cnchi nemůže pokračovat."
+
+#: cnchi/src/download/download.py:152
+msgid "Creating the list of packages to download..."
+msgstr "Vytváření seznamu balíčků ke stažení..."
+
+#: cnchi/src/download/download.py:179
+#, fuzzy, python-format
+msgid "Error creating metalink for package {}. Installation will stop"
+msgstr "Chyba při vytváření metalink balíčku % s. instalace se zastaví."
+
+#: cnchi/src/download/download_requests.py:125
+#, fuzzy, python-format
+msgid "Fetching {0} {1} ({2}/{3})..."
+msgstr "Stahování {0} {1} ({2} / {3})..."
+
+#: cnchi/src/installation/action.py:53
+#, fuzzy, python-format
+msgid "Device {0} will be deleted!"
+msgstr "Oddíl {0} budou odstraněny."
+
+#: cnchi/src/installation/action.py:58
+#, fuzzy, python-format
+msgid "Device {0} will be created"
+msgstr "Oddíl {0} budou odstraněny."
+
+#: cnchi/src/installation/action.py:62
+#, fuzzy, python-format
+msgid "Device {0} will be modified"
+msgstr "Oddíl {0} budou odstraněny."
+
+#: cnchi/src/installation/action.py:64
+#, python-format
+msgid "Device {0} will be "
+msgstr ""
+
+#: cnchi/src/installation/action.py:67
+#, fuzzy
+msgid "relabeled"
+msgstr "Přejmenovat"
+
+#: cnchi/src/installation/action.py:69
+#, fuzzy
+msgid "not relabeled"
+msgstr "Přejmenovat"
+
+#: cnchi/src/installation/action.py:71
+#, fuzzy
+msgid "formatted"
+msgstr "Formátovat"
+
+#: cnchi/src/installation/action.py:73
+msgid "not formatted"
+msgstr ""
+
+#: cnchi/src/installation/action.py:75
+#, python-format
+msgid "mounted as {0}"
+msgstr ""
+
+#: cnchi/src/installation/action.py:78
+#, fuzzy
+msgid "not mounted"
+msgstr "odpojen %s"
+
+#: cnchi/src/installation/action.py:81
+msgid "and encrypted."
+msgstr ""
+
+#: cnchi/src/installation/action.py:83
+msgid "and not encrypted."
+msgstr ""
+
+#: cnchi/src/installation/auto_partition.py:335
+#, python-format
+msgid "Unknown filesystem type {0}"
+msgstr "Neznámý souborový systém typu {0}"
+
+#: cnchi/src/installation/auto_partition.py:623
+msgid ""
+"Setup cannot detect size of your device, please use advanced installation "
+"routine for partitioning and mounting devices."
+msgstr ""
+"Instalační program nemůže zjistit velikost zařízení, prosím použijte "
+"rozšířené instalační rutiny pro dělení a montáž zařízení."
+
+#: cnchi/src/installation/firewall.py:86
+msgid "Aborted"
+msgstr "Přerušeno"
+
+#: cnchi/src/installation/install.py:173
+#, fuzzy, python-format
+msgid "Mounting boot partition {0} into {1} directory"
+msgstr "Montáž oddílu {0} do adresáře {1}"
+
+#: cnchi/src/installation/install.py:185
+#, fuzzy, python-format
+msgid "Mounting EFI partition {0} into {1} directory"
+msgstr "Montáž oddílu {0} do adresáře {1}"
+
+#: cnchi/src/installation/install.py:206
+#, python-format
+msgid "Mounting partition {0} into {1} directory"
+msgstr "Montáž oddílu {0} do adresáře {1}"
+
+#: cnchi/src/installation/install.py:236
+#, python-format
+msgid "Installing using the '{0}' method"
+msgstr "Instalace pomocí metody {0}."
+
+#: cnchi/src/installation/install.py:344
+msgid "Installation finished"
+msgstr "Instalace dokončena"
+
+#: cnchi/src/installation/install.py:371
+#, python-format
+msgid "Creating a temporary pacman.conf for {0} architecture"
+msgstr "Vytvoření dočasné pacman.conf v architektuře {0}"
+
+#: cnchi/src/installation/install.py:394
+msgid "Updating package manager security. Please wait..."
+msgstr ""
+
+#: cnchi/src/installation/install.py:413
+#: cnchi/src/installation/select_packages.py:134
+msgid "Can't refresh pacman databases."
+msgstr "Nelze aktualizovat databáze pacman."
+
+#: cnchi/src/installation/install.py:521
+msgid "Can't install necessary packages. Cnchi can't continue."
+msgstr "Nelze nainstalovat potřebné balíčky. Cnchi nemůže pokračovat."
+
+#: cnchi/src/installation/post_install.py:259
+msgid "Configuring LightDM desktop manager..."
+msgstr "Konfigurace Správce plochy LightDM..."
+
+#: cnchi/src/installation/post_install.py:295
+msgid "LightDM display manager configuration completed."
+msgstr " Byla dokončena konfigurace správceLightDM "
+
+#: cnchi/src/installation/post_install.py:298
+msgid "Error while trying to configure the LightDM display manager"
+msgstr "Chyba při pokusu o konfiguraci LightDM display manager"
+
+#: cnchi/src/installation/post_install.py:535
+msgid "Encrypting user home dir..."
+msgstr "Šifrování domovského adresáře..."
+
+#: cnchi/src/installation/post_install.py:558
+msgid "Building zfs modules..."
+msgstr ""
+
+#: cnchi/src/installation/post_install.py:626
+msgid "Configuring your new system"
+msgstr "Konfigurace vašeho nového systému"
+
+#: cnchi/src/installation/post_install.py:729
+msgid "Generating locales..."
+msgstr "Vytváří se národní prostředí..."
+
+#: cnchi/src/installation/post_install.py:741
+msgid "Adjusting hardware clock..."
+msgstr "Seřizují se hardwarové hodiny..."
+
+#: cnchi/src/installation/post_install.py:744
+msgid "Configuring keymap..."
+msgstr "Konfigurace mapy kláves..."
+
+#: cnchi/src/installation/post_install.py:750
+msgid "Configuring hardware..."
+msgstr "Konfigurace hardware..."
+
+#: cnchi/src/installation/post_install.py:785
+msgid "Configuring System Startup..."
+msgstr "Konfigurace spouštění systému..."
+
+#: cnchi/src/installation/post_install.py:804
+msgid "Installing bootloader..."
+msgstr "Instalace zavaděče systému..."
+
+#: cnchi/src/installation/process.py:73
+#, fuzzy
+msgid "Cannot create package list."
+msgstr "Získává se seznamu balíků..."
+
+#: cnchi/src/installation/process.py:90
+#, fuzzy
+msgid "Cannot create download package list (metalinks)."
+msgstr ""
+"Nelze vytvořit seznam balíčků ke stažení. Kontrola výstupu protokolování pro "
+"podrobnosti"
+
+#: cnchi/src/installation/process.py:104
+msgid "Getting your disk(s) ready for Antergos..."
+msgstr ""
+
+#: cnchi/src/installation/process.py:114
+#, fuzzy
+msgid "Installation will start now!"
+msgstr "Instalace dokončena"
+
+#: cnchi/src/installation/process.py:128
+#, fuzzy, python-format
+msgid "Error running command {0}: {1}"
+msgstr "Chyba při spuštění příkazu: %s"
+
+#: cnchi/src/installation/select_packages.py:197
+msgid "Getting package list..."
+msgstr "Získává se seznamu balíků..."
+
+#: cnchi/src/installation/select_packages.py:351
+#, c-format
+msgid "Adding '%s' bootloader packages"
+msgstr "Přidání balíčků zavaděče '%s'"
+
+#: cnchi/src/installation/select_packages.py:357
+#, c-format
+msgid "Couldn't find %s bootloader packages!"
+msgstr "Nelze najít %s bootloader balíčky!"
+
+#: cnchi/src/installation/special_dirs.py:75
+msgid "Special dirs are already mounted. Skipping."
+msgstr "Zvláštní složky jsou již namontovány. Bude vynechán."
+
+#: cnchi/src/installation/special_dirs.py:107
+msgid "Special dirs are not mounted. Skipping."
+msgstr "Speciální adresáře nejsou již připojeny. Přeskakuje se."
+
+#: cnchi/src/installation/wrapper.py:76
+#, fuzzy, python-format
+msgid "Command {0} failed: {1}"
+msgstr "Příkaz %s selhal"
+
+#: cnchi/src/installation/wrapper.py:108 cnchi/src/installation/wrapper.py:152
+#, fuzzy, python-format
+msgid ""
+"Cannot create a new partition on device {0}. Command {1} has failed: {2}"
+msgstr "Chyba při vytváření nového oddílu na zařízení {0}"
+
+#: cnchi/src/installation/wrapper.py:172
+#, fuzzy, python-format
+msgid ""
+"Cannot create a new partition table on device {0}. Command {1} failed: {2}"
+msgstr "Chyba při vytváření nové tabulky oddílů na zařízení {0}"
+
+#: cnchi/src/installation/boot/boot_ui.py:58
+msgid "Use the device below for boot loader installation:"
+msgstr "Pro instalaci zavaděče použijte zařízení níže:"
+
+#: cnchi/src/installation/boot/boot_ui.py:63
+msgid "Bootloader:"
+msgstr "Zavaděč:"
+
+#: cnchi/src/installation/boot/boot_ui.py:67
+msgid "Device:"
+msgstr "Zařízení:"
+
+#: cnchi/src/installation/boot/grub2.py:294
+#, python-format
+msgid "Installing GRUB(2) BIOS boot loader in {0}"
+msgstr "Instalace GRUB(2) BIOS zavaděč v {0}"
+
+#: cnchi/src/installation/boot/grub2.py:323
+msgid "GRUB(2) BIOS has been successfully installed."
+msgstr "GRUB(2) BIOS byl úspěšně nainstalován."
+
+#: cnchi/src/installation/boot/grub2.py:327
+msgid "ERROR installing GRUB(2) BIOS."
+msgstr "CHYBA při instalaci GRUB(2) BIOS."
+
+#: cnchi/src/installation/boot/grub2.py:342
+msgid ""
+"Please install efibootmgr package to install Grub2 for x86_64-efi platform."
+msgstr ""
+
+#: cnchi/src/installation/boot/grub2.py:345
+msgid "GRUB(2) will NOT be installed"
+msgstr ""
+
+#: cnchi/src/installation/boot/grub2.py:350
+#, python-format
+msgid "Installing GRUB(2) UEFI {0} boot loader"
+msgstr "Instalace GRUB(2) UEFI {0} zavaděče"
+
+#: cnchi/src/installation/boot/grub2.py:387
+#, c-format
+msgid "No OEM loader found in %s. Copying Grub(2) into dir."
+msgstr " V %s nebyl nalezen OEM zavaděč. Kopíruje se Grub(2) do adresáře."
+
+#: cnchi/src/installation/boot/grub2.py:390
+#, c-format
+msgid "Copying Grub(2) into OEM dir failed: %s"
+msgstr "Kopírování Grub(2) do OEM dir se nezdařilo: %s"
+
+#: cnchi/src/installation/boot/grub2.py:394
+msgid "File not found."
+msgstr "Soubor nebyl nalezen."
+
+#: cnchi/src/installation/boot/grub2.py:396
+msgid "File already exists."
+msgstr "Soubor již existuje."
+
+#: cnchi/src/misc/avatars.py:57
+#, fuzzy
+msgid "Choose your avatar"
+msgstr "Zvolte si jazyk"
+
+#: cnchi/src/misc/validation.py:142
+msgid "Password is too short"
+msgstr "Heslo je příliš krátké"
+
+#: cnchi/src/misc/validation.py:145
+msgid "Weak password"
+msgstr "Slabé heslo"
+
+#: cnchi/src/misc/validation.py:148
+msgid "Fair password"
+msgstr "Spravedlivé heslo"
+
+#: cnchi/src/misc/validation.py:151
+msgid "Good password"
+msgstr "Dobré heslo"
+
+#: cnchi/src/misc/validation.py:154
+msgid "Strong password"
+msgstr "Silné heslo"
+
+#: cnchi/src/misc/validation.py:173
+msgid "Passwords do not match"
+msgstr "Hesla se neshodují"
+
+#: cnchi/src/pacman/pac.py:109
+#, c-format
+msgid "%.1f KiB"
+msgstr ""
+
+#: cnchi/src/pacman/pac.py:111
+#, c-format
+msgid "%.2f MiB"
+msgstr ""
+
+#: cnchi/src/pacman/pac.py:514
+msgid "Checking dependencies..."
+msgstr "Kontrolují se závislosti..."
+
+#: cnchi/src/pacman/pac.py:516
+msgid "Checking file conflicts..."
+msgstr "Kontrolují se konflikty souborů..."
+
+#: cnchi/src/pacman/pac.py:518
+msgid "Resolving dependencies..."
+msgstr "Řeší se závislosti..."
+
+#: cnchi/src/pacman/pac.py:520
+msgid "Checking inter conflicts..."
+msgstr "Kontrolují se interní konflikty..."
+
+#: cnchi/src/pacman/pac.py:525
+msgid "Checking integrity..."
+msgstr "Kontrola integrity..."
+
+#: cnchi/src/pacman/pac.py:528
+#, fuzzy
+msgid "Loading packages files..."
+msgstr "Načítají se balíčky..."
+
+#: cnchi/src/pacman/pac.py:530
+#, fuzzy
+msgid "Checking target delta integrity..."
+msgstr "Kontrola integrity cíl delta..."
+
+#: cnchi/src/pacman/pac.py:532
+msgid "Applying deltas to packages..."
+msgstr "Použití delty na balíčky..."
+
+#: cnchi/src/pacman/pac.py:534
+#, fuzzy, python-format
+msgid "Generating {} with {}..."
+msgstr "Vytváří se národní prostředí..."
+
+#: cnchi/src/pacman/pac.py:537
+#, fuzzy
+msgid "Downloading files from the repositories..."
+msgstr "Stahují se soubory z repozitáře..."
+
+#: cnchi/src/pacman/pac.py:539
+#, fuzzy
+msgid "Checking available disk space..."
+msgstr "Kontroluje se místo na disku..."
+
+#: cnchi/src/pacman/pac.py:541
+msgid "Checking keys in keyring..."
+msgstr "Kontrolují se klíče v klíčence..."
+
+#: cnchi/src/pacman/pac.py:543
+msgid "Downloading missing keys into the keyring..."
+msgstr "Stahují se chybějící klíče do klíčenky"
+
+#: cnchi/src/pacman/pac.py:545
+#, fuzzy, python-format
+msgid "Configuring {}"
+msgstr "Konfigurace LAMP..."
+
+#: cnchi/src/pacman/pac.py:578
+#, python-format
+msgid "Installing {0} ({1}/{2})"
+msgstr "Instalace produktu {0} ({1} / {2})"
+
+#: cnchi/src/pacman/pac.py:598
+#, python-format
+msgid "Updating {0} database"
+msgstr "Aktualizace databáze {0}"
+
+#: cnchi/src/pacman/pac.py:600
+#, fuzzy, python-format
+msgid "Downloading {}..."
+msgstr "Stahuje se {0}..."
+
+#: cnchi/src/pacman/pkginfo.py:206
+msgid "Explicitly installed"
+msgstr "Explicitně nainstalované"
+
+#: cnchi/src/pacman/pkginfo.py:208
+msgid "Installed as a dependency for another package"
+msgstr "Nainstalováno jako závislost pro jiný balíček"
+
+#: cnchi/src/pages/advanced.py:233 cnchi/src/pages/advanced.py:474
+#: cnchi/src/pages/advanced.py:489
+msgid "free space"
+msgstr "volné místo"
+
+#: cnchi/src/pages/advanced.py:456
+msgid "none"
+msgstr "žádný"
+
+#: cnchi/src/pages/advanced.py:517
+#, fuzzy
+msgid "Unknown"
+msgstr "neznámý"
+
+#: cnchi/src/pages/advanced.py:557 cnchi/src/pages/advanced.py:915
+msgid "Can't use same mount point twice."
+msgstr "Nelze použít dvakrát stejné přípojného bodu."
+
+#: cnchi/src/pages/advanced.py:558
+msgid "Root partition must be formatted."
+msgstr "Root oddíl musí být naformátován."
+
+#: cnchi/src/pages/advanced.py:559
+#, fuzzy
+msgid "Root partition cannot be NTFS or FAT32"
+msgstr "Root oddíl musí být naformátován."
+
+#: cnchi/src/pages/advanced.py:560
+msgid "Home partition cannot be NTFS or FAT32"
+msgstr ""
+
+#: cnchi/src/pages/advanced.py:561
+msgid "As no /boot/efi is defined (yet), /boot needs to be fat32."
+msgstr ""
+
+#: cnchi/src/pages/advanced.py:562
+msgid "/boot/efi needs to be fat32."
+msgstr ""
+
+#: cnchi/src/pages/advanced.py:871
+#, python-format
+msgid "Sorry, you already have {0} primary partitions created."
+msgstr "Omlouvám se, že už máte primárních oddílů {0} vytvořit."
+
+#: cnchi/src/pages/advanced.py:877
+#, python-format
+msgid "Sorry, you already have {0} primary and 1 extended partitions created."
+msgstr "Omlouvám se už máte {0} primární a 1 rozšířené oddíly vytvořené."
+
+#: cnchi/src/pages/advanced.py:1061
+msgid "Advanced Installation Mode"
+msgstr "Pokročilý režim instalace"
+
+#: cnchi/src/pages/advanced.py:1065
+msgid "Mount Checklist:"
+msgstr "Mount kontrolní seznam:"
+
+#: cnchi/src/pages/advanced.py:1071
+msgid "Root"
+msgstr "Kořen"
+
+#: cnchi/src/pages/advanced.py:1075
+msgid "Boot"
+msgstr "Boot"
+
+#: cnchi/src/pages/advanced.py:1079
+msgid "EFI"
+msgstr "EFI"
+
+#: cnchi/src/pages/advanced.py:1083
+msgid "Swap"
+msgstr "Swap"
+
+#: cnchi/src/pages/advanced.py:1093
+msgid "Undo"
+msgstr "Zpět:"
+
+#: cnchi/src/pages/advanced.py:1094
+msgid "New"
+msgstr "Nový"
+
+#: cnchi/src/pages/advanced.py:1095
+msgid "Delete"
+msgstr "Smazat"
+
+#: cnchi/src/pages/advanced.py:1096
+msgid "Edit..."
+msgstr "Upravit..."
+
+#: cnchi/src/pages/advanced.py:1097
+msgid "New partition table"
+msgstr "Nová tabulka oddílů"
+
+#: cnchi/src/pages/advanced.py:1182
+msgid ""
+"GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img "
+"file due to lack of post-MBR embed gap in GPT disks.\n"
+"\n"
+"Cnchi will create this BIOS Boot Partition for you."
+msgstr ""
+"GRUB vyžaduje BIOS spouštěcí oddíl v systému BIOS pro vložení spise core.img "
+"kvůli nedostatku post-MBR vložit mezeru v disky GPT.\n"
+"\n"
+"Cnchi vytvoří tento BIOS spouštěcí oddíl pro vás."
+
+#: cnchi/src/pages/advanced.py:1243
+#, fuzzy, python-format
+msgid "Couldn't create BIOS GPT Boot partition: {}"
+msgstr "Nelze vytvořit BIOS GPT spouštěcí oddíl"
+
+#: cnchi/src/pages/advanced.py:1420
+#, fuzzy, python-format
+msgid "{0} is already mounted as swap, to continue it will be unmounted."
+msgstr ""
+"{0} je připojen jako swap.\n"
+"Chcete-li pokračovat, že musí být odpojen.\n"
+"Klepněte na tlačítko Ano, chcete-li odpojit, nebo ne se vrátíte\n"
+
+#: cnchi/src/pages/advanced.py:1425
+#, fuzzy, python-format
+msgid "{0} is already mounted in {1}, to continue it will be unmounted."
+msgstr ""
+"{0} je připojeno v {1}.\n"
+"Chcete-li pokračovat, že musí být odpojen.\n"
+"Klepněte na tlačítko Ano, chcete-li odpojit, nebo ne se vrátíte\n"
+
+#: cnchi/src/pages/advanced.py:1678
+#, fuzzy, python-format
+msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}': {3}"
+msgstr "Nelze naformátovat LUKS zařízení '{0}' s popiskem '{1}' jako '{2}'"
+
+#: cnchi/src/pages/advanced.py:1712
+#, fuzzy, python-format
+msgid "Couldn't format partition '{0}' with label '{1}' as '{2}': {3}"
+msgstr "Nelze zformátovat oddíl {0} s popiskem {1} jako {2}"
+
+#: cnchi/src/pages/advanced.py:1734
+#, python-format
+msgid "Cannot commit your changes to disk: {0}"
+msgstr ""
+
+#: cnchi/src/pages/alongside.py:160
+#, python-format
+msgid ""
+"Cnchi recommends at least 6.5GB free to install Antergos. \n"
+"\n"
+"New partition {0} resulting of shrinking {1} will not have enough\n"
+"free space for a full installation.\n"
+"You can still install Antergos, but be carefull on which DE you\n"
+"choose as it might not fit in.\n"
+"\n"
+"Install at your own risk!\n"
+"\n"
+msgstr ""
+
+#: cnchi/src/pages/alongside.py:223
+msgid "Choose the new size of your installation"
+msgstr "Zvolte novou velikost instalace"
+
+#: cnchi/src/pages/alongside.py:227
+msgid "Choose the partition that you want to shrink:"
+msgstr "Vyberte oddíl, který chcete zmenšit:"
+
+#: cnchi/src/pages/alongside.py:230
+msgid "Antergos Alongside Installation"
+msgstr "Antergos vedle instalace"
+
+#: cnchi/src/pages/alongside.py:266
+msgid ""
+"Can't find any spare partition number.\n"
+"Alongside installation can't continue."
+msgstr ""
+"Nelze najít žádné náhradní číslo.\n"
+"Vedle instalace nemůže pokračovat."
+
+#: cnchi/src/pages/ask.py:143
+msgid "I need help with an Antergos / Windows(tm) dual boot setup!"
+msgstr ""
+
+#: cnchi/src/pages/ask.py:260
+msgid " and "
+msgstr " a "
+
+#: cnchi/src/pages/ask.py:274
+msgid "Installation Type"
+msgstr "Typ instalace"
+
+#: cnchi/src/pages/ask.py:289
+#, python-format
+msgid "Replace {0} with Antergos"
+msgstr "Nahradit Antergos {0}"
+
+#: cnchi/src/pages/ask.py:291
+msgid "Erase disk and install Antergos"
+msgstr "Vymazat disk a nainstalovat Antergos"
+
+#: cnchi/src/pages/ask.py:296
+msgid "Warning: This will erase ALL data on your disk."
+msgstr "Varování: Tímto vymažete veškerá data na disku."
+
+#: cnchi/src/pages/ask.py:305
+msgid "Encrypt this installation for increased security."
+msgstr "Zašifrovat tuto instalaci pro zvýšení bezpečnosti."
+
+#: cnchi/src/pages/ask.py:313
+msgid "You will be asked to create an encryption password in the next step."
+msgstr "V dalším kroku budete vyzváni k vytvoření šifrovacího hesla."
+
+#: cnchi/src/pages/ask.py:323
+msgid "Use LVM with this installation."
+msgstr "Využití LVM s touto instalací."
+
+#: cnchi/src/pages/ask.py:331
+msgid ""
+"This will setup LVM and allow you to easily manage partitions and create "
+"snapshots."
+msgstr "To nastavení LVM a umožňují snadnou správu oddílů a vytvářet snímky."
+
+#: cnchi/src/pages/ask.py:341
+#, fuzzy
+msgid "Use ZFS with this installation."
+msgstr "Využití LVM s touto instalací."
+
+#: cnchi/src/pages/ask.py:349
+#, fuzzy
+msgid "This will setup ZFS on your drive(s)."
+msgstr "Cnchi nastaví LUKS na zařízení %s"
+
+#: cnchi/src/pages/ask.py:358
+msgid "Set your Home in a different partition/volume"
+msgstr "Nastavení domovského adresáře do samostatného oddílu/svazku"
+
+#: cnchi/src/pages/ask.py:366
+#, fuzzy
+msgid ""
+"This will setup your /home directory in a different partition or volume."
+msgstr "Tato volba nastaví /home adresář na jiný oddíl nebo svazek."
+
+#: cnchi/src/pages/ask.py:390 cnchi/src/pages/mirrors.py:422
+msgid "How would you like to proceed?"
+msgstr "Jak byste rádi pokračovali?"
+
+#: cnchi/src/pages/ask.py:403
+msgid "Choose exactly where Antergos should be installed."
+msgstr "Vyberte si přesně v kde by měl být nainstalován Antergos."
+
+#: cnchi/src/pages/ask.py:407
+msgid "Edit partition table and choose mount points."
+msgstr "Upravit tabulku oddílů a vybrat přípojné body."
+
+#: cnchi/src/pages/automatic.py:89
+msgid "Select drive:"
+msgstr "Vyberte disk:"
+
+#: cnchi/src/pages/automatic.py:93
+msgid "WARNING! This will overwrite everything currently on your drive!"
+msgstr "VAROVÁNÍ\" Tímto přepíšete veškerá data na vašem disku!"
+
+#: cnchi/src/pages/automatic.py:98
+msgid ""
+"Select the drive we should use to install Antergos and then click above to "
+"start the process."
+msgstr ""
+"Vyberte jednotku, na kterou bychom měli použít k instalaci Antergos a "
+"klepněte na tlačítko nad spuštění procesu."
+
+#: cnchi/src/pages/automatic.py:103
+msgid "Encryption Password:"
+msgstr "Šifrované heslo:"
+
+#: cnchi/src/pages/automatic.py:107 cnchi/src/pages/user_info.py:188
+msgid "Confirm your password:"
+msgstr "Znovu zadejte heslo pro ověření:"
+
+#: cnchi/src/pages/automatic.py:111
+#, fuzzy
+msgid "LUKS Password. We do not recommend using special characters or accents!"
+msgstr "LUKS heslo. Nepoužívejte speciální znaky nebo diakritiku!"
+
+#: cnchi/src/pages/automatic.py:116
+msgid "Show password"
+msgstr "Zobrazit heslo"
+
+#: cnchi/src/pages/automatic.py:118
+msgid "Automatic Installation Mode"
+msgstr "Automatická instalace"
+
+#: cnchi/src/pages/automatic.py:234
+#, fuzzy, python-format
+msgid "Device {0} will be created ({1} filesystem) as {2}"
+msgstr "Zařízení %s bude mít systém souborů %s"
+
+#: cnchi/src/pages/automatic.py:238
+#, fuzzy, python-format
+msgid "Device {0} will be created ({1} filesystem)"
+msgstr "Zařízení %s bude mít systém souborů %s"
+
+#: cnchi/src/pages/automatic.py:275
+#, c-format
+msgid "Cnchi will install Antergos on device %s"
+msgstr "Cnchi nainstaluje Antergos do zařízení %s"
+
+#: cnchi/src/pages/cache.py:66
+#, fuzzy
+msgid "Select cache partition:"
+msgstr "Nelze odstranit oddíl {0}"
+
+#: cnchi/src/pages/cache.py:70
+msgid ""
+"It is recommended to use an additional cache\n"
+"This installer needs to download a TON of packages from the Internet!"
+msgstr ""
+
+#: cnchi/src/pages/cache.py:76
+msgid ""
+"You can use an additional device or partition to use as packages' cache. In "
+"case you need to restart this installation\n"
+"you won't be needing to re-download all packages again."
+msgstr ""
+
+#: cnchi/src/pages/cache.py:79
+msgid ""
+"- It <b>cannot</b> be the same device or partition where you are installing "
+"Antergos."
+msgstr ""
+
+#: cnchi/src/pages/cache.py:81
+msgid ""
+"- If you select a <b>device</b>, its contents will be fully <b>DELETED!</b>"
+msgstr ""
+
+#: cnchi/src/pages/cache.py:82
+msgid ""
+"- If you select a <b>partition</b> its contents will be <b>preserved</b> "
+"(you must be sure that it is alread formated and unmounted!)"
+msgstr ""
+
+#: cnchi/src/pages/cache.py:84
+msgid ""
+"If this is not the first time you are running this installer you need to "
+"select a partition, and not a drive (selecting a drive will\n"
+"delete the packages you have already downloaded)."
+msgstr ""
+
+#: cnchi/src/pages/cache.py:87
+msgid "Please, choose now the device (or partition) to use as cache."
+msgstr ""
+
+#: cnchi/src/pages/cache.py:92
+#, fuzzy
+msgid "Cache selection (optional)"
+msgstr "Název (volitelné):"
+
+#: cnchi/src/pages/cache.py:130
+#, python-format
+msgid "Device {} will be fully erased! Are you REALLY sure?"
+msgstr ""
+
+#: cnchi/src/pages/check.py:82
+msgid "System Check"
+msgstr "Kontrola systému"
+
+#: cnchi/src/pages/check.py:86
+msgid "Cnchi is up to date"
+msgstr ""
+
+#: cnchi/src/pages/check.py:90
+#, python-format
+msgid "has at least {0}GB available storage space. (*)"
+msgstr "má alespoň {0} GB dostupného místa pro ukládání. (*)"
+
+#: cnchi/src/pages/check.py:94
+msgid ""
+"This highly depends on which desktop environment you choose, so you might "
+"need more space."
+msgstr ""
+"Závisí na desktopovém prostředí které jste vybrali, možná bude zapotřebí "
+"více místa."
+
+#: cnchi/src/pages/check.py:103
+msgid "is plugged in to a power source"
+msgstr "je připojen ke zdroji napájení"
+
+#: cnchi/src/pages/check.py:108
+msgid "is connected to the Internet"
+msgstr "je připojen k Internetu"
+
+#: cnchi/src/pages/check.py:112
+msgid ""
+"There are no temporary packaging issues that would interfere with "
+"installation."
+msgstr ""
+
+#: cnchi/src/pages/check.py:117
+msgid "For best results, please ensure that this computer:"
+msgstr "Pro dosažení nejlepších výsledků se ujistěte, že tento počítač:"
+
+#: cnchi/src/pages/check.py:129
+msgid "You must reboot before retrying again."
+msgstr ""
+
+#: cnchi/src/pages/desktop.py:133
+msgid "Choose Your Desktop"
+msgstr "Vyberte si svůj desktop"
+
+#: cnchi/src/pages/features.py:277
+msgid "Show advanced features"
+msgstr ""
+
+#: cnchi/src/pages/features.py:280
+msgid "Feature Selection"
+msgstr "Výběr vlastností"
+
+#: cnchi/src/pages/features.py:345
+msgid "Arch User Repository - Disclaimer"
+msgstr "Arch User Repository - Prohlášení"
+
+#: cnchi/src/pages/features.py:346
+msgid ""
+"The Arch User Repository is a collection of user-submitted PKGBUILDs\n"
+"that supplement software available from the official repositories.\n"
+"\n"
+"The AUR is community driven and NOT supported by Arch or Antergos.\n"
+msgstr ""
+"Úložiště uživatele Arch je kolekce user předložené PKGBUILDs, které doplňují "
+"software dostupný z oficiálních repozitářích.\n"
+"\n"
+"AUR se Společenství řídí a není podporován oblouk nebo Antergos.\n"
+
+#: cnchi/src/pages/features.py:351
+msgid "Uncomplicated Firewall will be installed with these rules:"
+msgstr "Uncomplicated Firewall bude nainstalován s těmito pravidly:"
+
+#: cnchi/src/pages/features.py:353
+#, python-format
+msgid ""
+"ufw default deny\n"
+"ufw allow from {0}\n"
+"ufw allow Transmission\n"
+"ufw allow SSH"
+msgstr ""
+"UFW výchozí odepřít ufw povolit z {0} ufw umožňují přenos ufw dovolit SSH"
+
+#: cnchi/src/pages/features.py:383
+msgid "Do you want to install the Nginx server instead of the Apache server?"
+msgstr "Chcete nainstalovat server Nginx namísto serveru Apache?"
+
+#: cnchi/src/pages/keymap.py:87
+msgid "Select Your Keyboard Layout"
+msgstr "Vyberte si rozložení klávesnice"
+
+#: cnchi/src/pages/keymap.py:92
+msgid ""
+"Choose your keyboard layout and variant (if applies).\n"
+"For instance, the default Slovak variant is qwertz, but you\n"
+"can manually specify qwerty, etc.\n"
+"\n"
+"You can use the entry below the keyboard to test your\n"
+"layout selection."
+msgstr ""
+"Vyberte si rozložení klávesnice a variantu (pokud se vztahuje).\n"
+"Například výchozí Česká varianta je QWERTZ, ale vy\n"
+"můžete ručně zadat qwerty, apod..\n"
+"\n"
+"Můžete použít položku pod klávesnicí k otestování výběru rozložení."
+
+#: cnchi/src/pages/keymap.py:144
+#, c-format
+msgid "Can't match a keymap for country code '%s'"
+msgstr "Nelze shodovat s mapu kláves s kódem země '%s'"
+
+#: cnchi/src/pages/keymap.py:291
+#, fuzzy, python-format
+msgid "Set keyboard to '{0}' ({1}), variant '{2}' ({3})"
+msgstr ""
+"Nastavte klávesnici jméno rozvržení '{0}' ({1}) a název varianty '{2}' ({3})"
+
+#: cnchi/src/pages/keymap.py:298
+#, fuzzy, python-format
+msgid "Set keyboard to '{0}' ({1})"
+msgstr "Nastavte klávesnici jméno rozvržení '{0}' ({1})"
+
+#: cnchi/src/pages/language.py:115
+msgid "Notice: The Cnchi Installer is beta software."
+msgstr "Upozornění: Instalátor Cnchi je beta software."
+
+#: cnchi/src/pages/language.py:118
+#, fuzzy, python-format
+msgid ""
+"<span weight='bold'>{0}</span>\n"
+"\n"
+"Cnchi is pre-release beta software that is under active development. It does "
+"not yet properly handle RAID, btrfs subvolumes, or other advanced setups. "
+"Please proceed with caution as data loss is possible!\n"
+"\n"
+"If you find any bugs, please report them at <a href='{1}'>{1}</a>"
+msgstr ""
+"Cnchi je software v pre-beta verzi, který je pod aktivním vývojem. To zatím "
+"ne zcela správně zachází s RAID, Btrfs subvolumes nebo jinými pokročilými "
+"nastaveními. Prosím, postupujte opatrně, protože hrozí riziko ztráty dat!\n"
+"\n"
+"Pokud najdete nějaké chyby, prosím, nahlaste je v {0}"
+
+#: cnchi/src/pages/language.py:137
+#, fuzzy
+msgid "Choose the Installer language"
+msgstr "Zvolte si jazyk"
+
+#: cnchi/src/pages/location.py:90
+#, fuzzy
+msgid ""
+"The location you select will be used to help determine the system locale. It "
+"should normally be the country in which you reside."
+msgstr ""
+"Umístění které vyberete bude použito k pomoci s určením národního prostředí "
+"systému. To je za normálních okolností země, v níž žijete. Zde je užší "
+"seznam lokalit na základě jazyka, který jste vybrali."
+
+#: cnchi/src/pages/location.py:93
+msgid ""
+"Please, note that your system language will be determined from this "
+"selection."
+msgstr ""
+
+#: cnchi/src/pages/location.py:95
+msgid ""
+"Here is a shortlist of locations based on the language you selected for this "
+"installer (click on show all locations to show them all)."
+msgstr ""
+
+#: cnchi/src/pages/location.py:102
+msgid "Country, territory or area:"
+msgstr "Země, území nebo oblast:"
+
+#: cnchi/src/pages/location.py:107
+msgid "Show all locations"
+msgstr "Zobrazit všechna umístění"
+
+#: cnchi/src/pages/location.py:110
+msgid "Select your location"
+msgstr "Vyberte umístění"
+
+#: cnchi/src/pages/location.py:310
+#, c-format
+msgid "Can't get country code from %s location"
+msgstr "Nelze získat kód země %s z umístění"
+
+#: cnchi/src/pages/mirrors.py:400
+#, fuzzy
+msgid "Mirrors Selection"
+msgstr "Výběr vlastností"
+
+#: cnchi/src/pages/mirrors.py:408
+msgid "Let Cnchi sort the mirrors lists (recommended)"
+msgstr ""
+
+#: cnchi/src/pages/mirrors.py:413
+msgid "Leave the mirrors lists as they are (by default)"
+msgstr ""
+
+#: cnchi/src/pages/mirrors.py:418
+msgid "Let me manage the mirrors lists (advanced)"
+msgstr ""
+
+#: cnchi/src/pages/slides.py:91
+msgid "Please wait..."
+msgstr "Prosím čekejte..."
+
+#: cnchi/src/pages/slides.py:93
+msgid "Installing Antergos..."
+msgstr "Instaluji Antergos..."
+
+#: cnchi/src/pages/slides.py:238
+#, fuzzy
+msgid ""
+"IMPORTANT: There may have been a problem with the bootloader installation "
+"which could prevent your system from booting properly. Before rebooting, you "
+"may want to verify whether or not the bootloader is installed and "
+"configured.\n"
+"\n"
+"The Arch Linux Wiki contains troubleshooting information:\n"
+"\thttps://wiki.archlinux.org/index.php/GRUB\n"
+"\n"
+"Would you like to view the wiki page now?"
+msgstr ""
+"DŮLEŽITÉ: Může nastat problém s instalací zavaděče,\n"
+"který by mohl bránit úspěšnému spuštění systému.\n"
+"Před restartováním systému budete možná chtít ověřit, zda je zavaděč "
+"nainstalovaný a\n"
+"nastavený. Stránka Arch Linux Wiki obsahuje informace o odstraňování "
+"problémů:\n"
+"⇥https://wiki.archlinux.org/index.php/GRUB\n"
+"\n"
+"Přejete si nyní stránku zobrazit?"
+
+#: cnchi/src/pages/slides.py:255
+msgid ""
+"Installation Complete!\n"
+"Do you want to restart your system now?"
+msgstr ""
+"Instalace dokončena!\n"
+"Chcete nyní restartovat Váš systém?"
+
+#: cnchi/src/pages/slides.py:275
+msgid "Please reference the following number when reporting this error: "
+msgstr ""
+
+#: cnchi/src/pages/summary.py:86
+#, fuzzy
+msgid "Installation Summary"
+msgstr "Typ instalace"
+
+#: cnchi/src/pages/summary.py:90
+msgid "Location"
+msgstr ""
+
+#: cnchi/src/pages/summary.py:91
+#, fuzzy
+msgid "Timezone"
+msgstr "Časová zóna nastavena."
+
+#: cnchi/src/pages/summary.py:92
+msgid "Keyboard"
+msgstr ""
+
+#: cnchi/src/pages/summary.py:93
+msgid "Desktop Environment"
+msgstr ""
+
+#: cnchi/src/pages/summary.py:94
+msgid "Features"
+msgstr ""
+
+#: cnchi/src/pages/summary.py:95
+#, fuzzy
+msgid "Partitions"
+msgstr "Oddíl"
+
+#: cnchi/src/pages/summary.py:119
+#, python-format
+msgid "Layout: {0}"
+msgstr ""
+
+#: cnchi/src/pages/summary.py:121
+#, fuzzy, python-format
+msgid "Variant: {0}"
+msgstr "Načítání {0}"
+
+#: cnchi/src/pages/summary.py:149 cnchi/src/pages/summary.py:156
+msgid "Error getting changes from install screen"
+msgstr ""
+
+#: cnchi/src/pages/summary.py:193
+#, fuzzy
+msgid "Are you REALLY sure you want to continue?"
+msgstr "Jste si jisti, že chcete šifrovat Váš domovský adresář ?"
+
+#: cnchi/src/pages/summary.py:221
+msgid "Ranking mirrors"
+msgstr "Pořadí zrcadel"
+
+#: cnchi/src/pages/summary.py:224
+msgid "Cnchi is still updating and optimizing your mirror lists."
+msgstr "Cnchi stále aktualizuje a optimalizuje seznamy zracadel."
+
+#: cnchi/src/pages/summary.py:227
+msgid "Please be patient..."
+msgstr "Prosím, buďte trpěliví..."
+
+#: cnchi/src/pages/timezone.py:95
+msgid "Zone:"
+msgstr "Pásmo:"
+
+#: cnchi/src/pages/timezone.py:99
+msgid "Region:"
+msgstr "Oblast:"
+
+#: cnchi/src/pages/timezone.py:103
+msgid "Use Network Time Protocol (NTP) for clock synchronization"
+msgstr "Použít Protokol Síťového Času (NTP) pro sinchronizaci hodin"
+
+#: cnchi/src/pages/timezone.py:106
+msgid "Select Your Timezone"
+msgstr "Vyberte Vaši časovou zónu"
+
+#: cnchi/src/pages/timezone.py:316
+#, c-format
+msgid "Timezone (latitude %s, longitude %s) detected."
+msgstr "Časové pásmo (zeměpisná šířka %s, délka %s) detekováno."
+
+#: cnchi/src/pages/user_info.py:184
+msgid "Your name:"
+msgstr "Vaše jméno:"
+
+#: cnchi/src/pages/user_info.py:185
+msgid "Your computer's name:"
+msgstr "Jméno počítače:"
+
+#: cnchi/src/pages/user_info.py:186
+msgid "Pick a username:"
+msgstr "Zvolte si uživatelské jméno:"
+
+#: cnchi/src/pages/user_info.py:187
+msgid "Choose a password:"
+msgstr "Zvolte si heslo:"
+
+#: cnchi/src/pages/user_info.py:195
+msgid "Identifies your system to other computers and devices."
+msgstr "Identifikuje váš systém pro další počítače a zařízení."
+
+#: cnchi/src/pages/user_info.py:200
+msgid "Your name"
+msgstr "Vaše jméno"
+
+#: cnchi/src/pages/user_info.py:201
+msgid "Hostname"
+msgstr "Název hostitele"
+
+#: cnchi/src/pages/user_info.py:202
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+#: cnchi/src/pages/user_info.py:203 cnchi/src/pages/zfs.py:326
+msgid "Password"
+msgstr "Heslo"
+
+#: cnchi/src/pages/user_info.py:204
+msgid "Confirm password"
+msgstr "Potvrdit heslo"
+
+#: cnchi/src/pages/user_info.py:211
+msgid "You must enter a name"
+msgstr "Je potřeba vyplnit jméno"
+
+#: cnchi/src/pages/user_info.py:212
+msgid "You must enter a username"
+msgstr "Je zapotřebí zadat uživatelské jméno"
+
+#: cnchi/src/pages/user_info.py:213
+msgid "You must enter a password"
+msgstr "Je zapotřebí vyplnit heslo:"
+
+#: cnchi/src/pages/user_info.py:221
+msgid "Log in automatically"
+msgstr "Přihlásit automaticky"
+
+#: cnchi/src/pages/user_info.py:222
+msgid "Require my password to log in"
+msgstr "Vyžadovat moje heslo pro přihlášení"
+
+#: cnchi/src/pages/user_info.py:223
+msgid "Encrypt my home folder"
+msgstr "Zašifrovat můj domovský adresář"
+
+#: cnchi/src/pages/user_info.py:226
+msgid "show password"
+msgstr "zobrazit heslo"
+
+#: cnchi/src/pages/user_info.py:228
+msgid "Create Your User Account"
+msgstr "Vytvořte si uživatelský účet"
+
+#: cnchi/src/pages/user_info.py:263
+msgid "Are you sure you want to encrypt your home directory?"
+msgstr "Jste si jisti, že chcete šifrovat Váš domovský adresář ?"
+
+#: cnchi/src/pages/user_info.py:330
+msgid "Invalid characters entered"
+msgstr "Zadány nesprávné znaky"
+
+#: cnchi/src/pages/user_info.py:332
+msgid "Username can't contain dots"
+msgstr "Uživatelské jméno nemůže obsahovat tečky"
+
+#: cnchi/src/pages/user_info.py:334
+msgid "Too many characters"
+msgstr "Příliš mnoho znaků"
+
+#: cnchi/src/pages/user_info.py:336
+#, fuzzy
+msgid "Unknown error"
+msgstr "neznámý"
+
+#: cnchi/src/pages/welcome.py:103
+msgid "Use Antergos without making any changes to your system."
+msgstr "Použijte Antergos bez jakýchkoli změn ve vašem systému."
+
+#: cnchi/src/pages/welcome.py:109
+msgid "Create a permanent place for Antergos on your system."
+msgstr "Vytvořte trvalé místo pro Antergos na vašem systému."
+
+#: cnchi/src/pages/welcome.py:113
+msgid "Try It"
+msgstr "Vyzkoušet"
+
+#: cnchi/src/pages/welcome.py:119
+msgid "Install It"
+msgstr "Instalovat"
+
+#: cnchi/src/pages/welcome.py:122
+msgid "Welcome to Antergos!"
+msgstr "Vítejte v distribuci Antergos!"
+
+#: cnchi/src/pages/welcome.py:153
+msgid "Loading, please wait..."
+msgstr "Načítání, prosím vyčkejte..."
+
+#: cnchi/src/pages/wireless.py:68
+msgid "Connecting this computer to a wi-fi network"
+msgstr "Počítač se připojuje k wi-fi síti"
+
+#: cnchi/src/pages/wireless.py:72
+msgid "I don't want to connect to a wi-fi network right now"
+msgstr "Momentálně se nechci připojit k wi-fi síti"
+
+#: cnchi/src/pages/wireless.py:75
+msgid "Connect to this network"
+msgstr "Připojit k této síti"
+
+#: cnchi/src/pages/wireless.py:77 cnchi/src/pages/dialogs/luks_settings.py:130
+msgid "Password:"
+msgstr "Heslo:"
+
+#: cnchi/src/pages/wireless.py:78
+msgid "Display password"
+msgstr "Zobrazit heslo"
+
+#: cnchi/src/pages/zfs.py:195
+#, fuzzy
+msgid "Use"
+msgstr "Využito"
+
+#: cnchi/src/pages/zfs.py:204
+msgid "Disk"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:210
+#, fuzzy
+msgid "Size (GB)"
+msgstr "Velikost"
+
+#: cnchi/src/pages/zfs.py:216 cnchi/src/widgets/partition_treeview.py:78
+msgid "Device"
+msgstr "Zařízení"
+
+#: cnchi/src/pages/zfs.py:222
+msgid "Disk ID"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:261
+msgid "ZFS Setup"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:295
+msgid "Pool type"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:309
+#, fuzzy
+msgid "Partition scheme"
+msgstr "Oddíl"
+
+#: cnchi/src/pages/zfs.py:323
+#, fuzzy
+msgid "Validate password"
+msgstr "Spravedlivé heslo"
+
+#: cnchi/src/pages/zfs.py:329
+#, fuzzy
+msgid "Swap size (MB)"
+msgstr "Prohodit velikost oddílu: % dMiB"
+
+#: cnchi/src/pages/zfs.py:333
+#, fuzzy
+msgid "Encrypt swap"
+msgstr "Šifrovat"
+
+#: cnchi/src/pages/zfs.py:336
+#, fuzzy
+msgid "Encrypt disk"
+msgstr "Šifrovat"
+
+#: cnchi/src/pages/zfs.py:339
+#, fuzzy
+msgid "Pool name"
+msgstr "Vaše jméno"
+
+#: cnchi/src/pages/zfs.py:342
+msgid "Force ZFS 4k block size"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:364
+#, fuzzy
+msgid "You must select one drive"
+msgstr "Je potřeba vyplnit jméno"
+
+#: cnchi/src/pages/zfs.py:369
+#, python-format
+msgid "For the {0} pool_type, you must select at least two drives"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:384
+#, python-format
+msgid "You must select at least {0} drives"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:389
+#, python-format
+msgid ""
+"For the {0} pool type, you must use a 'power of two' (2,4,8,...) plus the "
+"appropriate number of drives for the parity. RAID-Z = 1 disk, RAIDZ-2 = 2 "
+"disks, and so on."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:399
+msgid "An unknown error occurred while processing chosen ZFS options."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:419
+msgid "'None' pool will use ZFS on a single selected disk."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:421
+msgid ""
+"When created together, with equal capacity, ZFS space-balancing makes a span "
+"act like a RAID0 stripe. The space is added together. Provided all the "
+"devices are of the same size, the stripe behavior will continue regardless "
+"of fullness level. If devices/vdevs are not equally sized, then they will "
+"fill mostly equally until one device/vdev is full."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:429
+msgid ""
+"A mirror consists of two or more devices, all data will be written to all "
+"member devices. Cnchi will try to group devices in groups of two."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:433
+msgid ""
+"ZFS implements RAID-Z, a variation on standard RAID-5. ZFS supports three "
+"levels of RAID-Z which provide varying levels of redundancy in exchange for "
+"decreasing levels of usable storage. The types are named RAID-Z1 through "
+"RAID-Z3 based on the number of parity devices in the array and the number of "
+"disks which can fail while the pool remains operational."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:445
+msgid ""
+"Advanced Format (AF) is a new disk format which natively uses a 4,096 byte "
+"instead of 512 byte sector size. To maintain compatibility with legacy "
+"systems AF disks emulate a sector size of 512 bytes. By default, ZFS will "
+"automatically detect the sector size of the drive. This combination will "
+"result in poorly aligned disk access which will greatly degrade the pool "
+"performance. If that might be your case, you can force ZFS to use a sector "
+"size of 4,096 bytes by selecting this option."
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:563
+#, python-format
+msgid "Create {0} on device {1}"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:567
+#, python-format
+msgid "Add device {0} to {1}"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:1133
+msgid "No devices were selected for the ZFS pool"
+msgstr ""
+
+#: cnchi/src/pages/zfs.py:1160
+msgid ""
+"Pool name is invalid. It must contain only alphanumeric characters (a-zA-"
+"Z0-9_), hyphens (-), colons (:), and/or spaces ( ). Names starting with the "
+"letter 'c' followed by a number (c[0-9]) are not allowed. The following "
+"names are also not allowed: 'mirror', 'raidz', 'spare', 'log'."
+msgstr ""
+
+#: cnchi/src/pages/dialogs/changelist.py:69
+#: cnchi/src/pages/dialogs/luks_settings.py:108
+#: cnchi/src/pages/dialogs/partition_base.py:90
+msgid "_Cancel"
+msgstr "Stornovat"
+
+#: cnchi/src/pages/dialogs/changelist.py:70
+#: cnchi/src/pages/dialogs/luks_settings.py:109
+#: cnchi/src/pages/dialogs/partition_base.py:91
+msgid "_Apply"
+msgstr "Apply"
+
+#: cnchi/src/pages/dialogs/create_partition.py:135
+#, fuzzy
+msgid "Create partition"
+msgstr "Vytvořit tabulku oddílů"
+
+#: cnchi/src/pages/dialogs/create_table.py:73
+msgid "Create Partition Table"
+msgstr "Vytvořit tabulku oddílů"
+
+#: cnchi/src/pages/dialogs/edit_partition.py:64
+#, fuzzy
+msgid "Edit partition"
+msgstr "Oddíl"
+
+#: cnchi/src/pages/dialogs/luks_settings.py:84
+msgid "Using LUKS encryption will DELETE all partition contents!"
+msgstr "Použití šifrování LUKS odstraní veškerý obsah z diskových oddílů!"
+
+#: cnchi/src/pages/dialogs/luks_settings.py:125
+#, fuzzy
+msgid "Encryption properties"
+msgstr "Možnosti šifrování..."
+
+#: cnchi/src/pages/dialogs/luks_settings.py:128
+msgid "Use LUKS encryption:"
+msgstr "Používejte LUKS šifrování:"
+
+#: cnchi/src/pages/dialogs/luks_settings.py:129
+msgid "LUKS volume name:"
+msgstr "LUKS název svazku:"
+
+#: cnchi/src/pages/dialogs/luks_settings.py:131
+msgid "Confirm password:"
+msgstr "Potvrzení hesla:"
+
+#: cnchi/src/pages/dialogs/luks_settings.py:201
+#, fuzzy
+msgid "LUKS passwords do not match! Encryption NOT enabled."
+msgstr "LUKS hesla se neshodují!"
+
+#: cnchi/src/pages/dialogs/luks_settings.py:205
+msgid "Volume name and password are mandatory! Encryption NOT enabled."
+msgstr ""
+
+#: cnchi/src/pages/dialogs/partition_base.py:226
+msgid "Location:"
+msgstr ""
+
+#: cnchi/src/pages/dialogs/partition_base.py:227
+msgid "Size:"
+msgstr "Velikost:"
+
+#: cnchi/src/pages/dialogs/partition_base.py:228
+msgid "Type:"
+msgstr "Typ"
+
+#: cnchi/src/pages/dialogs/partition_base.py:229
+msgid "Primary"
+msgstr "Primární"
+
+#: cnchi/src/pages/dialogs/partition_base.py:230
+msgid "Logical"
+msgstr "Logická"
+
+#: cnchi/src/pages/dialogs/partition_base.py:231
+msgid "Extended"
+msgstr "Rozšířený"
+
+#: cnchi/src/pages/dialogs/partition_base.py:232
+msgid "Beginning of this space"
+msgstr "Začátek dostupného místa"
+
+#: cnchi/src/pages/dialogs/partition_base.py:233
+msgid "End of this space"
+msgstr "Konec dostupného místa"
+
+#: cnchi/src/pages/dialogs/partition_base.py:234
+msgid "Use As:"
+msgstr "Používat jako:"
+
+#: cnchi/src/pages/dialogs/partition_base.py:235
+msgid "Mount Point:"
+msgstr "Přípojný bod:"
+
+#: cnchi/src/pages/dialogs/partition_base.py:236
+msgid "Label (optional):"
+msgstr "Název (volitelné):"
+
+#: cnchi/src/pages/dialogs/partition_base.py:237
+msgid "Format:"
+msgstr "Formátovat:"
+
+#: cnchi/src/widgets/partition_treeview.py:82
+msgid "Type"
+msgstr "Typ"
+
+#: cnchi/src/widgets/partition_treeview.py:86
+msgid "Mount point"
+msgstr "Přípojný bod"
+
+#: cnchi/src/widgets/partition_treeview.py:90
+msgid "Label"
+msgstr "Název"
+
+#: cnchi/src/widgets/partition_treeview.py:97
+msgid "Format"
+msgstr "Formátovat"
+
+#: cnchi/src/widgets/partition_treeview.py:105
+msgid "Size"
+msgstr "Velikost"
+
+#: cnchi/src/widgets/partition_treeview.py:109
+msgid "Used"
+msgstr "Využito"
+
+#: cnchi/src/widgets/partition_treeview.py:113
+msgid "Flags"
+msgstr "Příznak"
+
+#: cnchi/src/widgets/partition_treeview.py:120
+msgid "SSD"
+msgstr "SSD"
+
+#: cnchi/src/parted3/fs_module.py:172
+#, python-format
+msgid "Can't label a {0} partition"
+msgstr "Nelze označit oddíl {0}"
+
+#: cnchi/src/parted3/fs_module.py:194
+#, fuzzy, python-format
+msgid "Cannot make a filesystem of type None in partition {0}"
+msgstr "Nelze odstranit oddíl {0}"
+
+#: cnchi/src/parted3/fs_module.py:216
+#, fuzzy, python-format
+msgid "Unknown filesystem {0} for partition {1}"
+msgstr "Neznámý souborový systém {0}"
+
+#: cnchi/src/parted3/lvm.py:93
+#, python-format
+msgid "Can't remove logical volume {0}"
+msgstr "Logický svazek {0} nelze odebrat."
+
+#: cnchi/src/parted3/lvm.py:112
+#, python-format
+msgid "Can't remove volume group {0}"
+msgstr "Nelze odstranit svazek skupiny {0}"
+
+#: cnchi/src/parted3/lvm.py:125
+#, python-format
+msgid "Can't remove physical volume {0}"
+msgstr "Fyzický objem {0} nelze odebrat."
+
+#: cnchi/src/parted3/partition_module.py:260
+msgid "Partition is too large!"
+msgstr "Oddíl je příliš velký!"
+
+#: cnchi/src/parted3/partition_module.py:329
+#, fuzzy, python-format
+msgid "Can't detect used space from {0}: {1}"
+msgstr "Nelze zjistit využité místo z {0}"
+
+#: cnchi/src/parted3/used_space.py:55
+#, c-format
+msgid "Can't detect used space of NTFS partition %s"
+msgstr "Nelze zjistit použité místo na NTFS oddílu %s"
+
+#: cnchi/src/parted3/used_space.py:81
+#, c-format
+msgid "Can't detect used space of EXTFS partition %s"
+msgstr "Nelze zjistit použité místo na EXTFS oddílu %s"
+
+#: cnchi/src/parted3/used_space.py:110
+#, fuzzy, c-format
+msgid "Can't detect used space of FAT partition %s : %s"
+msgstr "Nelze zjistit použité místo na FAT oddílu %s"
+
+#: cnchi/src/parted3/used_space.py:143
+#, c-format
+msgid "Can't detect used space of JFS partition %s"
+msgstr "Nelze zjistit použité místo na JFS oddílu %s"
+
+#: cnchi/src/parted3/used_space.py:170
+#, c-format
+msgid "Can't detect used space of REISERFS partition %s"
+msgstr "Nelze zjistit použité místo na REISERFS oddílu %s"
+
+#: cnchi/src/parted3/used_space.py:243
+#, c-format
+msgid "Can't detect used space of XFS partition %s"
+msgstr "Nelze zjistit použité místo na XFS oddílu %s"
+
+#: cnchi/utils/pygettext.py:24
+msgid ""
+"pygettext -- Python equivalent of xgettext(1)\n"
+"\n"
+"Many systems (Solaris, Linux, Gnu) provide extensive tools that ease the\n"
+"internationalization of C programs. Most of these tools are independent of\n"
+"the programming language and can be used from within Python programs.\n"
+"Martin von Loewis' work[1] helps considerably in this regard.\n"
+"\n"
+"There's one problem though; xgettext is the program that scans source code\n"
+"looking for message strings, but it groks only C (or C++). Python\n"
+"introduces a few wrinkles, such as dual quoting characters, triple quoted\n"
+"strings, and raw strings. xgettext understands none of this.\n"
+"\n"
+"Enter pygettext, which uses Python's standard tokenize module to scan\n"
+"Python source code, generating .pot files identical to what GNU xgettext[2]\n"
+"generates for C and C++ code. From there, the standard GNU tools can be\n"
+"used.\n"
+"\n"
+"A word about marking Python strings as candidates for translation. GNU\n"
+"xgettext recognizes the following keywords: gettext, dgettext, dcgettext,\n"
+"and gettext_noop. But those can be a lot of text to include all over your\n"
+"code. C and C++ have a trick: they use the C preprocessor. Most\n"
+"internationalized C source includes a #define for gettext() to _() so that\n"
+"what has to be written in the source is much less. Thus these are both\n"
+"translatable strings:\n"
+"\n"
+"    gettext(\"Translatable String\")\n"
+"    _(\"Translatable String\")\n"
+"\n"
+"Python of course has no preprocessor so this doesn't work so well.  Thus,\n"
+"pygettext searches only for _() by default, but see the -k/--keyword flag\n"
+"below for how to augment this.\n"
+"\n"
+" [1] http://www.python.org/workshops/1997-10/proceedings/loewis.html\n"
+" [2] http://www.gnu.org/software/gettext/gettext.html\n"
+"\n"
+"NOTE: pygettext attempts to be option and feature compatible with GNU\n"
+"xgettext where ever possible. However some options are still missing or are\n"
+"not fully implemented. Also, xgettext's use of command line switches with\n"
+"option arguments is broken, and in these cases, pygettext just defines\n"
+"additional switches.\n"
+"\n"
+"Usage: pygettext [options] inputfile ...\n"
+"\n"
+"Options:\n"
+"\n"
+"    -a\n"
+"    --extract-all\n"
+"        Extract all strings.\n"
+"\n"
+"    -d name\n"
+"    --default-domain=name\n"
+"        Rename the default output file from messages.pot to name.pot.\n"
+"\n"
+"    -E\n"
+"    --escape\n"
+"        Replace non-ASCII characters with octal escape sequences.\n"
+"\n"
+"    -D\n"
+"    --docstrings\n"
+"        Extract module, class, method, and function docstrings.  These do\n"
+"        not need to be wrapped in _() markers, and in fact cannot be for\n"
+"        Python to consider them docstrings. (See also the -X option).\n"
+"\n"
+"    -h\n"
+"    --help\n"
+"        Print this help message and exit.\n"
+"\n"
+"    -k word\n"
+"    --keyword=word\n"
+"        Keywords to look for in addition to the default set, which are:\n"
+"        %(DEFAULTKEYWORDS)s\n"
+"\n"
+"        You can have multiple -k flags on the command line.\n"
+"\n"
+"    -K\n"
+"    --no-default-keywords\n"
+"        Disable the default set of keywords (see above).  Any keywords\n"
+"        explicitly added with the -k/--keyword option are still recognized.\n"
+"\n"
+"    --no-location\n"
+"        Do not write filename/lineno location comments.\n"
+"\n"
+"    -n\n"
+"    --add-location\n"
+"        Write filename/lineno location comments indicating where each\n"
+"        extracted string is found in the source.  These lines appear before\n"
+"        each msgid.  The style of comments is controlled by the -S/--style\n"
+"        option.  This is the default.\n"
+"\n"
+"    -o filename\n"
+"    --output=filename\n"
+"        Rename the default output file from messages.pot to filename.  If\n"
+"        filename is `-' then the output is sent to standard out.\n"
+"\n"
+"    -p dir\n"
+"    --output-dir=dir\n"
+"        Output files will be placed in directory dir.\n"
+"\n"
+"    -S stylename\n"
+"    --style stylename\n"
+"        Specify which style to use for location comments.  Two styles are\n"
+"        supported:\n"
+"\n"
+"        Solaris  # File: filename, line: line-number\n"
+"        GNU      #: filename:line\n"
+"\n"
+"        The style name is case insensitive.  GNU style is the default.\n"
+"\n"
+"    -v\n"
+"    --verbose\n"
+"        Print the names of the files being processed.\n"
+"\n"
+"    -V\n"
+"    --version\n"
+"        Print the version of pygettext and exit.\n"
+"\n"
+"    -w columns\n"
+"    --width=columns\n"
+"        Set width of output to columns.\n"
+"\n"
+"    -x filename\n"
+"    --exclude-file=filename\n"
+"        Specify a file that contains a list of strings that are not be\n"
+"        extracted from the input files.  Each string to be excluded must\n"
+"        appear on a line by itself in the file.\n"
+"\n"
+"    -X filename\n"
+"    --no-docstrings=filename\n"
+"        Specify a file that contains a list of files (one per line) that\n"
+"        should not have their docstrings extracted.  This is only useful in\n"
+"        conjunction with the -D option above.\n"
+"\n"
+"If `inputfile' is -, standard input is read.\n"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:177
+msgid ""
+"# SOME DESCRIPTIVE TITLE.\n"
+"# Copyright (C) YEAR ORGANIZATION\n"
+"# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.\n"
+"#\n"
+"msgid \"\"\n"
+"msgstr \"\"\n"
+"\"Project-Id-Version: PACKAGE VERSION\\n\"\n"
+"\"POT-Creation-Date: %(time)s\\n\"\n"
+"\"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n\"\n"
+"\"Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n\"\n"
+"\"Language-Team: LANGUAGE <LL@li.org>\\n\"\n"
+"\"MIME-Version: 1.0\\n\"\n"
+"\"Content-Type: text/plain; charset=%(charset)s\\n\"\n"
+"\"Content-Transfer-Encoding: %(encoding)s\\n\"\n"
+"\"Generated-By: pygettext.py %(version)s\\n\"\n"
+"\n"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:416
+msgid "*** %(file)s:%(lineno)s: Seen unexpected token \"%(token)s\""
+msgstr ""
+
+#: cnchi/utils/pygettext.py:463
+msgid "# File: %(filename)s, line: %(lineno)d"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:470
+msgid " %(filename)s:%(lineno)d"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:539
+#, c-format
+msgid "Invalid value for --style: %s"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:547
+#, c-format
+msgid "pygettext.py (xgettext for Python) %s"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:553
+#, c-format
+msgid "--width argument must be an integer: %s"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:580
+#, c-format
+msgid "Can't read --exclude-file: %s"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:599
+msgid "Reading standard input"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:604
+#, c-format
+msgid "Working on %s"
+msgstr ""
+
+#: cnchi/utils/pygettext.py:640
+msgid "*** Seen unexpected token \"%(token)s\""
+msgstr ""
+
+#: cnchi/utils/pygettext.py:641
+msgid "morethanonestring"
+msgstr ""
+
+#~ msgid "Error calling hexdump command: %s"
+#~ msgstr "Chyba při volání příkazu šestnáctkovém výpisu: %s"
+
+#~ msgid "Unknown partition id %s"
+#~ msgstr "Neznámý oddíl id %s"
+
+#~ msgid "We have Internet connection."
+#~ msgstr "Jsme připojení k internetu."
+
+#~ msgid "We're connected to a power source."
+#~ msgstr "je připojen ke zdroji napájení"
+
+#~ msgid "We have enough disk space."
+#~ msgstr "Máme dostatek místa na disku."
+
+#~ msgid "Can't create Cnchi main window: {0}"
+#~ msgstr "Nelze vytvořit hlavní okno Cnchi: {0}"
+
+#~ msgid "Sending Cnchi logs to {0} with id '{1}'"
+#~ msgstr "Odeslání Cnchi protokolů {0} s id '{1}'"
+
+#~ msgid "Using pyalpm v{0} as interface to libalpm v{1}"
+#~ msgstr "Pomocí pyalpm v {0} jako rozhraní libalpm v {1}"
+
+#~ msgid ""
+#~ "Choose which library to use when downloading packages. Possible options "
+#~ "are 'requests' (default), 'urllib' and 'aria2'"
+#~ msgstr ""
+#~ "Vyberte si, která z knihoven se použije při stahování balíčků. Možné "
+#~ "volby jsou \"žádosti\" (výchozí), \"urllib\" a \"aria2\""
+
+#~ msgid ""
+#~ "Choose to which log server send Cnchi logs. Expects a hostname or an IP "
+#~ "address"
+#~ msgstr ""
+#~ "Vyberte, pokud chcete zvolit, který server odešle Cnchi protokoly. "
+#~ "Očekává se, název hostitele nebo IP adresa"
+
+#~ msgid "Do not perform any changes (useful for developers)"
+#~ msgstr "Neprovádějte žádné změny (užitečné pro vývojáře)"
+
+#~ msgid "Upgrade/downgrade Cnchi to the web version"
+#~ msgstr "Upgrade/downgrade Cnchi na webovou verzi"
+
+#~ msgid "Do not search for new Cnchi versions online"
+#~ msgstr "Nevyhledávat pro nové Cnchi verze online"
+
+#~ msgid "Program updated! Restarting..."
+#~ msgstr "Program aktualizován! Restartování..."
+
+#~ msgid "Cnchi will install Antergos with the '%s' desktop"
+#~ msgstr ""
+#~ "Cnchi nainstaluje distribuci Antergos spolu s pracovním prostředím '%s'"
+
+#~ msgid ""
+#~ "Cinnamon is a fork of GNOME 3 developed by (and for) Linux Mint. It "
+#~ "provides users a more traditional desktop interface along with the newest "
+#~ "compositing techniques of GNOME 3. Cinnamon is for users of all "
+#~ "experience levels. "
+#~ msgstr ""
+#~ "Cinnamon je fork GNOME 3 vyvinutý Linux Mint komunitou. Poskytuje "
+#~ "uživatelům tradiční desktopové rozhraní spolu s nejnovějšími kompozičními "
+#~ "technologiemi GNOME 3. Cinnamon je určen pro uživatele všech úrovní "
+#~ "znalostí."
+
+#~ msgid ""
+#~ "LXDE is an extremely fast-performing and energy-saving desktop "
+#~ "environment. It uses less CPU and RAM than other environments. LXDE is "
+#~ "especially designed for cloud computers with low hardware specifications "
+#~ "such as netbooks, mobile devices, and older computers."
+#~ msgstr ""
+#~ "LXDE je extrémně rychlé výkonné a energeticky úsporné pracovní prostředí. "
+#~ "Využívá méně CPU a RAM, než jiná prostředí. LXDE je speciálně navrženo "
+#~ "pro počítače s nízkou specifikací hardwaru, jako jsou netbooky, mobilní "
+#~ "zařízení a starší počítače."
+
+#~ msgid ""
+#~ "Openbox is a highly configurable, next generation window manager with "
+#~ "extensive standards support. It's default theme is well known for its "
+#~ "minimalistic appearance and flexibility. Your desktop becomes cleaner, "
+#~ "faster. Perfect for low hardware specifications, too."
+#~ msgstr ""
+#~ "Openbox je vysoce konfigurovatelný, příští generace window manager s "
+#~ "podporou rozsáhlé standardy. Je to výchozí motiv je dobře známý pro jeho "
+#~ "minimalistický vzhled a pružnost. Vaše plocha se stává čistší, rychleji. "
+#~ "Ideální pro nízkou hardwarové specifikace, taky."
+
+#~ msgid ""
+#~ "Plasma 5.0 introduces a new major version of KDE's workspace offering. It "
+#~ "provides a visually updated core desktop experience that is easy to use "
+#~ "and familiar to the user. "
+#~ msgstr ""
+#~ "Plazma 5.0 zavádí novou hlavní verzi KDE prostoru nabízí. To poskytuje "
+#~ "vizuálně aktualizované základní pracovní prostředí, které je snadno "
+#~ "ovladatelné a známé uživateli. "
+
+#~ msgid ""
+#~ "LXQt is an advanced, easy-to-use, and fast desktop environment based on "
+#~ "Qt technologies. It has been tailored for users who value simplicity, "
+#~ "speed, and an intuitive interface."
+#~ msgstr ""
+#~ "LXQt je moderní, snadno to použití a rychlé pracovní prostředí založené "
+#~ "na Qt technologiích. Bylo přizpůsobené pro uživatele, kteří ocení "
+#~ "jednoduchost, rychlost a intuitivní rozhraní."
+
+#~ msgid ""
+#~ "An intuitive, attractive and lightweight desktop environment, fork of "
+#~ "GNOME 2. MATE is one of the best options for use on older computers or "
+#~ "those with low hardware specifications due to its lightweight yet very "
+#~ "customizable set of features."
+#~ msgstr ""
+#~ "Intuitivní, atraktivní a lehké desktopové prostředí, fork GNOME 2. MATE "
+#~ "je jednou z nejlepších možností pro použití na starších počítačích nebo "
+#~ "těch s nízkou hardwarové specifikace díky své lehké, ale velmi "
+#~ "přizpůsobitelný sadu funkcí."
+
+#~ msgid "Can't call Aria2. Error Output: %s"
+#~ msgstr "Nelze volat Aria2. Výstupní chyby: %s"
+
+#~ msgid "Can't add metalink to Aria2. Error Output: %s"
+#~ msgstr "Nelze přidat metalink Aria2. Výstupní chyby: %s"
+
+#~ msgid "Can't add uris to Aria2. Error Output: %s"
+#~ msgstr "Nelze přidat identifikátory URI Aria2. Výstupní chyby: %s"
+
+#~ msgid "Can't run aria2: %s"
+#~ msgstr "Nelze spustit aria2: %s"
+
+#~ msgid "Using %s library to download packages"
+#~ msgstr "Použití %s knihovny ke stažení balíčků"
+
+#~ msgid "Unknown '%s' library, Cnchi will use the 'requests' one as default"
+#~ msgstr ""
+#~ "Neznámá '%s' knihovna, Cnchi bude používat z \"Žádosti\" jednu jako "
+#~ "výchozí"
+
+#~ msgid "Can't initialize pyalpm: %s"
+#~ msgstr "Nelze inicializovat pyalpm: %s"
+
+#~ msgid "Can't release pyalpm: %s"
+#~ msgstr "Nelze uvolnit pyalpm: %s"
+
+#~ msgid "Aria2 is not running."
+#~ msgstr "Aria2 není spuštěna."
+
+#~ msgid "Downloading packages... ({0}/{1})..."
+#~ msgstr "Probíhá stahování balíčků... ({0}/{1})..."
+
+#~ msgid "File %s already exists, Cnchi will not overwrite it"
+#~ msgstr "Soubor %s již existuje, Cnchi nepřepíše"
+
+#~ msgid "MD5 hash (url:%s, file:%s) of file %s do not match!"
+#~ msgstr "MD5 hash (url:%s, file:%s) ze file%s se neshodují!"
+
+#~ msgid "Cnchi will download it"
+#~ msgstr "Cnchi bude stahovat toto"
+
+#~ msgid "%s found in suplied pkg cache. Copying..."
+#~ msgstr "%s nalezen v podkladech dodaných s pkg cache. Kopírování ..."
+
+#~ msgid "Error copying %s to %s."
+#~ msgstr "Chyba při kopírování %s na %s."
+
+#~ msgid "Package %s v%s has an empty url for this mirror"
+#~ msgstr "Balík %s v%s má prázdnou URL pro toto zrcadlo"
+
+#~ msgid "Can't download {0}"
+#~ msgstr "Nelze stáhnout {0}"
+
+#~ msgid "Cnchi will try another mirror."
+#~ msgstr "Cnchi zkusí jiné zrcadlo."
+
+#~ msgid "Metalink for package %s has no size info"
+#~ msgstr "Metalink pro balíček %s nemá žádné informace o velikosti"
+
+#~ msgid "Can't download {0}, even after trying all available mirrors"
+#~ msgstr ""
+#~ "Nelze stáhnout {0}, dokonce i po vyzkoušení všech dostupných možností."
+
+#~ msgid "Wrong url, will try another one if available."
+#~ msgstr "Nesprávné url, zkusí jinou, je-li k dispozici."
+
+#~ msgid "Can't open {0} - Reason: {1}"
+#~ msgstr "Nelze otevřít {0} - důvod: {1}"
+
+#~ msgid "HTTP Error : {0}"
+#~ msgstr "HTTP chyba: {0}"
+
+#~ msgid "URL Error : {0}"
+#~ msgstr "Adresa URL chyba: {0}"
+
+#~ msgid "%s found in iso pkg cache. Copying..."
+#~ msgstr "%s nalezen v iso pkg cache. Kopírování ..."
+
+#~ msgid "Error copying %s to %s. Cnchi will try to download it"
+#~ msgstr "Chyba při kopírování %s na %s. Cnchi se jej pokusí stáhnout"
+
+#~ msgid "Unable to create download queue for package {0}"
+#~ msgstr "Nelze vytvořit frontu pro stahování pro balíčku {0}"
+
+#~ msgid "Can't find these packages: "
+#~ msgstr "Nepodařilo se nalézt následující balíčky:"
+
+#~ msgid "Can't resolve these dependencies: "
+#~ msgstr "Nelze vyřešit tyto závislosti: "
+
+#~ msgid "Can't create and modify encfs configuration files."
+#~ msgstr "Nelze vytvářet a upravovat konfigurační soubory formátu encfs."
+
+#~ msgid "Home directory won't be encrypted."
+#~ msgstr "Domovský adresář nebude zašifrován."
+
+#~ msgid "Can't run encfs. Bad password?"
+#~ msgstr "Nelze spustit encfs. Špatné heslo?"
+
+#~ msgid "No icon found for feature %s"
+#~ msgstr "Žádná ikona nebyla nalezena pro funkci %s"
+
+#~ msgid "Extra Truetype Fonts"
+#~ msgstr " Dodatečná písma TrueType "
+
+#~ msgid "Installation of extra TrueType fonts"
+#~ msgstr "Instalace dodatečných TrueType písem"
+
+#~ msgid ""
+#~ "TrueType is an outline font standard developed by\n"
+#~ "Apple and Microsoft in the late 1980s as a competitor\n"
+#~ "to Adobe's Type 1 fonts used in PostScript. It has\n"
+#~ "become the most common format for fonts on both the\n"
+#~ "Mac OS and Microsoft Windows operating systems."
+#~ msgstr ""
+#~ "TrueType je že obrysové písmo standardní vyvinutý společností Apple a "
+#~ "Microsoft na konci osmdesátých (1980)  let jako konkurence pro Adobe typu "
+#~ "1 písem použitých v jazyce PostScript. To se stalo nejběžnější formát pro "
+#~ "písma v operačních systémech Microsoft Windows i Mac OS."
+
+#~ msgid "Windows sharing SMB"
+#~ msgstr "Windows sdílení SMB"
+
+#~ msgid "SMB provides shared access to files and printers"
+#~ msgstr "SMB poskytuje sdílený přístup k souborům a tiskárnám"
+
+#~ msgid ""
+#~ "In computer networking, Server Message Block (SMB)\n"
+#~ "operates as an application-layer network protocol mainly used\n"
+#~ "for providing shared access to files, printers, serial ports,\n"
+#~ "and miscellaneous communications between nodes on a network.\n"
+#~ "Most usage of SMB involves computers running Microsoft Windows."
+#~ msgstr ""
+#~ "V počítačové síti, Server Message Block (SMB) funguje jako aplikační "
+#~ "vrstvy síťový protokol používá především k poskytování sdíleného přístupu "
+#~ "k souborů, tiskáren, sériových portů a další komunikaci mezi uzly v "
+#~ "síti.\n"
+#~ "Většina využití protokolu SMB zahrnuje počítače se systémem Microsoft "
+#~ "Windows."
+
+#~ msgid "Selected '%s' feature to install"
+#~ msgstr "Funkce vybraných '%s' pro instalaci"
+
+#~ msgid "%s completed successfully."
+#~ msgstr "%s úspěšně dokončena."
+
+#~ msgid "Error running %s script"
+#~ msgstr "Chyba spuštění %s skriptu"
+
+#~ msgid "Output: %s"
+#~ msgstr "Výstup: %s"
+
+#~ msgid "Error importing %s from %s : %s"
+#~ msgstr "Chyba při importu %s z %s: %s"
+
+#~ msgid "Unexpected error importing %s: %s"
+#~ msgstr "Neočekávaná chyba při importu % s: %s"
+
+#~ msgid "Cnchi will test %d drivers for %d hardware devices"
+#~ msgstr "Cnchi bude testovat %d ovladače pro %d hardwarová zařízení"
+
+#~ msgid "Can't edit a partition with LVM filesystem type"
+#~ msgstr "Nelze upravit oddíl, který obsahuje souborový systém LVM"
+
+#~ msgid "'%s' is not a valid label"
+#~ msgstr "\"%s\" není platná značka"
+
+#~ msgid "/boot or /boot/efi need to be fat32 in UEFI systems. Forcing it."
+#~ msgstr ""
+#~ "/boot nebo /boot/efi potřebují FAT32 v systémech s UEFI. Vyžadováno."
+
+#~ msgid "You will delete the partition %s from disk %s"
+#~ msgstr "Oddíl %s bude odstraněn z disku %s"
+
+#~ msgid "Unmounting %s..."
+#~ msgstr "Odpojuje %s..."
+
+#~ msgid "Can't use same mount point twice..."
+#~ msgstr "Nelze použít stejné přípojného bodu dvakrát..."
+
+#~ msgid "Creating a primary partition"
+#~ msgstr "Vytváření primárního oddílu"
+
+#~ msgid "Creating an extended partition"
+#~ msgstr "Vytváření rozšířeného oddílu"
+
+#~ msgid "Creating a logical partition"
+#~ msgstr "Vytváření logického oddílu"
+
+#~ msgid "Partition Table Type:"
+#~ msgstr "Typ tabulky oddílů:"
+
+#~ msgid "Creating a new %s partition table for disk %s"
+#~ msgstr "Vytváří se nová %s tabulka oddílů na disku %s"
+
+#~ msgid "Can't create BIOS GPT Boot partition!"
+#~ msgstr "Nelze vytvořit BIOS GPT spouštěcí oddíl!"
+
+#~ msgid "Install now!"
+#~ msgstr "Nainstalovat nyní!"
+
+#~ msgid "Swap partition %s unmounted"
+#~ msgstr "Oddíl pro swap %s odpojen"
+
+#~ msgid "%s shows as mounted (busy) but it has no mount point"
+#~ msgstr "% vypadá jako připojený (busy), ale nemá žádný přípojný bod"
+
+#~ msgid ""
+#~ "Added %s to changelist: createme[%s] relabel[%s] fmt[%s] mnt[%s] "
+#~ "encrypt[%s]"
+#~ msgstr ""
+#~ "Přidat %s do seznamu změn: mnt fmt [%s] zvedání vrcholu [%s] createme "
+#~ "[%s] [%s] šifrování [%s]"
+
+#~ msgid "Mount"
+#~ msgstr "Připojit"
+
+#~ msgid "These disks will have partition actions:"
+#~ msgstr "Tyto disky budou mít oddíl akce:"
+
+#~ msgid "Finished saving changes in %s"
+#~ msgstr "Dokončeno ukládání změn v %s"
+
+#~ msgid "Creating new {0} filesystem in {1} labeled {2}"
+#~ msgstr "Vytváření nových souborů {0} v {1} s popiskem {2}"
+
+#~ msgid "Creating new {0} filesystem in {1}"
+#~ msgstr "Vytváření nových souborů {0} v {1}"
+
+#~ msgid "Volume name is %s"
+#~ msgstr "Název svazku je %s"
+
+#~ msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
+#~ msgstr "Šifrování {0}, formátování a přiřazení {1} název svazku..."
+
+#~ msgid "Cnchi will not install any bootloader"
+#~ msgstr "Cnchi nebude instalovat jakékoliv bootloaderu"
+
+#~ msgid "Antergos will install the bootloader {0} in device {1}"
+#~ msgstr "Antergos nainstaluje zavaděč {0} v {1} zařízení"
+
+#~ msgid "Testing mode. Cnchi will not change anything!"
+#~ msgstr "Testovací režim. Cnchi nebude nic měnit!"
+
+#~ msgid "There are no primary partitions available"
+#~ msgstr "K dispozici nejsou žádné primární oddíly"
+
+#~ msgid "Will shrink device {0} and create new device {1}"
+#~ msgstr "Bude zmenšovat zařízení {0} a vytvářet nové zařízení {1}"
+
+#~ msgid "Cnchi recommends at least 6.5GB free to install Antergos."
+#~ msgstr ""
+#~ "Cnchi doporučuje nejméně 6,5 GB volného místa pro instalaci Antergos."
+
+#~ msgid ""
+#~ "New partition {0} resulting of shrinking {1} will not have enough free "
+#~ "space for a full installation."
+#~ msgstr ""
+#~ "Nový oddíl {0} vyplývající ubývá {1} nebude mít dostatek volného místa "
+#~ "pro úplnou instalaci."
+
+#~ msgid ""
+#~ "You can still install Antergos, but be carefull on which DE you choose as "
+#~ "it might not fit in."
+#~ msgstr ""
+#~ "Můžete přesto nainstalovat Antergos, ale pozor, na kterém DE zvolíte, jak "
+#~ "je to v pořádku."
+
+#~ msgid "Install at your own risk!"
+#~ msgstr "Instalace na vlastní nebezpečí!"
+
+#~ msgid "Can't find any installed OS!"
+#~ msgstr "Nelze najít žádné nainstalované OS!"
+
+#~ msgid "The 'alongside' installation mode does not work in UEFI systems"
+#~ msgstr "Režim instalace \"vedle\" nefunguje v systémy s rozhraním UEFI"
+
+#~ msgid "Windows(tm) OS detected."
+#~ msgstr "Windows(TM) OS byl zjištěny."
+
+#~ msgid "Windows(tm) OS not detected."
+#~ msgstr "Windows(TM) OS nebyl zjištěn."
+
+#~ msgid "Can't detect any OS in device sda."
+#~ msgstr "Nelze zjistit žádné OS v zařízení sda."
+
+#~ msgid "Unsuported disk layout for the 'alongside' installation mode"
+#~ msgstr "Unsuported rozložení disku pro režim instalace \"spolu\""
+
+#~ msgid "Antergos installation will be encrypted using LUKS"
+#~ msgstr "Instalace distribuce Antergos bude zašifrována pomocí LUKS"
+
+#~ msgid "Antergos will be installed using LVM volumes"
+#~ msgstr "Instalace distribuce Antergos použije LVM svazky"
+
+#~ msgid "Antergos will be installed using a separate /home volume."
+#~ msgstr "Antergos použije samostatný svazek pro /home."
+
+#~ msgid "Antergos will be installed using a separate /home partition."
+#~ msgstr "Antergos použije samostatný oddíl pro /home."
+
+#~ msgid "Waiting for all external processes to finish..."
+#~ msgstr "Čekání na všechny vnější procesy až do jejich dokončení..."
+
+#~ msgid "All external processes are finished. Installation can go on"
+#~ msgstr "Všechny externí procesy jsou hotové. Instalace může pokračovat"
+
+#~ msgid "Unmounting %s"
+#~ msgstr "Odpojuje se %s"
+
+#~ msgid "Unmounting %s failed. Trying lazy arg."
+#~ msgstr "Odpojování %s selhalo. Probíhá pokus s opožděnými arg."
+
+#~ msgid "Unmounting %s failed."
+#~ msgstr "Odpojení %s se nezdařilo."
+
+#~ msgid "Can't delete existent LVM volumes"
+#~ msgstr "Nelze odstranit existující svazky LVM"
+
+#~ msgid "Can't close already opened LUKS devices"
+#~ msgstr "Nelze zavřít již otevřeno LUKS zařízení"
+
+#~ msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
+#~ msgstr ""
+#~ "Nelze nastavit LUKS v zařízení {0}. Heslo nebo soubor klíče jsou zapotřebí"
+
+#~ msgid "Can't format and open the LUKS device {0}"
+#~ msgstr "Nelze formátovat a otevřít zařízení {0} LUKS"
+
+#~ msgid "Can't wipe filesystem of device %s"
+#~ msgstr "Nelze vymazat filesystem zařízení %s"
+
+#~ msgid "Can't run dd command"
+#~ msgstr "Nelze spustit příkaz dd"
+
+#~ msgid "Will format device %s as %s"
+#~ msgstr "Zformátuje zařízení %s jako %s"
+
+#~ msgid "Can't activate swap in %s"
+#~ msgstr "Nelze aktivovat odkládací v %s"
+
+#~ msgid "Command %s has failed."
+#~ msgstr "Provedení příkazu %s selhalo."
+
+#~ msgid "Output : %s"
+#~ msgstr "Výstup : %s"
+
+#~ msgid "Can't create filesystem {0}"
+#~ msgstr "Nelze vytvořit souborový systém {0}"
+
+#~ msgid "Error trying to  mount {0} in {1}"
+#~ msgstr "Chyba při pokusu o připojení {0} v {1}"
+
+#~ msgid "Device details: %s UUID=%s LABEL=%s"
+#~ msgstr "Podrobnosti o zařízení: %s UUID = %s LABEL = %s"
+
+#~ msgid "%s will be mounted as %s"
+#~ msgstr "%s bude připojen jako %s"
+
+#~ msgid "Total disk size: %dMiB"
+#~ msgstr "Celková velikost disku: % dMiB"
+
+#~ msgid "EFI System Partition (ESP) size: %dMiB"
+#~ msgstr "Oddíl systému EFI (ESP) Velikost: % dMiB"
+
+#~ msgid "Boot partition size: %dMiB"
+#~ msgstr "Boot velikost oddílu: % dMiB"
+
+#~ msgid "LVM physical volume size: %dMiB"
+#~ msgstr "LVM fyzický objem velikost: % dMiB"
+
+#~ msgid "Root partition size: %dMiB"
+#~ msgstr "Kořen velikost oddílu: % dMiB"
+
+#~ msgid "Home partition size: %dMiB"
+#~ msgstr "Velikost domovského oddílu: % dMiB"
+
+#~ msgid "Error informing the kernel of the partition change."
+#~ msgstr "Při informování jádra došlo ke změně oddílu."
+
+#~ msgid "Cnchi will setup LVM on device %s"
+#~ msgstr "Cnchi bude nastavení LVM na zařízení %s"
+
+#~ msgid "Error creating LVM physical volume"
+#~ msgstr "Chyba při vytváření fyzický svazek pro LVM"
+
+#~ msgid "Error creating LVM volume group"
+#~ msgstr "Chyba při vytváření Zašifruje skupinu svazků"
+
+#~ msgid "Error creating LVM logical volume"
+#~ msgstr "Chyba při vytváření LVM logický svazek"
+
+#~ msgid "Can't copy LUKS keyfile to the installation device"
+#~ msgstr "Nelze kopírovat LUKS keyfile do instalace zařízení"
+
+#~ msgid "A root LUKS password has been set"
+#~ msgstr "Root heslo LUKS je nastaveno"
+
+#~ msgid "Automatic install on %s"
+#~ msgstr "Automatická instalace do %s"
+
+#~ msgid ""
+#~ "Do you really want to proceed and delete all your content on your hard "
+#~ "drive?"
+#~ msgstr ""
+#~ "Opravdu chcete pokračovat a odstranit veškerý obsah na pevném disku?"
+
+#~ msgid "Antergos will install the bootloader '{0}' in device '{1}'"
+#~ msgstr "Antergos nainstaluje zavad∞φ '{0}' zařízení '{1}."
+
+#~ msgid "Cnchi will install the Gummiboot loader"
+#~ msgstr "Cnchi bude instalovat Gummiboot zavaděč"
+
+#~ msgid "Cnchi will install the Grub2 (efi) loader"
+#~ msgstr "Cnchi bude instalovat grub2 (EFI) zavaděč"
+
+#~ msgid "Cnchi will install the Grub2 (bios) loader"
+#~ msgstr "Cnchi bude instalovat grub2 (BIOS) zavaděč"
+
+#~ msgid ""
+#~ "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's "
+#~ "hope it's ok"
+#~ msgstr ""
+#~ "Proměnná 'ruuid' není nastaven. Nelze kontrolovat root UUID v grub.cfg, "
+#~ "doufejme, že to je v pořádku"
+
+#~ msgid "Wrong uuid in grub.cfg, Cnchi will try to fix it."
+#~ msgstr "Špatné UUID v grub.cfg, Cnchi je zkusí opravit."
+
+#~ msgid "/etc/default/grub configuration completed successfully."
+#~ msgstr "/etc/default/grub konfigurace byla úspěšně dokončena."
+
+#~ msgid "Could not copy %s to grub.d"
+#~ msgstr "Do grub.d nelze zkopírovat %s"
+
+#~ msgid "Command grub-install failed. Error output: %s"
+#~ msgstr "Příkaz grub-install selhal. Chyba výstup: %s"
+
+#~ msgid "Command grub-install timed out."
+#~ msgstr "Příkaz grub-install vypršel."
+
+#~ msgid "Command grub-install failed. Unknown Error: %s"
+#~ msgstr "Příkaz grub-install selhal. Neznámá chyba: %s"
+
+#~ msgid "Running grub-mkconfig..."
+#~ msgstr "Spuštění grub-mkconfig..."
+
+#~ msgid ""
+#~ "grub-mkconfig does not respond. Killing grub-mount and os-prober so we "
+#~ "can continue."
+#~ msgstr ""
+#~ "grub-mkconfig, nereaguje. Zabíjení grub-mount a os-prober, abychom mohli "
+#~ "pokračovat."
+
+#~ msgid "UEFI Shell drop-in not found at %s"
+#~ msgstr "UEFI Shell drop-in na %s nebyl nalezen"
+
+#~ msgid "UEFI Shell drop-in could not be copied."
+#~ msgstr "UEFI Shell drop-in nelze zkopírovat."
+
+#~ msgid "Generating grub.cfg"
+#~ msgstr "Generování grub.cfg"
+
+#~ msgid ""
+#~ "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we "
+#~ "can continue."
+#~ msgstr ""
+#~ "Zdá se, že grub-mkconfig kombinovatelná. Zabíjení grub-mount a os-prober, "
+#~ "abychom mohli pokračovat."
+
+#~ msgid "Path '%s' doesn't exist, when it should"
+#~ msgstr "Cesta '%s' neexistuje, pokud by měl"
+
+#~ msgid "GRUB(2) UEFI install completed successfully"
+#~ msgstr "Instalace GRUB(2) UEFI byla úspěšně dokončena"
+
+#~ msgid "GRUB(2) UEFI install may not have completed successfully."
+#~ msgstr "GRUB(2) UEFI instalace nemusí být úspěšně dokončena."
+
+#~ msgid "50mounted-tests file patched successfully"
+#~ msgstr "50mounted-testy soubor oprava úspěšně"
+
+#~ msgid "Failed to patch 50mounted-tests, file not found."
+#~ msgstr "Nepodařilo se 50mounted-testy, soubor nebyl nalezen."
+
+#~ msgid "Copying GRUB(2) Theme Files"
+#~ msgstr "Kopírují se soubory motivů pro GRUB(2)"
+
+#~ msgid "Grub2 theme files not found"
+#~ msgstr "Soubory motivů pro Grub2 nenalezeny"
+
+#~ msgid "Grub2 theme files already exist."
+#~ msgstr "Soubory motivů pro Grub2 již v souborovém systému existují."
+
+#~ msgid "Installing Grub2 locales."
+#~ msgstr "Instalace národního prostředí pro Grub2."
+
+#~ msgid "Can't install GRUB(2) locale."
+#~ msgstr "Nelze nainstalovat národní prostředí pro GRUB(2)."
+
+#~ msgid "Installing gummiboot bootloader..."
+#~ msgstr "Instalace gummiboot zavaděče..."
+
+#~ msgid "Gummiboot install completed successfully"
+#~ msgstr "Gummiboot instalace byla úspěšně dokončena"
+
+#~ msgid "Command gummiboot failed. Error output: %s"
+#~ msgstr "Příkaz gummiboot selhal. Chyba výstupního: %s"
+
+#~ msgid "Command gummiboot timed out."
+#~ msgstr "Příkaz gummiboot vypršel."
+
+#~ msgid "Command gummiboot failed. Unknown Error: %s"
+#~ msgstr "Příkaz gummiboot selhal. Neznámá chyba: %s"
+
+#~ msgid "Can't freeze/unfreeze xfs system"
+#~ msgstr "Nelze zmrazení/rozmrazení systému xfs"
+
+#~ msgid "Timeout running the command %s"
+#~ msgstr "Časový limit příkazu %s"
+
+#~ msgid "Cnchi will try to continue anyways"
+#~ msgstr "Cnchi se snažit pokračovat"
+
+#~ msgid "Doing Mariadb setup..."
+#~ msgstr "Děláte nastavení Mariadb..."
+
+#~ msgid "Mariadb setup done. Doing Apache setup..."
+#~ msgstr "Nastavení Mariadb provedeno. Děláte nastavení Apache..."
+
+#~ msgid "Apache setup done. Doing PHP setup..."
+#~ msgstr "Nastavení apache provedeno. Děláte nastavení PHP..."
+
+#~ msgid "PHP setup done."
+#~ msgstr "Nastavení PHP provedeno."
+
+#~ msgid "Mariadb setup done. Doing Nginx setup..."
+#~ msgstr "Nastavení Mariadb provedeno. Děláte nastavení Nginx..."
+
+#~ msgid "Nginx setup done. Doing PHP-fpm setup..."
+#~ msgstr "Nastavení Nginx provedeno. Děláte PHP-FPM nastavení..."
+
+#~ msgid "PHP-fpm setup done."
+#~ msgstr "Nastavení PHP-FPM provedeno."
+
+#~ msgid "Setting hooks and modules in mkinitcpio.conf"
+#~ msgstr "Nastavení háky a moduly v mkinitcpio.conf"
+
+#~ msgid "Error running command %s"
+#~ msgstr "Chyba při spuštění příkazu %s"
+
+#~ msgid "Creating partitions and their filesystems in %s"
+#~ msgstr "Na disku %s se vytváří oddíly a jejich souborové systémy"
+
+#~ msgid "Mounting partition {0} into {1}/boot directory"
+#~ msgstr "Montážní oddíl {0} do {1} / spouštěcí adresář"
+
+#~ msgid "Can't mount %s in %s"
+#~ msgstr "Nelze připojit %s v %s"
+
+#~ msgid "Activating swap in %s"
+#~ msgstr "Aktivace swapu v %s"
+
+#~ msgid "%s deleted"
+#~ msgstr "odstranění %s"
+
+#~ msgid "Prepare pacman..."
+#~ msgstr "Připravte pacman..."
+
+#~ msgid "Pacman ready"
+#~ msgstr "Pacman připraven"
+
+#~ msgid "Selecting packages..."
+#~ msgstr "Probíhá výběr balíků..."
+
+#~ msgid "Packages selected"
+#~ msgstr "Vybrané balíky"
+
+#~ msgid "Removed 'v86d' package from list"
+#~ msgstr "Odstranit modul 'v86d' vyžaduje balíček ze seznamu"
+
+#~ msgid "Downloading packages..."
+#~ msgstr "Probíhá stahování balíčků..."
+
+#~ msgid "Installing packages..."
+#~ msgstr "Instalují se balíčky..."
+
+#~ msgid "Configuring system..."
+#~ msgstr "Konfigurace systému..."
+
+#~ msgid "Can't copy Cnchi log to %s"
+#~ msgstr "Nelze kopírovat Cnchi log do %s"
+
+#~ msgid "Can't initialize pyalpm."
+#~ msgstr "Nelze inicializovat pyalpm."
+
+#~ msgid "Can't start haveged service"
+#~ msgstr "Nelze spustit službu Haveged "
+
+#~ msgid "Error deleting old gnupg files"
+#~ msgstr "Chyba při odstraňování starých souborů gnupg"
+
+#~ msgid "Error regenerating gnupg files with pacman-key"
+#~ msgstr "Chyba při obnovení gnupg souborů s pacman klíčem"
+
+#~ msgid "Getting url {0}..."
+#~ msgstr "Zjišťuje se url {0}..."
+
+#~ msgid "Can't retrieve remote package list, using the local file instead."
+#~ msgstr "Nelze načíst vzdálený seznam balíčků, použijte místní soubor."
+
+#~ msgid "Adding '%s' desktop packages"
+#~ msgstr "Přidávání balíku '%s' pracovního prostředí "
+
+#~ msgid "Selected kde language pack: %s"
+#~ msgstr "Vybraný jazykový balíček KDE: %s"
+
+#~ msgid "Hardware module detected this drivers: %s"
+#~ msgstr "Hardwarový modul zjistil tohoto ovladače: %s"
+
+#~ msgid "Hardware module added these packages: %s"
+#~ msgstr "Hardwarový modul dodal tyto balíčky: %s"
+
+#~ msgid "Running hardware drivers pre-install jobs..."
+#~ msgstr "Spuštění předinstalování ovladačů hardwaru..."
+
+#~ msgid "Unknown error in hardware module. Output: %s"
+#~ msgstr "Neznámá chyba v hardwarovém modulu. Výstup: %s"
+
+#~ msgid "Check for user desired features and add them to our installation"
+#~ msgstr ""
+#~ "Kontrola požadovaných funkcí uživatelem a jejich přidání do naší instalace"
+
+#~ msgid "All features needed packages have been added"
+#~ msgstr "Byly přidány všechny funkce, které vyžadovaly balíky"
+
+#~ msgid "Selecting chinese fonts."
+#~ msgstr "Vybírají se čínská písma."
+
+#~ msgid "Adding packages for '%s' feature."
+#~ msgstr "Přidání balíčků pro '%s' funkce."
+
+#~ msgid "Selecting package %s for feature %s"
+#~ msgstr "Výběr balíčku %s pro funkce %s"
+
+#~ msgid "Add libreoffice language package"
+#~ msgstr "Přidat jazykový balíček pro LibreOffice"
+
+#~ msgid "Can't copy network configuration files"
+#~ msgstr "Nelze kopírovat síťové konfigurační soubory "
+
+#~ msgid "Can't get {0} partition UUID. It won't be added to fstab"
+#~ msgstr "Nelze získat {0} UUID diskového oddílu. Nebude přidáno do fstab"
+
+#~ msgid "Added to fstab : %s"
+#~ msgstr "Přidáno do fstab: %s"
+
+#~ msgid "Added to crypttab : %s"
+#~ msgstr "Přidáno do crypttab : %s"
+
+#~ msgid "fstab written."
+#~ msgstr "fstab byl zapsán."
+
+#~ msgid "Could not copy udev rule for SSDs"
+#~ msgstr "Nelze kopírovat udev pravidla pro SSD disky"
+
+#~ msgid "Service '%s' has been enabled."
+#~ msgstr "Služba '%s' byla povolena."
+
+#~ msgid "Can't find service %s"
+#~ msgstr "Služba %s nebyla nalezena"
+
+#~ msgid "Error creating password hash for user %s"
+#~ msgstr "Chyba při vytváření hesla pro uživatele %s"
+
+#~ msgid "Error changing password for user %s"
+#~ msgstr "CHYBA při změně hesla uživatele %s"
+
+#~ msgid "Error adjusting hardware clock"
+#~ msgstr "Chyba nastavení hardwarových hodin"
+
+#~ msgid "Can't find pacman configuration file"
+#~ msgstr "Pacman konfigurační soubor nebyl nalezen"
+
+#~ msgid "Can't find locale.gen file"
+#~ msgstr "Nelze najít soubor locale.gen"
+
+#~ msgid "Copying xz files from cache..."
+#~ msgstr "Kopírování xz souborů z cache..."
+
+#~ msgid "Configuring firewall..."
+#~ msgstr "Konfigurace firewallu..."
+
+#~ msgid "Can't import LAMP module"
+#~ msgstr "Nelze importovat modul LAMP"
+
+#~ msgid "Configuring LEMP..."
+#~ msgstr "Konfigurace LEMP..."
+
+#~ msgid "Can't import LEMP module"
+#~ msgstr "Nelze importovat LEMP modul"
+
+#~ msgid "fstab file generated."
+#~ msgstr "byl vygenerován soubor fstab."
+
+#~ msgid "SSD udev rule copied successfully"
+#~ msgstr "SSD udev pravidlo úspěšně zkopírovány"
+
+#~ msgid "Network configuration done."
+#~ msgstr "Konfigurace sítě provedena."
+
+#~ msgid "Mirror list copied."
+#~ msgstr "Seznam zrcadel byl zkopírován."
+
+#~ msgid "Can't copy mirrorlist file"
+#~ msgstr "Nelze kopírovat soubor se seznamem zrcadel"
+
+#~ msgid "Generated /etc/pacman.conf"
+#~ msgstr "Vygenerován /etc/pacman.conf"
+
+#~ msgid "Sudo configuration for user %s done."
+#~ msgstr "Konfigurace sudo pro uživatele %s je hotova."
+
+#~ msgid "Running hardware drivers post-install jobs..."
+#~ msgstr "Hardwarové ovladače po-instalační úlohy..."
+
+#~ msgid "User %s added."
+#~ msgstr "Uživatel %s přidán."
+
+#~ msgid "Hostname set to %s."
+#~ msgstr "Jméno počítače nastaveno na %s."
+
+#~ msgid "Set the same password to root."
+#~ msgstr "Zadejte stejné heslo jako pro uživatele root."
+
+#~ msgid "Set /etc/X11/xorg.conf.d/00-keyboard.conf for the xkblayout"
+#~ msgstr "Nastavte /etc/X11/xorg.conf.d/00-keyboard.conf pro xkblayout"
+
+#~ msgid "00-keyboard.conf written."
+#~ msgstr "00-keyboard.conf byl zapsán."
+
+#~ msgid "Updated Alsa mixer settings"
+#~ msgstr "Aktualizované nastavení směšovače Alsa"
+
+#~ msgid "Updated fluidsynth configuration file"
+#~ msgstr "Konfigurační soubor aktualizované fluidsynth"
+
+#~ msgid "Call Cnchi post-install script"
+#~ msgstr "Cnchi post-instalační skript"
+
+#~ msgid "Post install script completed successfully."
+#~ msgstr "Poinstalační skript byl úspěšně dokončen."
+
+#~ msgid "Error running post-install script"
+#~ msgstr "Chyba při spuštění poinstalačního skriptu"
+
+#~ msgid "User home dir encrypted"
+#~ msgstr "Domovský adresář zašifrován"
+
+#~ msgid "While installing boot loader Cnchi encountered this error: %s"
+#~ msgstr "Při instalaci zavaděče Cnchi narazil na tuto chybu: %s"
+
+#~ msgid "Copying install log to /var/log."
+#~ msgstr "Instalační protokol kopírování do/var/log."
+
+#~ msgid "systemd-networkd configuration failed."
+#~ msgstr "konfigurace systemd-networkd se nezdařila."
+
+#~ msgid "Found [%s] links and [%s] are wireless"
+#~ msgstr "Nalezené [%s] spojení a [%s] jsou bezdrátové"
+
+#~ msgid "Can't find value '%s' in treeview"
+#~ msgstr "Nelze nalézt hodnotu '%s' ve stromu"
+
+#~ msgid "Unknown layout description %s"
+#~ msgstr "Neznámý popisek rozvržení %s"
+
+#~ msgid "Unknown variant description %s"
+#~ msgstr "Neznámá varianta popisku %s"
+
+#~ msgid "Can't find translation file for the %s language"
+#~ msgstr "Nelze nalézt soubor s překladem pro jazyk %s"
+
+#~ msgid "locale changed to : %s"
+#~ msgstr "národní prostředí změněno na : %s"
+
+#~ msgid "Can't change to locale '%s'"
+#~ msgstr "Nelze změnit národní prostředí na '%s'"
+
+#~ msgid "File '%s' already exists."
+#~ msgstr "Soubor '%s' již existuje."
+
+#~ msgid "Previous step"
+#~ msgstr "Předchozí krok"
+
+#~ msgid "Using %s to download packages"
+#~ msgstr "Použití %s ke stažení balíčků"
+
+#~ msgid "Using '%s' file as package list"
+#~ msgstr "Pomocí souboru '%s' jako seznam balíčků"
+
+#~ msgid "Quiting installer..."
+#~ msgstr "Dokončuji instalaci ..."
+
+#~ msgid "Can't find %s file!"
+#~ msgstr "Nelze najít %s soubor!"
+
+#~ msgid "Can't change to locale '%s' : %s"
+#~ msgstr "Nelze změnit  prostředí '%s': %s"
+
+#~ msgid "alpm init with root dir '{0}' and db path '{1}'"
+#~ msgstr "alpm init s kořenovým dir '{0}' a db cestou '{1}'"
+
+#~ msgid "Prepare alpm transaction..."
+#~ msgstr "Připravte alpm transakce..."
+
+#~ msgid "Commit alpm transaction..."
+#~ msgstr "Potvrzení transakce alpm..."
+
+#~ msgid "Can't finalize alpm transaction: %s"
+#~ msgstr "Nelze dokončit transakci alpm: %s"
+
+#~ msgid "Releasing alpm transaction..."
+#~ msgstr "Uvolnění alpm transakce..."
+
+#~ msgid "Alpm transaction done."
+#~ msgstr "Alpm transakce provedena."
+
+#~ msgid "Can't init alpm transaction: %s"
+#~ msgstr "Nelze init alpm transakce: %s"
+
+#~ msgid "Target %s not found"
+#~ msgstr "Cíl %s nebyl nalezena."
+
+#~ msgid "Can't init transaction"
+#~ msgstr "Nelze init transakce"
+
+#~ msgid "Adding package '%s' to remove transaction"
+#~ msgstr "Přidání balíčku '%s' Odstranit transakce"
+
+#~ msgid "alpm is not initialised"
+#~ msgstr "alpm není inicializována."
+
+#~ msgid "Package list is empty"
+#~ msgstr "Seznam balíčků je prázdný"
+
+#~ msgid "Cnchi will install a list of packages like pacman -S"
+#~ msgstr "Cnchi nainstaluje seznam balíčků, jako pacman -S"
+
+#~ msgid "Can't find a package or group called '%s'"
+#~ msgstr "Nedaří se nalézt balíček nebo skupinu s názvem '%s'"
+
+#~ msgid "No targets found"
+#~ msgstr "Žádné cíle, nalezeny"
+
+#~ msgid "Applying delta patch to target package..."
+#~ msgstr "Použití opravy delta do cílového balíčku..."
+
+#~ msgid "Can't get partition %s UUID"
+#~ msgstr "Nelze získat diskový oddíl %s UUID"
+
+#~ msgid "Can't get partition %s label (or it does not have any)"
+#~ msgstr "Nelze získat diskový oddíl %s štítek (nebo žádný nemá)"
+
+#~ msgid "Sorry but filesystem %s can't be shrinked"
+#~ msgstr "Omlouváme se, ale souborový systém %s nelze zmenšovat"
+
+#~ msgid ""
+#~ "Exception: {0}.\n"
+#~ "For more information take a look at /tmp/cnchi.log"
+#~ msgstr "Výjimka: {0}. Další informace Podívejte se na /tmp/cnchi.log"
+
+#~ msgid "Can't detect used space of BTRFS partition %s"
+#~ msgstr "Nelze zjistit použité místo na BTRFS oddílu %s"
+
+#~ msgid "Can't synchronize cached writes to persistent storage: %s"
+#~ msgstr "Nelze synchronizovat zápis mezipaměti do trvalého úložiště: %s"
+
+#~ msgid "Update of antergos-mirrorlist package failed with error: %s"
+#~ msgstr "Aktualizace antergos-mirrorlist balíčku se nezdařilo s chybou: %s"
+
+#~ msgid "Error copying new mirrorlist files: %s"
+#~ msgstr "Chyba při kopírování nových mirrorlist souborů: %s"
+
+#~ msgid "Error running reflector on Arch mirrorlist: %s"
+#~ msgstr "Chyba spuštění reflektoru na Arch mirrorlist: %s"
+
+#~ msgid "Error running rankmirrors on Antergos mirrorlist: %s"
+#~ msgstr "Chyba spuštění rankmirrors na Antergos mirrorlist: %s"
+
+#~ msgid "Updating both mirrorlists (Arch and Antergos)..."
+#~ msgstr "Aktualizace obou mirrorlists (ARCH a Antergos)..."
+
+#~ msgid "Running reflector command to sort Arch mirrors..."
+#~ msgstr "Spuštění příkazu reflektoru třídit Arch zrcadla..."
+
+#~ msgid "Running rankmirrors command to sort Antergos mirrors..."
+#~ msgstr "Příkaz provedení rankmirrors třídit Antergos zrcadla..."
+
+#~ msgid "Checking Arch mirrorlist against mirror status data..."
+#~ msgstr "Kontrola Arch mirrorlist s údaji zrcadla..."
+
+#~ msgid "Auto mirror selection has been run successfully."
+#~ msgstr "Volba automatického zrcadla byla úspěšně spuštěna."
+
+#~ msgid "location changed to : %s"
+#~ msgstr "Oblast změněna na : %s"
+
+#~ msgid "Can't autodetect timezone coordinates"
+#~ msgstr "Nedaří se automaticky detekovat souřadnice pro časové pásmo"
+
+#~ msgid "Can't get network status. Cnchi will try again in a moment"
+#~ msgstr "Nelze získat stav sítě. Cnchi se pokusí znovu za okamžik"
+
+#~ msgid "A working network connection has been detected."
+#~ msgstr "Bylo zjištěno připojení k pracovní síti."
+
+#~ msgid "We have connection. Let's get our timezone"
+#~ msgstr "Připojení máme. Pojďme na časové pásmo"
+
+#~ msgid ""
+#~ "Could not find 'update.info' file. Cnchi will not be able to update "
+#~ "itself."
+#~ msgstr ""
+#~ "Soubor 'update.info' nebyl nalezen. Cnchi nebude schopné se aktualizovat."
+
+#~ msgid "New version found. Updating installer..."
+#~ msgstr "Nová verze nalezen. Aktualizace instalačního programu..."
+
+#~ msgid "No new version found. Updating anyways..."
+#~ msgstr "Žádná nová verze nalezena. Aktualizace stejně..."
+
+#~ msgid "Downloading new version of Cnchi..."
+#~ msgstr "Stahuje se nová verze Cnchi"
+
+#~ msgid "Can't download new Cnchi version."
+#~ msgstr "Nelze stáhnout nová verze Cnchi"
+
+#~ msgid "Uncompressing new version..."
+#~ msgstr "Rozbaluje se nová verze..."
+
+#~ msgid ""
+#~ "Wrong md5 (%s). Bad download or wrong file, Cnchi won't update itself"
+#~ msgstr ""
+#~ "Špatné md5 (%s). Chyba při stažení nebo špatný soubor, Cnchi se nebude "
+#~ "samo aktualizovat"
+
+#~ msgid "File %s is not in md5 signatures list"
+#~ msgstr "Soubor %s není v md5 seznamu podpisů"
+
+#~ msgid "Copying %s to %s..."
+#~ msgstr "Kopírování %s do %s..."
+
+#~ msgid "Can't copy %s to %s"
+#~ msgstr "Nelze kopírovat %s do %s"
+
+#~ msgid "Save"
+#~ msgstr "Uložit"

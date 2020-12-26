@@ -1,0 +1,57 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Figue <ffigue at gmail>
+# Contributor (Parabola): fauno <fauno@kiwwwi.com.ar>
+# Thank you very much to the older contributors:
+# Contributor: evr <evanroman at gmail>
+# Contributor: Muhammad 'MJ' Jassim <UnbreakableMJ@gmail.com> 
+
+pkgname=icecat
+pkgver=52.6.0
+pkgrel=1
+pkgdesc="GNU version of the Firefox browser."
+arch=('x86_64')
+url="http://www.gnu.org/software/gnuzilla/"
+license=('GPL' 'MPL' 'LGPL')
+depends=('gtk2' 'mozilla-common' 'libxt' 'startup-notification' 'mime-types' 'dbus-glib'
+		'alsa-lib' 'desktop-file-utils' 'hicolor-icon-theme' 'libvpx' 'icu' 'libevent'
+		'nss' 'hunspell' 'sqlite' 'pango' 'freetype2' 'libxft' 'libx11')
+optdepends=('networkmanager: Location detection via available WiFi networks'
+			'gst-plugins-good: h.264 video'
+			'gst-libav: h.264 video'
+			'upower: Battery API')
+groups=('browser')
+install=icecat.install
+source=(	icecat.desktop
+		icecat-safe.desktop
+		vendor.js)
+source_x86_64=("https://mirrors.kernel.org/gnu/gnuzilla/${pkgver}/${pkgname}-${pkgver}.en-US.gnulinux-x86_64.tar.bz2")
+md5sums=('e81ad01dbc16ba28bf92ba4b7c309ca7'
+         'd93fe402b87cd000a869e1fd6badc6c9'
+         '0d053487907de4376d67d8f499c5502b')
+md5sums_x86_64=('97994d4a7562e51e4ede1b64f6dc95b3')
+
+
+package () {
+
+	cd "${srcdir}/${pkgname}"
+
+	install -dm755 ${pkgdir}/usr/share/applications
+	install -dm755 ${pkgdir}/usr/share/pixmaps
+	install -dm755 ${pkgdir}/usr/lib
+	install -dm755 ${pkgdir}/usr/bin
+
+	for i in 16 32 48; do
+		install -Dm644 ${srcdir}/${pkgname}/browser/chrome/icons/default/default${i}.png \
+		"$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/icecat.png"
+	done
+	install -Dm644 ${srcdir}/${pkgname}/browser/chrome/icons/default/default48.png ${pkgdir}/usr/share/pixmaps/icecat.png
+	install -Dm644 ${srcdir}/icecat.desktop ${pkgdir}/usr/share/applications/
+	install -Dm644 ${srcdir}/icecat-safe.desktop ${pkgdir}/usr/share/applications/
+	
+	cp -R --no-preserve=ownership ${srcdir}/${pkgname} ${pkgdir}/usr/lib
+	
+	install -Dm644 "${srcdir}/vendor.js" "${pkgdir}/usr/lib/${pkgname}/defaults/pref"
+	
+	ln -s "/usr/lib/${pkgname}/${pkgname}-bin" "${pkgdir}/usr/bin/icecat"
+}
+

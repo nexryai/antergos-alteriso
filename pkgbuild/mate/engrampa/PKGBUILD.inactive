@@ -1,0 +1,54 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=engrampa
+pkgver=1.20.2
+pkgrel=1
+pkgdesc="Archive file manipulator"
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('bzip2' 'desktop-file-utils' 'gtk3' 'gzip' 'libarchive' 'tar')
+makedepends=('wget' 'caja' 'mate-common' 'yelp-tools')
+optdepends=('unrar: for RAR uncompression'
+			'zip: for ZIP archives'
+			'unzip: for ZIP archives'
+			'p7zip: 7zip compression utility'
+			'arj: for ARJ archives'
+			'unace: extraction tool for the proprietary ace archive format'
+			'yelp: for reading MATE help documents')
+groups=('mate-extra')
+source=("https://pub.mate-desktop.org/releases/${pkgver::(-2)}/${pkgname}-${pkgver}.tar.xz"
+		fr-rpm-bsdtar.patch)
+_sha1sums_url="https://pub.mate-desktop.org/releases/${pkgver::(-2)}/SHA1SUMS"
+sha1sums=($(wget -q "${_sha1sums_url}" && grep "${pkgname}-${pkgver}.tar.xz" SHA1SUMS | cut -f1)
+          '219b05a979bf6f249aaae27964f02345fd81168d')
+
+# BEGIN ANTBS METADATA
+_autosums='True'
+_is_monitored='True'
+_monitored_service='mate-desktop'
+_monitored_match_pattern='/^\d\.\d[02468]\.\d+$/'
+# END ANTBS METADATA
+
+prepare() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	# This patch 'depends' on libarchive
+	patch -Np1 -i "${srcdir}/fr-rpm-bsdtar.patch"
+}
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/${pkgname} \
+		--disable-static
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}
+
+# -*- mode: bash;-*-

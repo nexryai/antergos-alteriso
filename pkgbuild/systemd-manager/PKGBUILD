@@ -1,0 +1,47 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Daniel Sandman <revoltism@gmail.com>
+
+pkgname=systemd-manager
+pkgver=1.0.0
+_pkgver=1.0.0
+pkgrel=1
+pkgdesc='A graphical interface for managing systemd services.'
+arch=('x86_64')
+url='https://github.com/mmstick/systemd-manager/'
+license=('GPL2')
+depends=('gtk3')
+makedepends=('cargo')
+provides=('systemd-manager')
+conflicts=('systemd-manager-git')
+source=("${pkgname}.zip::https://github.com/mmstick/systemd-manager/archive/${pkgver}.zip")
+#source=("${pkgname}-${pkgver}::git+https://github.com/mmstick/systemd-manager.git")
+md5sums=('2102236d96b118b82cd16362c5b1f4c8')
+
+# BEGIN ANTBS METADATA
+_is_monitored='True'
+_monitored_service='github'
+_monitored_type='releases'
+_monitored_project='mmstick'
+_monitored_repo='systemd-manager'
+# END ANTBS METADATA
+
+build() {
+	cd "${srcdir}/${pkgname}-${_pkgver}"
+	[[ -d /pkg ]] && export CARGO_HOME='/pkg'
+	cargo build --release --verbose
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${_pkgver}"
+	
+	install -D -m755 'target/release/systemd-manager' "${pkgdir}/usr/bin/systemd-manager"
+	install -D -m755 'assets/systemd-manager-pkexec' "${pkgdir}/usr/bin/systemd-manager-pkexec"
+	install -D -m644 'assets/systemd-manager.desktop' "${pkgdir}/usr/share/applications/systemd-manager.desktop"
+
+	install -D -m644 \
+		'assets/org.freedesktop.policykit.systemd-manager.policy' \
+		"${pkgdir}/usr/share/polkit-1/actions/org.freedesktop.policykit.systemd-manager.policy"
+
+	install -D -m644 'README.md' "${pkgdir}/usr/share/doc/${pkgname}/README"
+	install -D -m644 'LICENSE' "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}

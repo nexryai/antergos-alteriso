@@ -1,0 +1,39 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=mate-calc
+pkgver=1.20.3
+pkgrel=1
+pkgdesc='Calculator for MATE'
+arch=('x86_64')
+url='https://www.mate-desktop.org'
+license=('GPL')
+groups=('mate-extra')
+depends=('gtk3')
+makedepends=('wget' 'intltool' 'flex' 'bison' 'mate-common' 'perl-xml-parser' 'yelp-tools')
+conflicts=('galculator' 'mate-calc-git')
+replaces=('galculator')
+provides=('mate-calc' 'galculator')
+source=("https://pub.mate-desktop.org/releases/${pkgver::(-2)}/${pkgname}-${pkgver}.tar.xz")
+_sha1sums_url="https://pub.mate-desktop.org/releases/${pkgver::(-2)}/SHA1SUMS"
+sha1sums=($(wget -q "${_sha1sums_url}" && grep "${pkgname}-${pkgver}.tar.xz" SHA1SUMS | cut -f1))
+
+# BEGIN ANTBS METADATA
+_autosums='True'
+_is_monitored='True'
+_monitored_service='mate-desktop'
+_monitored_match_pattern='/^\d\.\d[02468]\.\d+$/'
+# END ANTBS METADATA
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./autogen.sh --prefix=/usr
+	make
+}
+
+package() {
+	cd "${pkgname}-${pkgver}"
+	make DESTDIR="$pkgdir" install
+}
+
+# -*- mode: bash;-*-

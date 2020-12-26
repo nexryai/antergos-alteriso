@@ -1,0 +1,25 @@
+From 9ff7312ad73f5227b23bd2a4de42e23054a45886 Mon Sep 17 00:00:00 2001
+From: Dustin Falgout <dustin@falgout.us>
+Date: Tue, 8 Nov 2016 21:17:24 -0600
+Subject: [PATCH] set default theme in gschema file
+
+---
+ data/org.cinnamon.gschema.xml.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/org.cinnamon.gschema.xml.in b/data/org.cinnamon.gschema.xml.in
+index 5003497..d225412 100644
+--- a/data/org.cinnamon.gschema.xml.in
++++ b/data/org.cinnamon.gschema.xml.in
+@@ -625,7 +625,7 @@
+   <schema id="org.cinnamon.theme" path="/org/cinnamon/theme/"
+         gettext-domain="@GETTEXT_PACKAGE@">
+     <key name="name" type="s">
+-      <default>""</default>
++      <default>"Linux Mint"</default>
+       <_summary>Theme name</_summary>
+       <_description>
+        The name of the theme
+-- 
+2.10.2
+

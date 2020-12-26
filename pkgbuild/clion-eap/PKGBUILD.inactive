@@ -1,0 +1,58 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+
+pkgname=clion-eap
+_buildver=163.6512.7
+_pkgver=2016.3.0
+_eap="True"
+pkgver="${_pkgver}.${_buildver}"
+pkgrel=1
+pkgdesc="Powerful C and C++ IDE. Early Access Program (EAP) build."
+arch=('any')
+options=('!strip')
+url="http://www.jetbrains.com/clion/"
+license=("custom")
+makedepends=('wget')
+conflicts=("clion")
+groups=("development" "IDE" "editor" "jetbrains")
+
+if [[ "True" = "${_eap}" ]]; then
+	_srcfile="CLion-${_buildver}.tar.gz"
+	#_srcfile="CLion-${_pkgver::(-2)}-RC.tar.gz"
+	source=("http://download.jetbrains.com/cpp/${_srcfile}"
+			"${pkgname}.desktop")
+	sha256sums=($(wget -q "${source}.sha256" && cat "${_srcfile}.sha256" | cut -f1 -d" ")
+				"b9b58f752f5da2d59cfcd5170402759bfe8a4d3f877c40ebefae2e7f02907753")
+else
+	_srcfile="CLion-${_pkgver}.tar.gz"
+	source=("http://download.jetbrains.com/cpp/${_srcfile}"
+			"${pkgname}.desktop")
+	sha256sums=($(wget -q "${source}.sha256" && cat "${_srcfile}.sha256" | cut -f1 -d" ")
+				"b9b58f752f5da2d59cfcd5170402759bfe8a4d3f877c40ebefae2e7f02907753")
+fi
+
+package() {
+	cd "${srcdir}"
+	install -dm 755 \
+		"${pkgdir}/opt/${pkgname}" \
+		"${pkgdir}/usr/bin/" \
+		"${pkgdir}/usr/share/licenses/${pkgname}/" \
+		"${pkgdir}/usr/share/applications/"
+
+	if [[ "True" = "${_eap}" ]]; then
+		cp -R --no-preserve=ownership "${srcdir}/clion-${_buildver}/"* "${pkgdir}/opt/${pkgname}"
+	else
+		cp -R --no-preserve=ownership "${srcdir}/clion-${_pkgver}/"* "${pkgdir}/opt/${pkgname}"
+	fi
+	
+	if [[ "i686" = "${CARCH}" ]]; then
+		rm -f "${pkgdir}/opt/${pkgname}/bin/libyjpagent-linux64.so"
+		rm -f "${pkgdir}/opt/${pkgname}/bin/fsnotifier64"
+	fi
+
+	sed -i "s/Version=/Version=${pkgver}/g" "${pkgname}.desktop"
+	install -m644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/"
+	
+	ln -s "/opt/${pkgname}/bin/clion.sh" "${pkgdir}/usr/bin/clion-eap"
+}
+
+# -*- mode: bash;-*-

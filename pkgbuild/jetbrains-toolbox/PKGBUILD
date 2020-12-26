@@ -1,0 +1,60 @@
+# Maintainer: Antergos Developers <dev@antergos.com>
+
+pkgname=jetbrains-toolbox
+pkgver=1.14.5179
+pkgrel=1
+epoch=2
+pkgdesc="One-stop access to all your coding tools from JetBrains."
+url='http://www.jetbrains.com/toolbox/'
+arch=('any')
+options=('!strip' 'emptydirs')
+license=('custom')
+depends=('fuse' 'openssl-1.0')
+provides=('clion' 'clion-eap' 'phpstorm' 'phpstorm-eap' 'webstorm' 'webstorm-eap' 'rubymine' 'rubymine-eap'
+		'pycharm-pro-eap' 'pycharm-com-eap' 'pycharm-eap' 'pycharm-professional' 'pycharm-community'
+		'intellij-idea-ultimate-edition' 'intellij-idea-community-edition' 'intellij-idea-ue-eap')
+groups=('development' 'IDE' 'editor' 'jetbrains')
+install="${pkgname}.install"
+backup=('opt/JetBrains/Toolbox/.settings.json')
+source=("https://download.jetbrains.com/toolbox/${pkgname}-${pkgver}.tar.gz"
+		"${pkgname}.desktop"
+		'.settings.json'
+		'toolbox.svg'
+		'launcher.sh')
+sha256sums=($(wget -q "${source}.sha256" && cat "${pkgname}-${pkgver}.tar.gz.sha256" | cut -f1 -d" ")
+			'ec837e9d12f010957cf274bb846bc758619d041fb07dfde716ef6f4a4b5dd0a7'
+			'1d583206859c21ba3d8898f0dffbaf3f6ae88c0e4ebeeb4868cc7e71aaf3895a'
+			'9e3784dc0bc10c0d7db7c01fa8874b4048ecb1d21fa2a82d4ff17c53cfacf70c'
+			'28b57e415789d704f99bb505b83bfbb90430b37c53e37d0e20e527c9f510c04f'
+)
+
+# BEGIN ANTBS METADATA
+_autosums='True'
+# END ANTBS METADATA
+
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	install -dm755 \
+		"${pkgdir}/usr/bin/" \
+		"${pkgdir}"/usr/share/{applications,pixmaps}
+
+	install -dm777 "${pkgdir}/opt/JetBrains/Toolbox/bin"
+	touch "${pkgdir}/opt/JetBrains/Toolbox/.installed_version"
+	chmod -R a+w "${pkgdir}/opt/JetBrains"
+
+	cp -t "${pkgdir}/opt/JetBrains/Toolbox" \
+		"${pkgname}" \
+		"${srcdir}/.settings.json"
+
+	cp "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/"
+	cp "${srcdir}/toolbox.svg" "${pkgdir}/usr/share/pixmaps/jetbrains-toolbox.svg"
+
+	cp "${srcdir}/launcher.sh" "${pkgdir}/usr/bin/${pkgname}"
+	chmod +x "${pkgdir}/usr/bin/${pkgname}"
+}
+
+
+
+
